@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/logo_basico_fondo.png" type="../../assets/logo_basico">
+    <link rel="stylesheet" href="landing.component.css" />
+    <title>Bienvenido a DOGTOR</title>
+</head>
+<body>
+    <header>
+        <nav class="navegacion-principal">
+            <a href="#"><img src="../../assets/logo_horizontal.png" alt=""></a>
+            <ul class="menu-principal">  
+                <a href="#quienes-somos"><li>¿Quiénes somos?</li></a>
+                <a href="#servicios"><li>Servicios</li></a>
+                <a href="#estado-mascotas"><li>Estado de mascotas</li></a>
+                <a href="#contacto"><li>Contáctanos</li></a>
+                <a href="http://localhost:8090/dueno/inicioSesion"><li class="inicio-sesion">Iniciar Sesión</li></a>
+                </ul>
+            </nav>
+    </header>
+
+    <section class="banner-principal">
+        <img src="../../assets/banner2.png" alt="banner1">
+    </section>
+
+    <section class="quienes-somos" id="quienes-somos">
+        <div class="texto-section">
+            <img src="../../assets/logo_basico.png" alt="oddie-negro" class="oddie-negro">
+            <p>Hola! Soy Oddie, y te quiero contar</p>
+            <h1>¿Quiénes somos?</h1>
+            <p>
+                ¡Somos DOGTOR! Una clínica veterinaria ubicada en Colombia, 
+                dedicada exclusivamente al bienestar de los perros.
+
+                Contamos con un equipo veterinario apasionado cuya dedicación se refleja en cada aspecto de nuestro servicio. 
+                Nos esforzamos por ofrecer atención de alta calidad y servicios especializados que aborden todas las 
+                necesidades de salud y bienestar de nuestros pacientes caninos.
+                
+                En DOGTOR, amamos a cada compañero peludo. Ofrecemos cuidado compasivo y experto en cada visita, 
+                comprendiendo la singularidad de cada perro. Nuestra misión es crear un ambiente cálido y acogedor, donde 
+                perros y dueños se sientan cómodos y confiados en la atención recibida.
+                
+                ¡Bienvenidos a nuestra familia de DOGTORES!
+            </p>
+        </div>
+
+        <div class="imagen-section">
+            <img src="../../assets/quienes_somos.jpg" alt="quienes-somos">
+        </div>
+    </section>
+
+    <section class="servicios-section" id="servicios">
+        <div class="texto-section-central">
+            <div class="titulo-servicios">
+                <img src="../../assets/logo_basico_blanco.png" alt="oddie-blanco" class="oddie-blanco">
+                <p>Me gustaría contarte acerca de nuestros</p>
+                <h1>Servicios</h1>
+            </div>
+        </div>
+
+        <div class="servicios">
+            <div class="servicio">
+                <h2>Hospitalización </h2>
+                <img src="../../assets/servicio1.png" alt="">
+                <p>¡Nos encargamos de cuidar a tu mascota!</p>
+            </div>
+
+            <div class="servicio">
+                <h2>Consulta médica</h2>
+                <img src="../../assets/servicio2.png" alt="">
+                <p>Cuentanos, ¿Que sucede?</p>
+            </div>
+
+            <div class="servicio">
+                <h2>Paseo</h2>
+                <img src="../../assets/servicio3.png" alt="">
+                <p>¿No tienes tiempo?, ¡Lo hacemos por ti!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="estado-mascotas" id="estado-mascotas">
+        
+        <div class="imagen-section">
+            <img src="../../assets/estado_mascota.jpg" alt="quienes-somos">
+        </div>
+        <div class="texto-section">
+            <img src="../../assets/logo_basico.png" alt="oddie-negro" class="oddie-negro">
+            <p>Tambien puedes ver el</p>
+            <h1>Estado de tu mascota</h1>
+            <p>
+                Te mantenemos al tanto del estado de tu mascota durante su visita. Nuestro equipo experimentado cuida 
+                detalladamente de tu amigo peludo. Aquí, encontrarás actualizaciones sobre su salud y comportamiento para tu 
+                tranquilidad. La salud de tu mascota es nuestra principal preocupación.
+            </p>
+            <a href="http://localhost:8090/dueno/inicioSesion"><button>Estado de tu mascota</button></a>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <div class="texto-section-contacto">
+            <img src="../../assets/logo_basico_blanco.png" alt="oddie-blanco" class="oddie-negro">
+            <h3>Así puedes llegar a nosotros</h3>
+            
+        </div>
+        <div class="mapa-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15907.228180762453!2d-74.08371891284182!3d4.628487500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a8193f1c9f%3A0xf93431640f134c07!2sPontificia%20Universidad%20Javeriana!5e0!3m2!1ses!2sco!4v1707687286529!5m2!1ses!2sco" 
+            style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="datos">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <img src="../../assets/facebook.png" alt="facebook">
+            <img src="../../assets/instagram.png" alt="instagram">
+            <img src="../../assets/whatsapp.png" alt="whatsapp">
+        </div>
+
+        
+        
+    </footer>
+</body>
+</html>
