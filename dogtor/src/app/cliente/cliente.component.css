@@ -1,0 +1,19 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #fe9739;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+app-cliente-mostrar-todos {
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    font-family: var(--font-dosis);
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    padding-top: 4rem;
+    margin: 0;
+}
