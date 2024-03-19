@@ -8,8 +8,8 @@ import { tratamiento } from './tratamiento';
 })
 export class TratamientoComponent {
   listaTratamiento: tratamiento[] = [
-    { id: 1, id_droga: 1, id_mascota: 1, id_veterinario: 1, fecha: 'fecha1'},
-    { id: 2, id_droga: 2, id_mascota: 2, id_veterinario: 2, fecha: 'fecha2'},
-    { id: 3, id_droga: 3, id_mascota: 3, id_veterinario: 3, fecha: 'fecha3'},
+    { id: 1, id_droga: 1, id_mascota: 1, id_veterinario: 1, fecha: new Date() },
+    { id: 2, id_droga: 2, id_mascota: 2, id_veterinario: 2, fecha: new Date() },
+    { id: 3, id_droga: 3, id_mascota: 3, id_veterinario: 3, fecha: new Date() },
   ]
 }

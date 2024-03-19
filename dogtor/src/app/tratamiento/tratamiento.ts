@@ -3,5 +3,5 @@ export interface tratamiento {
     id_droga: number;
     id_mascota: number;
     id_veterinario: number;
-    fecha: string;
+    fecha: Date;
 }
