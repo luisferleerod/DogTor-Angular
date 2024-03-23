@@ -7,13 +7,5 @@ import { administrador } from './administrador';
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent {
- listaAdministradores: administrador[] = [
-
-    {
-      id: 1,
-      usuario: 'admin',
-      nombre: 'admin',
-      contrasena: 'admin'
-    }
- ]
+ 
 }
