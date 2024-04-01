@@ -1,0 +1,91 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--font-dosis);
+    margin: 0;
+    padding: 0;
+}
+
+.fondo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+
+}
+
+.contenedor-login {
+    display: grid;
+    place-items: center;
+    background-color: #E9F6FB;
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: .7rem;
+    text-align: center;
+    width: 18rem;
+    height: 20rem;
+    margin-left: 10rem;
+    margin-top: 8rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo img {
+    width: 4.2rem;
+    height: auto;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 1rem;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+}
+
+form label {
+    display: block;
+    height: .5rem;
+    text-align: left;
+    color: black;
+    text-transform: uppercase;
+}
+
+form input {
+    width: 95%;
+    padding: .4rem; 
+    border: none;
+    border-radius: .3rem;
+    background-color: #9DEEFF;
+}
+
+.boton {
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    background-color: var(--color-contraste);
+    color: white;
+    border-radius: .3rem;
+    cursor: pointer;
+    margin: 1rem 0 1rem 0;
+}

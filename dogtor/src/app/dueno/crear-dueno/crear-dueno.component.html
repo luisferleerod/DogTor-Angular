@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <title>Nuevo Cliente</title>
+</head>
+<body>
+
+    <img class="fondo-imagen" src="../../../assets/fondoActualizarDueno.jpg" alt="Fondo">
+
+    <div class="formulario-container">
+        <div class="contenedor-formulario">
+            <div class="logo-container">
+                <img src="../../../assets/logo_basico.png" alt="Logo">
+            </div>
+
+            <h1>Nuevo Cliente</h1>
+            <form th:object="${dueno}" th:action="@{/dueno/agregar}" method="post"id="nuevoClienteForm">
+                <label for="nombre">Nombre:</label>
+                <input th:field="*{nombre}" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+
+                <label for="cedula">Cédula:</label>
+                <input th:field="*{cedula}" type="text" id="cedula" name="cedula" placeholder="Ingrese su cédula" required>
+
+                <label for="correo">Correo:</label>
+                <input th:field="*{correo}" type="email" id="correo" name="correo" placeholder="Ingrese su correo" required>
+
+                <label for="celular">Celular:</label>
+                <input th:field="*{celular}" type="number" id="celular" name="celular" placeholder="Ingrese su celular" required>
+
+                <button type="submit">Agregar Cliente</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

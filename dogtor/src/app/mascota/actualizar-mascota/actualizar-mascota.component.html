@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/nuevoPaciente.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <script th:if="${cedulaNoExiste}">
+        alert("No existe esa cédula");
+    </script>
+    <title>Actualizar Mascota</title>
+</head>
+<body>
+    <img class="fondo-imagen" src="../../../assets/nuevoFondoForms.jpg" alt="Fondo">
+    <div class="formulario-container">
+        <div class="contenedor-formulario">
+            <div class="logo-container">
+                <img src="../../../assets/logo_basico.png" alt="Logo">
+            </div>
+
+            <h1>Editar Paciente</h1>
+            <form class="formulario" th:object="${mascota}" th:action="@{/mascotas/update/{id}(id=${mascota.getId()})}" method="post">
+                <div class="contenedor-inputs">
+                    <div class="primera-columna">
+                        <label for="nombre">Nombre</label>
+                        <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
+
+                        <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
+                        <input th:field="*{id}" type="hidden" name="id" id="id">
+
+                        <label for="raza">Raza</label>
+                        <input th:field="*{raza}" type="text" name="raza" id="raza">
+
+                        <label for="edad">Edad</label>
+                        <input th:field="*{edad}" type="number" name="edad" id="edad">
+
+                        <label for="peso">Peso</label>
+                        <input th:field="*{peso}" type="number" name="peso" id="peso">
+                    </div>
+                    <div class="segunda-columna">
+                        <label for="foto">Foto</label>
+                        <input th:field="*{foto}" type="text" name="foto" id="foto">
+
+                        <label for="enfermedad">Enfermedad</label>
+                        <input th:field="*{enfermedad}" type="text" name="enfermedad" id="enfermedad">
+
+                        <label for="cedulaDueno">Cédula del Dueño:</label>
+                        <input th:field="*{dueno.cedula}" type="text" id="cedulaDueno" name="cedulaDueno">
+
+                        <label for="estado">Estado</label>
+                        <select th:field="*{estado}" id="estado" name="estado">
+                            <option value="activo">Activo</option>
+                            <option value="desactivado">Desactivado</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Actualizar</button>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

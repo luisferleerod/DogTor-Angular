@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <title>Actualizar Dueno</title>
+</head>
+<body>
+    <img class="fondo-imagen" src="../../../assets/fondoActualizarDueno.jpg" alt="Fondo">
+    <div class="formulario-container">
+        <div class="contenedor-formulario">
+            <div class="logo-container">
+                <img src="../../../assets/logo_basico.png" alt="Logo">
+            </div>
+            <h1>Editar Cliente</h1>
+
+                <form th:object="${dueno}" th:action="@{/dueno/update/{id}(id=${dueno.getId()})}" method="post"> 
+
+                    <label for="cedula">Cedula</label>
+                    <input th:field="*{cedula}" type="number" name="cedula" id="cedula">
+
+                    <label for="nombre">Nombre</label>
+                    <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
+
+                    <label for="correo">Correo</label>
+                    <input th:field="*{correo}" type="email" name="correo" id="correo">
+
+                    <label for="celular">Celular</label>
+                    <input th:field="*{celular}" type="number" name="celular" id="celular">
+
+                    <button type="submit">Actualizar</button>
+
+                </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo_basico_fondo.png" type="img/logo_basico">
+
+    <script th:if="${cedulaNoExiste}">
+        alert("No existe esa cédula");
+    </script>
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <section>
+        <img src="../../../assets/fondo-login.png" class="fondo" alt="">
+        <div class="contenedor-login">
+            <div class="logo">
+                <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
+            </div>
+            <form th:action="@{/dueno/inicioSesion}" method="post" th:object="${dueno}">
+                <h1>Iniciar Sesión</h1>
+                <label for="cedula">Cédula</label>
+                <br>
+                <input th:field="*{cedula}" type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula">
+                <br>
+                <input type="submit" value="Ingresar" class="boton">
+            </form>
+        </div>
+        
+    </section>
+
+    
+</body>
+</html>

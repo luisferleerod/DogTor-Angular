@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
+    <link rel="stylesheet" href="/css/mostrarMascota.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <title>Bienvenido a DOGTOR</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Mascota:      </h1>
+            <h2 th:text="${mascota.getNombre()}"></h2>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a href="#datos-mascota"><li>Información del Paciente</li></a>
+                <a href="#tratamientos"><li>Tratamientos</li></a>
+                <a href="http://localhost:8090"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="datos-paciente-imagen" id="datos-mascota">
+            
+        <div class="datos-paciente" >
+            <h1 class="titulo">Info del Paciente</h1>
+            <table class="tabla-info">
+                <tr>
+                    <td class="titulo-tabla borer-radius1">Edad</td>
+                    <td th:text="${mascota.getEdad()}" class="contenido-tabla borer-radius2"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Raza</td>
+                    <td th:text="${mascota.getRaza()}" class="contenido-tabla"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Peso</td>
+                    <td th:text="${mascota.getPeso()}" class="contenido-tabla"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla borer-radius4">Enfermedad</td>
+                    <td th:text="${mascota.getEnfermedad()}" class="contenido-tabla borer-radius3"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="datos-imagen">
+            <img th:src="${mascota.getFoto()}" class="imagen-perro">
+        </div>        
+        
+    </section>
+
+
+    <section class="tratamientos" id="tratamientos">
+            <h1 class="titulo2">TRATAMIENTOS</h1>
+        <table>
+            <th class="titulo-tabla borer-radius1">FECHA</th>
+            <th class="titulo-tabla borer-radius2">DROGA</th>
+
+            <tr>
+                <td class="contenido-tabla">1/1/24</td>
+                <td class="contenido-tabla">Keppra 5mg</td>
+            </tr>
+            <tr>
+                <td class="contenido-tabla borer-radius4">2/2/24</td>
+                <td class="contenido-tabla borer-radius3">Keppra 2mg</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <footer>
+        <div class="datos">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <img src="../../../assets/facebook.png" alt="facebook">
+            <img src="../../../assets/instagram.png" alt="instagram">
+            <img src="../../../assets/whatsapp.png" alt="whatsapp">
+        </div>
+
+        
+        
+    </footer>
+    
+</body>
+</html>

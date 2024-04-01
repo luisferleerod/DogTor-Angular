@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
+    <link rel="stylesheet" href="/css/mostrarDueno.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <title>Dueno</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Cliente: </h1>
+            <h2 th:text="${dueno.getNombre()}"></h2>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a href="#datos-dueno"><li>Tu Información</li></a>
+                <a href="#mascotas"><li>Tus Mascotas</li></a>
+                <a href="http://localhost:8090"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <section class="datos-dueno-imagen" id="datos-dueno">
+
+            <div class="datos-dueno">
+                <h1 class="titulo">Info del Dueño</h1>
+                <table class="tabla-info">
+                    <tr>
+                        <td class="titulo-tabla borer-radius1">Cedula</td>
+                        <td th:text="${dueno.getCedula()}" class="contenido-tabla borer-radius2"></td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Nombre</td>
+                        <td th:text="${dueno.getNombre()}" class="contenido-tabla"></td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Correo</td>
+                        <td th:text="${dueno.getCorreo()}" class="contenido-tabla"></td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla borer-radius4">Celular</td>
+                        <td th:text="${dueno.getCelular()}" class="contenido-tabla borer-radius3"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="datos-imagen">
+                <img class="imagen-dueno" src="../../../assets/dueno_especifico.jpg" alt="">
+            </div>
+    </section>
+
+    <!-- Sección para mostrar las mascotas -->
+    <section class="tus-mascotas" id="mascotas">
+        <h1 class="titulo2">Tus Mascotas</h1>
+        <table>
+            <tr>
+                <th class="titulo-tabla borer-radius1">Nombre</th>
+                <th class="titulo-tabla">Raza</th>
+                <th class="titulo-tabla borer-radius2">Información</th>
+            </tr>
+            <!-- Iterar sobre las mascotas del dueño y mostrar sus detalles -->
+            <tr th:each="mascota, iterStat : ${dueno.mascotas}"
+                th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
+                <td th:text="${mascota.nombre}" class="contenido-tabla"></td>
+                <td th:text="${mascota.raza}" class="contenido-tabla"></td>
+
+                <td class="boton-tabla">
+                    <a class="ver-info" th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">ver Información </a> 
+                </td>
+                
+            </tr>
+        </table>
+    </section>
+
+
+    <footer>
+        <div class="datos">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <img src="../../../assets/facebook.png" alt="facebook">
+            <img src="../../../assets/instagram.png" alt="instagram">
+            <img src="../../../assets/whatsapp.png" alt="whatsapp">
+        </div>
+        
+    </footer>
+    
+</body>
+</html>

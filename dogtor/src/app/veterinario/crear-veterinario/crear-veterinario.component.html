@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/nuevoCliente.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <title>Nuevo Veterinario</title>
+</head>
+<body>
+
+    <img class="fondo-imagen" src="../../../assets/nuevoFondoFormulario.jpg" alt="Fondo">
+
+    <div class="formulario-container">
+        <div class="contenedor-formulario">
+            <div class="logo-container">
+                <img src="../../../assets/logo_basico.png" alt="Logo">
+            </div>
+
+            <h1>Nuevo Veterinario</h1>
+
+            <form action="#" method="post" id="nuevoVeterinarioForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required>
+
+                <label for="cedula">Cédula:</label>
+                <input type="number" id="cedula" name="cedula" placeholder="Ingrese la cédula del veterinario" required inputmode="numeric">
+                
+                <label for="especialidad">Especialidad:</label>
+                <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad del veterinario" required>
+
+                <label for="foto">Foto (URL):</label>
+                <input type="url" id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required>
+
+                <button type="submit">Agregar Veterinario</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
