@@ -1,0 +1,263 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+.titulo-mascotas {
+    width: 90%;
+    margin: 1rem 5% .5rem 5%;
+    background-color: #035A6C;
+    border-radius: .7rem;
+
+
+}
+
+.titulo-todas-las-mascotas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 93%;
+    margin-left: 1rem;
+}
+
+.mas {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-left: 30rem;
+    background-color: white;
+    border-radius: 70%;
+    transition: .2s;
+}
+
+.mas:hover {
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+.titulo-mascotas img {
+    
+    width: 4rem;
+    height: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.borer-radius4 {
+    border-radius: 0 0 0 .6rem;
+}
+
+.tabla {
+    width: 90%;
+    margin: .5rem 5% 2rem 5%;
+    border-radius: .1rem;
+    overflow: hidden;
+    background-color: #035A6C;
+}
+
+thead {
+    background-color: #9EF0F7;
+    color: black;
+    padding: 1rem;
+}
+
+th {
+    padding: 1.2rem;
+    font-size: 20px;
+}
+
+td {
+    padding: .7rem;
+    font-size: 20px;
+    background-color: #D5FCFF;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 1.6rem;
+    color: #D5FCFF;
+    height: 26px;
+}
+
+.contenedor-boton,
+.contenedor-boton2,
+.contenedor-boton3 {
+  
+  display: flex; /* Utilizar flexbox para organizar las imágenes */
+  width: 50px;
+  height: 50px;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+
+.boton-borrar {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin: 0 auto; /* Center image horizontally and vertically */
+  }
+  
+
+.boton-borrar:hover {
+    opacity: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* HEADER */
+header {
+    background-color: #04bcd6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-left: 0;
+    padding-bottom: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0 .3rem 0 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+.logo h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: #146076;
+}
+
+.logo img {
+    height: 4rem;
+    margin-left: 3.5rem;
+}
+
+nav{
+    display: flex; /* para que los elementos se alineen en lineas */
+    justify-content: space-between; /* para que los elementos se alineen en el espacio entre ellos */
+    padding: 0;
+    margin-right: 3rem;
+
+}
+
+
+.menu-principal{
+    list-style: none; /* para quitar los puntos */
+    padding:  .8rem;
+    display: flex;
+    justify-content: right; /* para que los elementos se alineen en el espacio entre ellos */
+    align-items: center; 
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.menu-principal a{
+    text-decoration: none;
+}
+
+.menu-principal ul{
+    margin-top: 1rem;
+}
+
+.menu-principal li{
+    margin: 0 1rem 0 1rem;
+    border-radius: .7rem;
+    padding: .4rem .7rem .4rem .7rem;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+
+.menu-principal li:hover{
+    background-color: var(--color-contraste);
+    color: white;
+    border-radius: .7rem;
+    transition-duration: 300ms;
+}
+
+.indice-secciones{
+    background-color: var(--color-secundario);
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+
+
+/*  FOOTER */ 
+footer{
+    display: flex;
+    width: 100%;
+    background-color: var(--color-secundario);
+    bottom: 0;
+    color : white;
+    text-align: justify;
+    padding: 0;
+    font-size: 20px;
+}
+
+.datos{
+    text-align: justify;
+    margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.derechos{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociales {
+    margin: 2rem 0 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.redes-sociales img {
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+}
+
+.redes-sociales img:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
