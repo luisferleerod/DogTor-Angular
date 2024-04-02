@@ -12,7 +12,7 @@ html {
 }
 
 
-body {
+.contenido {
     box-sizing: border-box;
     background-color: var(--color-primario);
     font-family: var(--font-dosis);
