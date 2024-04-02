@@ -24,37 +24,37 @@
 
             <h1>Nuevo Paciente</h1>
 
-            <form class="formulario" th:object="${mascota}" th:action="@{/mascotas/agregar}" action="#" method="post" id="nuevoPacienteForm">
+            <form class="formulario" >
 
                 <div class="contenedor-inputs">
                     <div class="primera-columna">
                         <label for="nombre">Nombre:</label>
-                        <input th:field="*{nombre}" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del paciente" required>
+                        <input  type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del paciente" required [(ngModel)]=formMascota.nombre>
     
                         <label for="raza">Raza:</label>
-                        <input th:field="*{raza}" type="text" id="raza" name="raza" placeholder="Ingrese la raza del paciente" required>
+                        <input  type="text" id="raza" name="raza" placeholder="Ingrese la raza del paciente" required [(ngModel)]=formMascota.raza>
     
                         <label for="edad">Edad:</label>
-                        <input th:field="*{edad}" type="number" id="edad" name="edad" placeholder="Ingrese la edad del paciente" required inputmode="numeric">
+                        <input  type="number" id="edad" name="edad" placeholder="Ingrese la edad del paciente" required inputmode="numeric" [(ngModel)]=formMascota.edad>
     
                         <label for="peso">Peso (KG):</label>
-                        <input th:field="*{peso}" type="number" id="peso" name="peso" placeholder="Ingrese el peso del paciente" required inputmode="numeric">
+                        <input  type="number" id="peso" name="peso" placeholder="Ingrese el peso del paciente" required inputmode="numeric" [(ngModel)]=formMascota.peso>
                     </div>
     
                     <div class="segunda-columna">
                         <label for="foto">Foto (URL):</label>
-                        <input th:field="*{foto}" type="url" id="foto" name="foto" placeholder="Ingrese la URL del paciente" required>
+                        <input type="url" id="foto" name="foto" placeholder="Ingrese la URL del paciente" required [(ngModel)]=formMascota.foto >
     
                         <label for="enfermedad">Enfermedad</label>
-                        <input th:field="*{enfermedad}" type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese la enfermedad del paciente" required>
+                        <input  type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese la enfermedad del paciente" required [(ngModel)]=formMascota.enfermedad>
     
                         <label for="estado" hidden>Estado</label>
-                        <input th:field="*{estado}" type="hidden" name="estado" id="estado" value="Activo">
+                        <input  type="hidden" name="estado" id="estado" value="Activo" [(ngModel)]=formMascota.estado>
     
                         <label for="cedulaDueno">Cédula del Dueño:</label>
-                        <input th:field="*{dueno.cedula}" type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required>
+                        <input  type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required [(ngModel)]=formMascota.cliente>
 
-                        <button type="submit">Agregar Paciente</button>
+                        <button type="submit" (click)="addMascotaForm()">Agregar Paciente</button>
                     </div>
                 </div>
 

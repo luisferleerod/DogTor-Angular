@@ -6,5 +6,7 @@ export interface mascota {
     peso: number;
     enfermedad: string;
     estado: string;
+    foto: string;
     cliente: number;
+
 }

@@ -17,6 +17,7 @@ export class MascotaService {
       peso: 10,
       enfermedad: 'Ninguna',
       estado: 'Disponible',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     },
     {
@@ -27,6 +28,7 @@ export class MascotaService {
       peso: 5,
       enfermedad: 'Ninguna',
       estado: 'Disponible',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     },
     {
@@ -37,6 +39,7 @@ export class MascotaService {
       peso: 15,
       enfermedad: 'Ninguna',
       estado: 'Disponible',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     }
   ];

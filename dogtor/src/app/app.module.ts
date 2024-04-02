@@ -22,6 +22,7 @@ import { MostrarMascotaComponent } from './mascota/mostrar-mascota/mostrar-masco
 import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.component';
 import { ActualizarMascotaComponent } from './mascota/actualizar-mascota/actualizar-mascota.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -54,7 +55,8 @@ import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
