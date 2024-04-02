@@ -38,16 +38,6 @@ export class MascotaService {
       enfermedad: 'Ninguna',
       estado: 'Disponible',
       cliente: 1
-    },
-    {
-      id: 4,
-      nombre: 'Pouyer',
-      raza: 'Chihuahua',
-      edad: 1,
-      peso: 8,
-      enfermedad: 'Ninguna',
-      estado: 'Disponible',
-      cliente: 2
     }
   ];
 

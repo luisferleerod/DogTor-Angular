@@ -51,13 +51,13 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let mascota of listaMascotas">
-                    <td th:text="${mascota.getNombre()}"></td>
-                    <td th:text="${mascota.getRaza()}"></td>
-                    <td th:text="${mascota.getEdad()}"></td>
-                    <td th:text="${mascota.getPeso()}"></td>
-                    <td th:text="${mascota.getEnfermedad()}"></td>
-                    <td th:text="${mascota.getEstado()}"></td>
-
+                    <td>{{mascota.nombre}}</td>
+                    <td>{{mascota.raza}}</td>
+                    <td>{{mascota.edad}}</td>
+                    <td>{{mascota.peso}}</td>
+                    <td>{{mascota.enfermedad}}</td>
+                    <td>{{mascota.estado}}</td>
+                    
                     <td class="td-botones">
                         <div class="contenedor-botones">
 
