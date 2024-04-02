@@ -39,5 +39,26 @@ export class MascotaService {
       estado: 'Disponible',
       cliente: 1
     },
-  ]
+    {
+      id: 4,
+      nombre: 'Pouyer',
+      raza: 'Chihuahua',
+      edad: 1,
+      peso: 8,
+      enfermedad: 'Ninguna',
+      estado: 'Disponible',
+      cliente: 2
+    }
+  ];
+
+  findAll(): mascota[] {
+    return this.listaMascotas;
+  }
+
+  findById(id: number): mascota {
+    const mascota_: mascota = this.listaMascotas.find(mascota_ => mascota_.id === id)!;
+    return mascota_;
+  
+  }
 }
+

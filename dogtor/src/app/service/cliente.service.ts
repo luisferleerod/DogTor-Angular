@@ -11,35 +11,35 @@ export class ClienteService {
   listaClientes: Cliente[] = [
     {
       id: 1,
-      cedula: '1234567890',
+      cedula: '1234',
       nombre: 'Juan',
       correo: 'j@j.com',
       celular: '1234567890'
     },
     {
       id: 2,
-      cedula: '1234567890',
+      cedula: '5678',
       nombre: 'Pedro',
       correo: 'p@p.com',
       celular: '1234567890'
     },
     {
       id: 3,
-      cedula: '1234567890',
+      cedula: '9012',
       nombre: 'Luis',
       correo: 'l@l.com',
       celular: '1234567890'
     }, 
     {
       id: 4,
-      cedula: '1234567890',
+      cedula: '3456',
       nombre: 'Maria',
       correo: 'm@m.com',
       celular: '1234567890'
     },
     {
       id: 5,
-      cedula: '1234567890',
+      cedula: '7890',
       nombre: 'Carlos',
       correo: 'c@c.com',
       celular: '1234567890'
