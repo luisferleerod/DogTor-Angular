@@ -37,19 +37,19 @@
             <table class="tabla-info">
                 <tr>
                     <td class="titulo-tabla borer-radius1">Edad</td>
-                    <td th:text="${mascota.getEdad()}" class="contenido-tabla borer-radius2"></td>
+                    <td  class="contenido-tabla borer-radius2">{{mascota.edad}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Raza</td>
-                    <td th:text="${mascota.getRaza()}" class="contenido-tabla"></td>
+                    <td class="contenido-tabla">{{mascota.raza}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Peso</td>
-                    <td th:text="${mascota.getPeso()}" class="contenido-tabla"></td>
+                    <td class="contenido-tabla">{{mascota.peso}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla borer-radius4">Enfermedad</td>
-                    <td th:text="${mascota.getEnfermedad()}" class="contenido-tabla borer-radius3"></td>
+                    <td class="contenido-tabla borer-radius3">{{mascota.enfermedad}}</td>
                 </tr>
             </table>
         </div>

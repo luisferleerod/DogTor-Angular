@@ -12,6 +12,12 @@ export class CrearMascotaComponent {
   @Output()
   addMascotaEvent = new EventEmitter<mascota>();
 
+  listMascotas!: mascota[]
+
+  sendMascota!: mascota;
+
+  constructor(private mascotaService: MascotaService) { }
+
   formMascota: mascota = {
    
     id: 0,
@@ -20,15 +26,20 @@ export class CrearMascotaComponent {
     edad: 0,
     peso: 0 ,
     enfermedad: "",
-    estado: "",
+    estado: "Disponible",
     foto: "",
     cliente: 0
   };
 
 
   addMascotaForm() {
-    this.addMascotaEvent.emit(this.formMascota);
-    
+
+    this.sendMascota = Object.assign({}, this.formMascota);
+
+    this.listMascotas=this.mascotaService.findAll();
+    this.sendMascota.id=(this.listMascotas.length+1);
+
+    this.addMascotaEvent.emit(this.sendMascota);
 
   }
 

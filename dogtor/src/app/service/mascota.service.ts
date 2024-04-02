@@ -16,7 +16,7 @@ export class MascotaService {
       edad: 5,
       peso: 10,
       enfermedad: 'Ninguna',
-      estado: 'Disponible',
+      estado: 'Activo',
       foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     },
@@ -27,7 +27,7 @@ export class MascotaService {
       edad: 5,
       peso: 5,
       enfermedad: 'Ninguna',
-      estado: 'Disponible',
+      estado: 'Activo',
       foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     },
@@ -38,7 +38,7 @@ export class MascotaService {
       edad: 2,
       peso: 15,
       enfermedad: 'Ninguna',
-      estado: 'Disponible',
+      estado: 'Activo',
       foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
     }
@@ -52,6 +52,10 @@ export class MascotaService {
     const mascota_: mascota = this.listaMascotas.find(mascota_ => mascota_.id === id)!;
     return mascota_;
   
+  }
+
+  agregarMascota(mascota: mascota) {
+    this.listaMascotas.push(mascota);
   }
 }
 

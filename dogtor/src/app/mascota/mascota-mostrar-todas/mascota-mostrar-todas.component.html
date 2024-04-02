@@ -62,21 +62,21 @@
                         <div class="contenedor-botones">
 
                             <div contenedor-boton3>
-                                <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">
+                                <a [routerLink]="['/mascota/mostrar', mascota.id]">
                                     <img class="boton-borrar" src="../../../assets/ver_naranja.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/ver.png" alt="">
                                 </a>
                             </div>
                             
                             <div contenedor-boton2>
-                                <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">
+                                <a (click)="modificarMascota(mascota)">
                                     <img class="boton-borrar" src="../../../assets/editar_azul.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/editar.png" alt="">
                                 </a>
                             </div>
     
                             <div contenedor-boton>
-                                <a th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">
+                                <a (click)="inactivarMascota(mascota)">
                                     <img class="boton-borrar" src="../../../assets/borrar_rojo.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/borrar.png" alt="">
                                 </a>
@@ -88,6 +88,11 @@
             </tbody>
         </table>
     </div>
+
+
+    <app-crear-mascota (addMascotaEvent)="agregarMascota($event)"></app-crear-mascota>
+    <app-actualizar-mascota [formMascota]="mascotaAct" (updateMascotaEvent)="actualizarMascota($event)"></app-actualizar-mascota>
+    
 
     <footer>
         <div class="datos">

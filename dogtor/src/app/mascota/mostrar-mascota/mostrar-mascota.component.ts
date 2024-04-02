@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { mascota } from '../mascota';
+import { MascotaService } from 'src/app/service/mascota.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mostrar-mascota',
@@ -7,4 +10,18 @@ import { Component } from '@angular/core';
 })
 export class MostrarMascotaComponent {
 
+  @Input()
+  mascota!: mascota;
+
+  constructor(private mascotaService: MascotaService,
+    private route: ActivatedRoute,){
+    
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      this.mascota=this.mascotaService.findById(id);
+    })
+  }
 }

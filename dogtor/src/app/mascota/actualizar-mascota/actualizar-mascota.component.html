@@ -21,42 +21,42 @@
             </div>
 
             <h1>Editar Paciente</h1>
-            <form class="formulario" th:object="${mascota}" th:action="@{/mascotas/update/{id}(id=${mascota.getId()})}" method="post">
+            <form class="formulario" method="post">
                 <div class="contenedor-inputs">
                     <div class="primera-columna">
                         <label for="nombre">Nombre</label>
-                        <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
+                        <input  type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre">
 
                         <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
-                        <input th:field="*{id}" type="hidden" name="id" id="id">
+                        <input  type="hidden" name="id" id="id" [(ngModel)]="formMascota.id">
 
                         <label for="raza">Raza</label>
-                        <input th:field="*{raza}" type="text" name="raza" id="raza">
+                        <input  type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza">
 
                         <label for="edad">Edad</label>
-                        <input th:field="*{edad}" type="number" name="edad" id="edad">
+                        <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad">
 
                         <label for="peso">Peso</label>
-                        <input th:field="*{peso}" type="number" name="peso" id="peso">
+                        <input  type="number" name="peso" id="peso" [(ngModel)]="formMascota.peso">
                     </div>
                     <div class="segunda-columna">
                         <label for="foto">Foto</label>
-                        <input th:field="*{foto}" type="text" name="foto" id="foto">
+                        <input  type="text" name="foto" id="foto" [(ngModel)]="formMascota.foto">
 
                         <label for="enfermedad">Enfermedad</label>
-                        <input th:field="*{enfermedad}" type="text" name="enfermedad" id="enfermedad">
+                        <input  type="text" name="enfermedad" id="enfermedad" [(ngModel)]="formMascota.enfermedad">
 
                         <label for="cedulaDueno">Cédula del Dueño:</label>
-                        <input th:field="*{dueno.cedula}" type="text" id="cedulaDueno" name="cedulaDueno">
+                        <input  type="text" id="cedulaDueno" name="cedulaDueno" [(ngModel)]="formMascota.cliente">
 
                         <label for="estado">Estado</label>
-                        <select th:field="*{estado}" id="estado" name="estado">
-                            <option value="activo">Activo</option>
-                            <option value="desactivado">Desactivado</option>
+                        <select id="estado" name="estado" [(ngModel)]="formMascota.estado">
+                            <option value="Activo">Activo</option>
+                            <option value="Desactivado">Desactivado</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit">Actualizar</button>
+                <button type="submit" (click)="updateMascota()">Actualizar</button>
 
 
             </form>
