@@ -21,7 +21,7 @@ export class ActualizarMascotaComponent {
     
 
   }
-  updateMascota(mascota: mascota) {
-    this.formMascota=mascota;
+  updateMascota() {
+    
   }
 }

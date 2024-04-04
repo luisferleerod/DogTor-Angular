@@ -59,6 +59,7 @@ export class MascotaService {
 
   agregarMascota(mascota: mascota) {
     console.log("Agregando mascota en la bd")
+    
     this.listaMascotas.push(mascota);
     console.log(this.listaMascotas.length)
 

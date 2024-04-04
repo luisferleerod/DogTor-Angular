@@ -37,13 +37,12 @@ export class CrearMascotaComponent {
     this.sendMascota = Object.assign({}, this.formMascota);
 
     this.listMascotas=this.mascotaService.findAll();
+    console.log(this.listMascotas.length)
     this.sendMascota.id=(this.listMascotas.length+1);
 
-    //this.addMascotaEvent.emit(this.sendMascota);
+    this.addMascotaEvent.emit(this.sendMascota);
 
     this.mascotaService.agregarMascota(this.sendMascota);
-
-
 
   }
 

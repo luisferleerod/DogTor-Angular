@@ -18,6 +18,15 @@ export class MascotaMostrarTodasComponent {
   mascotaAct!: mascota;
   // Constructior es para inyectar dependencias
 
+  constructor(private mascotaService: MascotaService) {
+    
+  }
+
+
+  ngOnInit(): void {
+    this.listaMascotas = this.mascotaService.findAll();
+  }
+
 
   agregarMascota(mascota: mascota) {
     this.listaMascotas.push(mascota);
@@ -30,11 +39,15 @@ export class MascotaMostrarTodasComponent {
 
   }
 
-   // const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
-    // console.log("Actualizando mascota: " + mascota.id);
 
-    // this.listaMascotas[index] = Object.assign({},mascota);
+
+    
   actualizarMascota(mascota: mascota) {
+    
+    const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
+
+    this.listaMascotas[index] = Object.assign({},mascota);
+    console.log("Actualizando mascota: " + mascota.id);
    
     this.modificarMascotaEvent.emit(mascota);
 
