@@ -28,10 +28,10 @@ export class MascotaMostrarTodasComponent {
   }
 
 
-  agregarMascota(mascota: mascota) {
-    this.listaMascotas.push(mascota);
-    this.agregarMascota(mascota);
-  }
+  // agregarMascota(mascota: mascota) {
+  //   this.listaMascotas.push(mascota);
+  //   this.agregarMascota(mascota);
+  // }
 
 
   modificarMascota(mascota: mascota) {
