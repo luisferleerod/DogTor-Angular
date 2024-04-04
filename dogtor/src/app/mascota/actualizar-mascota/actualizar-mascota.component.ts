@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { mascota } from '../mascota';
+import { MascotaService } from 'src/app/service/mascota.service';
 
 @Component({
   selector: 'app-actualizar-mascota',
@@ -8,23 +9,19 @@ import { mascota } from '../mascota';
 })
 export class ActualizarMascotaComponent {
 
-  @Input()
+  @Input() 
   formMascota!: mascota;
+  constructor() {}
+  //constructor(private mascotaService: MascotaService) { }
+  updateMascotaEvent = new EventEmitter<mascota>()
+  sendMascota!: mascota
 
-  @Output()
-  updateMascotaEvent = new EventEmitter<mascota>();
+  ngOnInit() {
 
-  sendMascota!: mascota;
+    
 
-
-  
-  updateMascota() {
-
-    this.sendMascota = Object.assign({}, this.formMascota);
-
-   
-
-    this.updateMascotaEvent.emit(this.sendMascota);
-
+  }
+  updateMascota(mascota: mascota) {
+    this.formMascota=mascota;
   }
 }

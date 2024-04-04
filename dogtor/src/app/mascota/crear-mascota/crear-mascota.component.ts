@@ -26,7 +26,7 @@ export class CrearMascotaComponent {
     edad: 0,
     peso: 0 ,
     enfermedad: "",
-    estado: "Disponible",
+    estado: "Activo",
     foto: "",
     cliente: 0
   };
@@ -39,7 +39,11 @@ export class CrearMascotaComponent {
     this.listMascotas=this.mascotaService.findAll();
     this.sendMascota.id=(this.listMascotas.length+1);
 
-    this.addMascotaEvent.emit(this.sendMascota);
+    //this.addMascotaEvent.emit(this.sendMascota);
+
+    this.mascotaService.agregarMascota(this.sendMascota);
+
+
 
   }
 

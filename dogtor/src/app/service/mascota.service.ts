@@ -45,6 +45,9 @@ export class MascotaService {
   ];
 
   findAll(): mascota[] {
+    console.log("Buscando  mascotas")
+    console.log(this.listaMascotas.length)
+    console.log(this.listaMascotas)
     return this.listaMascotas;
   }
 
@@ -55,7 +58,19 @@ export class MascotaService {
   }
 
   agregarMascota(mascota: mascota) {
+    console.log("Agregando mascota en la bd")
     this.listaMascotas.push(mascota);
+    console.log(this.listaMascotas.length)
+
+  }
+
+  actualizarMascota(mascota: mascota) {
+
+    const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
+    
+
+    this.listaMascotas[index] = Object.assign({},mascota);
+    
   }
 }
 

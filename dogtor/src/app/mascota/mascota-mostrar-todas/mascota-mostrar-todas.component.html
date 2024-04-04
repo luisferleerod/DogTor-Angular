@@ -69,7 +69,7 @@
                             </div>
                             
                             <div contenedor-boton2>
-                                <a (click)="modificarMascota(mascota)">
+                                <a [routerLink]="['/mascota/actualizar', mascota.id]" (click)="actualizarMascota(mascota)">
                                     <img class="boton-borrar" src="../../../assets/editar_azul.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/editar.png" alt="">
                                 </a>
@@ -90,9 +90,6 @@
     </div>
 
 
-    <app-crear-mascota (addMascotaEvent)="agregarMascota($event)"></app-crear-mascota>
-    <app-actualizar-mascota [formMascota]="mascotaAct" (updateMascotaEvent)="actualizarMascota($event)"></app-actualizar-mascota>
-    
 
     <footer>
         <div class="datos">

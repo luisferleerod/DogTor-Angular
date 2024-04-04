@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { mascota } from '../mascota';
+
 import { ClienteService } from 'src/app/service/cliente.service';
 import { MascotaService } from 'src/app/service/mascota.service';
 
@@ -11,19 +12,16 @@ import { MascotaService } from 'src/app/service/mascota.service';
 export class MascotaMostrarTodasComponent {
   listaMascotas!: mascota[];
 
+  @Output() 
+  modificarMascotaEvent = new EventEmitter<mascota>();
+
   mascotaAct!: mascota;
   // Constructior es para inyectar dependencias
-  constructor(private mascotaService: MascotaService) {
-    
-  }
 
-  // Llamado cuando ya esta cargada la interfaz
-  ngOnInit(): void {
-    this.listaMascotas = this.mascotaService.findAll();
-  }
 
   agregarMascota(mascota: mascota) {
     this.listaMascotas.push(mascota);
+    this.agregarMascota(mascota);
   }
 
 
@@ -32,10 +30,14 @@ export class MascotaMostrarTodasComponent {
 
   }
 
-  actualizarMascota(mascota: mascota) {
-    const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
+   // const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
+    // console.log("Actualizando mascota: " + mascota.id);
 
-    this.listaMascotas[index] = Object.assign({},mascota);
+    // this.listaMascotas[index] = Object.assign({},mascota);
+  actualizarMascota(mascota: mascota) {
+   
+    this.modificarMascotaEvent.emit(mascota);
+
   }
 
   inactivarMascota(mascota: mascota) {
