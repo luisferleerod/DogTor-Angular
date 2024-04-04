@@ -41,6 +41,39 @@ export class MascotaService {
       estado: 'Activo',
       foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       cliente: 1
+    },
+    {
+      id: 4,
+      nombre: 'Parau',
+      raza: 'Golden',
+      edad: 2,
+      peso: 15,
+      enfermedad: 'Ninguna',
+      estado: 'Activo',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      cliente: 1
+    },
+    {
+      id: 5,
+      nombre: 'Paradais',
+      raza: 'Border Collie',
+      edad: 6,
+      peso: 19,
+      enfermedad: 'Poyoditis',
+      estado: 'Activo',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      cliente: 1
+    },
+    {
+      id: 6,
+      nombre: 'Luis',
+      raza: 'Rottwiller',
+      edad: 1,
+      peso: 6,
+      enfermedad: 'Cancer',
+      estado: 'Inactivo',
+      foto: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      cliente: 1
     }
   ];
 
@@ -68,10 +101,9 @@ export class MascotaService {
   actualizarMascota(mascota: mascota) {
 
     const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
-    
-
-    this.listaMascotas[index] = Object.assign({},mascota);
+    this.listaMascotas[index] = Object.assign({}, mascota);
     
   }
 }
+
 

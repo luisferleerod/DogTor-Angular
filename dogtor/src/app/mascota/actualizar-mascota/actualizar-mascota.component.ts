@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-actualizar-mascota',
@@ -8,20 +9,30 @@ import { MascotaService } from 'src/app/service/mascota.service';
   styleUrls: ['./actualizar-mascota.component.css']
 })
 export class ActualizarMascotaComponent {
-
-  @Input() 
+  //@Input() 
   formMascota!: mascota;
-  constructor() {}
+  constructor(
+    private mascotaService: MascotaService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+  }
   //constructor(private mascotaService: MascotaService) { }
-  updateMascotaEvent = new EventEmitter<mascota>()
+  //updateMascotaEvent = new EventEmitter<mascota>()
+  
   sendMascota!: mascota
 
-  ngOnInit() {
+  ngOnInit(): void {
 
-    
-
-  }
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      this.formMascota = Object.assign({}, this.mascotaService.findById(id));
+      
+  });
+}
   updateMascota() {
-    
+    this.sendMascota = Object.assign({}, this.formMascota);
+    this.mascotaService.actualizarMascota(this.sendMascota);
+    this.router.navigate(['/mascota/all']);
   }
 }

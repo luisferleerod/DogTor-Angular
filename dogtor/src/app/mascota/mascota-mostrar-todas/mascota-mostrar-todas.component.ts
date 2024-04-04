@@ -12,8 +12,8 @@ import { MascotaService } from 'src/app/service/mascota.service';
 export class MascotaMostrarTodasComponent {
   listaMascotas!: mascota[];
 
-  @Output() 
-  modificarMascotaEvent = new EventEmitter<mascota>();
+  //@Output() 
+  //modificarMascotaEvent = new EventEmitter<mascota>();
 
   mascotaAct!: mascota;
   // Constructior es para inyectar dependencias
@@ -41,7 +41,7 @@ export class MascotaMostrarTodasComponent {
 
 
 
-    
+    /*
   actualizarMascota(mascota: mascota) {
     
     const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
@@ -51,7 +51,7 @@ export class MascotaMostrarTodasComponent {
    
     this.modificarMascotaEvent.emit(mascota);
 
-  }
+  }*/
 
   inactivarMascota(mascota: mascota) {
     const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
