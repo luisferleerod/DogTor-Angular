@@ -45,7 +45,4 @@ export class CrearMascotaComponent {
     this.mascotaService.agregarMascota(this.sendMascota);
 
   }
-
-
-    
 }

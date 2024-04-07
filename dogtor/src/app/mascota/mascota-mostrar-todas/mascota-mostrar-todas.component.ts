@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { mascota } from '../mascota';
 
-import { ClienteService } from 'src/app/service/cliente.service';
+
 import { MascotaService } from 'src/app/service/mascota.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mascota-mostrar-todas',
@@ -18,13 +19,15 @@ export class MascotaMostrarTodasComponent {
   mascotaAct!: mascota;
   // Constructior es para inyectar dependencias
 
-  constructor(private mascotaService: MascotaService) {
-    
+  constructor(private mascotaService: MascotaService, private route: ActivatedRoute, private router: Router) {
+     
   }
 
 
   ngOnInit(): void {
-    this.listaMascotas = this.mascotaService.findAll();
+    this.mascotaService.findAll().subscribe((mascotas) => this.listaMascotas = mascotas, (error) => {
+      
+    })
   }
 
 
@@ -57,7 +60,4 @@ export class MascotaMostrarTodasComponent {
     const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
     this.listaMascotas[index].estado = 'Inactivo';
   }
-
-
-
 }

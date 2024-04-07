@@ -5,16 +5,6 @@ import { administrador } from '../administrador/administrador';
   providedIn: 'root'
 })
 export class AdministradorService {
-
   constructor() { }
-  listaAdministradores: administrador[] = [
-
-    {
-      id: 1,
-      usuario: 'admin',
-      nombre: 'admin',
-      contrasena: 'admin'
-    }
- ]
 
 }
