@@ -15,12 +15,6 @@ export class MascotaComponent {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
-      this.mascotaService.findById(id).pipe(mergeMap((mascotaInfo) => {
-        
-      }))
-  }
   
-}
+  }
 }

@@ -28,7 +28,6 @@ export class CrearMascotaComponent {
     enfermedad: "",
     estado: "Activo",
     foto: "",
-    cliente: 0
   };
 
 
@@ -36,7 +35,10 @@ export class CrearMascotaComponent {
 
     this.sendMascota = Object.assign({}, this.formMascota);
 
-    this.listMascotas=this.mascotaService.findAll();
+    this.mascotaService.findAll().subscribe((mascotas: mascota[]) => {
+      this.listMascotas = mascotas;
+    });
+    
     console.log(this.listMascotas.length)
     this.sendMascota.id=(this.listMascotas.length+1);
 

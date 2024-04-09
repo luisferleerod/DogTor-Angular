@@ -19,6 +19,9 @@ export class ClienteMostrarTodosComponent {
 
   // Llamado cuando ya esta cargada la interfaz
   ngOnInit(): void {
-    this.listaClientes = this.clienteService.findAll();
+    this.clienteService.findAll().subscribe((clientes: Cliente[]) => {
+      this.listaClientes = clientes;
+    });
+    
   }
 }

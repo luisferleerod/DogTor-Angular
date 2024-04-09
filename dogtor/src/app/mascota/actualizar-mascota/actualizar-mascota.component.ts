@@ -26,13 +26,21 @@ export class ActualizarMascotaComponent {
 
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
-      this.formMascota = Object.assign({}, this.mascotaService.findById(id));
+      this.mascotaService.findById(id).subscribe((mascota: mascota) => {
+        this.formMascota = Object.assign({}, mascota);
+      });
+      
       
   });
 }
   updateMascota() {
     this.sendMascota = Object.assign({}, this.formMascota);
     this.mascotaService.actualizarMascota(this.sendMascota);
+    console.log("MANDANDO MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+this.sendMascota)
+    console.log(this.sendMascota.id)
+    console.log(this.sendMascota.nombre)
+    console.log(this.sendMascota.enfermedad)
+    console.log(this.sendMascota.estado)
     this.router.navigate(['/mascota/all']);
   }
 }
