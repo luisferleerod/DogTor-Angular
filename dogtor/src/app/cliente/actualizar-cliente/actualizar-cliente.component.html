@@ -18,21 +18,21 @@
             </div>
             <h1>Editar Cliente</h1>
 
-                <form th:object="${dueno}" th:action="@{/dueno/update/{id}(id=${dueno.getId()})}" method="post"> 
+                <form class="formulario" method="post"> 
 
                     <label for="cedula">Cedula</label>
-                    <input th:field="*{cedula}" type="number" name="cedula" id="cedula">
+                    <input type="text" name="cedula" id="cedula" [(ngModel)]="formCliente.cedula">
 
                     <label for="nombre">Nombre</label>
-                    <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" [(ngModel)]="formCliente.nombre">
 
                     <label for="correo">Correo</label>
-                    <input th:field="*{correo}" type="email" name="correo" id="correo">
+                    <input type="email" name="correo" id="correo" [(ngModel)]="formCliente.correo">
 
                     <label for="celular">Celular</label>
-                    <input th:field="*{celular}" type="number" name="celular" id="celular">
+                    <input type="number" name="celular" id="celular" [(ngModel)]="formCliente.celular">
 
-                    <button type="submit">Actualizar</button>
+                    <button type="submit" (click)="updateCliente()" class="boton">Actualizar</button>
 
                 </form>
         </div>

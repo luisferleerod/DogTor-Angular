@@ -43,23 +43,16 @@
                     <div class="contenedor-botones">
 
                         <div contenedor-boton3>
-                            <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">
+                            <a [routerLink]="['/cliente/mostrar', cliente.cedula]">
                                 <img class="boton-borrar" src="../../../assets/ver_naranja.png" alt="">
                                 <img class="boton-borrar" src="../../../assets/ver.png" alt="">
                             </a>
                         </div>
                         
                         <div contenedor-boton2>
-                            <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">
+                            <a [routerLink]="['/cliente/actualizar', cliente.id]">
                                 <img class="boton-borrar" src="../../../assets/editar_azul.png" alt="">
                                 <img class="boton-borrar" src="../../../assets/editar.png" alt="">
-                            </a>
-                        </div>
-
-                        <div contenedor-boton>
-                            <a th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">
-                                <img class="boton-borrar" src="../../../assets/borrar_rojo.png" alt="">
-                                <img class="boton-borrar" src="../../../assets/borrar.png" alt="">
                             </a>
                         </div>
                     </div>

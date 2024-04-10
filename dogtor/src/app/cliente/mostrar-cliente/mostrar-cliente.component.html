@@ -17,7 +17,7 @@
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
             <h1>Cliente: </h1>
-            <h2 th:text="${dueno.getNombre()}"></h2>
+            <h2 >{{cliente.nombre}}</h2>
         </div>
         
         <nav class="navegacion-principal">
@@ -38,19 +38,19 @@
                 <table class="tabla-info">
                     <tr>
                         <td class="titulo-tabla borer-radius1">Cedula</td>
-                        <td th:text="${dueno.getCedula()}" class="contenido-tabla borer-radius2"></td>
+                        <td class="contenido-tabla borer-radius2">{{cliente.cedula}}</td>
                     </tr>
                     <tr>
                         <td class="titulo-tabla">Nombre</td>
-                        <td th:text="${dueno.getNombre()}" class="contenido-tabla"></td>
+                        <td  class="contenido-tabla">{{cliente.nombre}}</td>
                     </tr>
                     <tr>
                         <td class="titulo-tabla">Correo</td>
-                        <td th:text="${dueno.getCorreo()}" class="contenido-tabla"></td>
+                        <td class="contenido-tabla">{{cliente.correo}}</td>
                     </tr>
                     <tr>
                         <td class="titulo-tabla borer-radius4">Celular</td>
-                        <td th:text="${dueno.getCelular()}" class="contenido-tabla borer-radius3"></td>
+                        <td class="contenido-tabla borer-radius3">{{cliente.celular}}</td>
                     </tr>
                 </table>
             </div>

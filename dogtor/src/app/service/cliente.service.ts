@@ -12,12 +12,26 @@ export class ClienteService {
       
 
   findAll(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>("http://localhost:8090/dueno/all");
+    return this.http.get<Cliente[]>("http://localhost:8090/cliente/all");
+  }
+
+  findByCedula(cedula: String): Observable<Cliente> {
+    console.log("recibiendo CEDULA DESDE FIND BY CEDULA CLIENTE SERVICE"+cedula)
+    return this.http.get<Cliente>("http://localhost:8090/cliente/find/"+cedula);
+  
   }
 
   findById(id: number): Observable<Cliente> {
-    return this.http.get<Cliente>("http://localhost:8090/dueno/find/"+id);
+    return this.http.get<Cliente>("http://localhost:8090/cliente/find/"+id);
   
+  }
+
+  actualizarCliente(cliente: Cliente) {
+    console.log("recibiendo CLIENTE DESDE ACTUALIZAR CLIENTE COMPONENT"+cliente)
+    console.log(cliente.cedula)
+    console.log(cliente.nombre)
+
+    this.http.put<Cliente>("http://localhost:8090/cliente/update/"+cliente.id, cliente).subscribe();
   }
 
 }
