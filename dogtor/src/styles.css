@@ -6,3 +6,6 @@
     --color-contraste: #fe9739;
     --font-dosis: 'Dosis', sans-serif;
 }
+body {
+    background-color: inherit; /* Esta línea anula el color de fondo definido por Angular */
+}

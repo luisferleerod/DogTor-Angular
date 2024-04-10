@@ -34,6 +34,9 @@ export class ClienteService {
     this.http.put<Cliente>("http://localhost:8090/cliente/update/"+cliente.id, cliente).subscribe();
   }
 
+  iniciarSesion(cliente: string) {
+    return this.http.get<Cliente>('http://localhost:8090/cliente/inicioSesion/' + cliente);
+  }
 }
 
   

@@ -21,13 +21,14 @@
             <div class="logo">
                 <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
             </div>
-            <form th:action="@{/dueno/inicioSesion}" method="post" th:object="${dueno}">
+            <form  method="post" >
                 <h1>Iniciar Sesión</h1>
                 <label for="cedula">Cédula</label>
                 <br>
-                <input th:field="*{cedula}" type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula">
+                <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
                 <br>
-                <input type="submit" value="Ingresar" class="boton">
+                <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
+                <div *ngIf="mensajeError" class="alert alert-danger mt-3">{{ mensajeError }}</div>
             </form>
         </div>
         
