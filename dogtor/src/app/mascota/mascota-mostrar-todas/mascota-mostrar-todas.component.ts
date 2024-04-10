@@ -36,7 +36,7 @@ export class MascotaMostrarTodasComponent {
   inactivarMascota(mascota: mascota) {
     this.mascotaService.deleteById(mascota.id);
 
-    // const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
-    // this.listaMascotas[index].estado = 'Inactivo';
+     const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
+     this.listaMascotas[index].estado = 'Inactivo';
   }
 }
