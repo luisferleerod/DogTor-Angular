@@ -1,89 +1,91 @@
-<header>
-    <div class="logo">
-        <img src="../../../assets/logo_basico_blanco.png" alt="">
-        <h1>Veterinario: </h1>
+<div class="body">
+    <header>
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Veterinario: </h1>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a href="#datos-dueno"><li>Tu Información</li></a>
+                <a href="#mascotas"><li>Tus Mascotas</li></a>
+                <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <div class="titulo-mascotas">
+        <div class="titulo-todas-las-mascotas">
+            <h1 class="titulo">Todos los Dueños</h1>
+            <a type="button" class="mas" th:href="@{/dueno/add}"><img src="../../../assets/mas.png" alt=""></a>
+        </div>
     </div>
     
-    <nav class="navegacion-principal">
-        <ul class="menu-principal">  
-            <a href="#datos-dueno"><li>Tu Información</li></a>
-            <a href="#mascotas"><li>Tus Mascotas</li></a>
-            <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
-        </ul>
-    </nav>
+    <div>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Celular</th>
+                    <th>Acciones</th>
     
-</header>
-
-<div class="titulo-mascotas">
-    <div class="titulo-todas-las-mascotas">
-        <h1 class="titulo">Todos los Dueños</h1>
-        <a type="button" class="mas" th:href="@{/dueno/add}"><img src="../../../assets/mas.png" alt=""></a>
-    </div>
-</div>
-
-<div>
-    <table class="tabla">
-        <thead>
-            <tr>
-                <th>Cedula</th>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Celular</th>
-                <th>Acciones</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let cliente of listaClientes">
-                <td>{{cliente.cedula}}</td>
-                <td>{{cliente.nombre}}</td>
-                <td>{{cliente.correo}}</td>
-                <td>{{cliente.celular}}</td>
-                <td class="td-botones">
-                    <div class="contenedor-botones">
-
-                        <div contenedor-boton3>
-                            <a [routerLink]="['/cliente/mostrar', cliente.cedula]">
-                                <img class="boton-borrar" src="../../../assets/ver_naranja.png" alt="">
-                                <img class="boton-borrar" src="../../../assets/ver.png" alt="">
-                            </a>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let cliente of listaClientes">
+                    <td>{{cliente.cedula}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.correo}}</td>
+                    <td>{{cliente.celular}}</td>
+                    <td class="td-botones">
+                        <div class="contenedor-botones">
+    
+                            <div contenedor-boton3>
+                                <a [routerLink]="['/cliente/mostrar', cliente.cedula]">
+                                    <img class="boton-borrar" src="../../../assets/ver_naranja.png" alt="">
+                                    <img class="boton-borrar" src="../../../assets/ver.png" alt="">
+                                </a>
+                            </div>
+                            
+                            <div contenedor-boton2>
+                                <a [routerLink]="['/cliente/actualizar', cliente.cedula]">
+                                    <img class="boton-borrar" src="../../../assets/editar_azul.png" alt="">
+                                    <img class="boton-borrar" src="../../../assets/editar.png" alt="">
+                                </a>
+                            </div>
                         </div>
-                        
-                        <div contenedor-boton2>
-                            <a [routerLink]="['/cliente/actualizar', cliente.cedula]">
-                                <img class="boton-borrar" src="../../../assets/editar_azul.png" alt="">
-                                <img class="boton-borrar" src="../../../assets/editar.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <footer>
+        <div class="datos">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+    
+        <div class="redes-sociales">
+            <img src="../../../assets/facebook.png" alt="facebook">
+            <img src="../../../assets/instagram.png" alt="instagram">
+            <img src="../../../assets/whatsapp.png" alt="whatsapp">
+        </div>
+    
+        
+        
+    </footer>
 </div>
-
-
-<footer>
-    <div class="datos">
-        <p>
-            Numero: +57 000 000 0000<br>
-            Email: consultor@dogtor.com<br>
-            Direccion: Calle 1 # 1-1<br>
-            Horario de atenciòn: 9:00 - 18:00
-        </p>
-    </div>
-    
-    <div class="derechos">
-        © 2024 DOGTOR. Todos los derechos reservados.
-    </div>
-
-    <div class="redes-sociales">
-        <img src="../../../assets/facebook.png" alt="facebook">
-        <img src="../../../assets/instagram.png" alt="instagram">
-        <img src="../../../assets/whatsapp.png" alt="whatsapp">
-    </div>
-
-    
-    
-</footer>
