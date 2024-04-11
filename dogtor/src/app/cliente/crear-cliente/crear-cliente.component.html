@@ -20,20 +20,20 @@
             </div>
 
             <h1>Nuevo Cliente</h1>
-            <form th:object="${dueno}" th:action="@{/dueno/agregar}" method="post"id="nuevoClienteForm">
+            <form method="post"id="nuevoClienteForm">
                 <label for="nombre">Nombre:</label>
-                <input th:field="*{nombre}" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required [(ngModel)]=formCliente.nombre>
 
                 <label for="cedula">Cédula:</label>
-                <input th:field="*{cedula}" type="text" id="cedula" name="cedula" placeholder="Ingrese su cédula" required>
+                <input type="text" id="cedula" name="cedula" placeholder="Ingrese su cédula" required [(ngModel)]=formCliente.cedula>
 
                 <label for="correo">Correo:</label>
-                <input th:field="*{correo}" type="email" id="correo" name="correo" placeholder="Ingrese su correo" required>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" required [(ngModel)]=formCliente.correo>
 
                 <label for="celular">Celular:</label>
-                <input th:field="*{celular}" type="number" id="celular" name="celular" placeholder="Ingrese su celular" required>
+                <input type="number" id="celular" name="celular" placeholder="Ingrese su celular" required [(ngModel)]=formCliente.celular>
 
-                <button type="submit">Agregar Cliente</button>
+                <button [routerLink]="['/cliente/all']" type="submit" (click)="addClienteForm()">Agregar Cliente</button>
             </form>
         </div>
     </div>

@@ -22,8 +22,10 @@ export class MascotaService {
   }
 
   agregarMascota(mascota: mascota) {
-    this.http.post<mascota>("http://localhost:8090/mascotas/add",mascota).subscribe();
     console.log("Agregando mascota en la bd")
+    console.log(mascota.id)
+    this.http.put<mascota>("http://localhost:8090/mascotas/add",mascota).subscribe();
+    
 
   }
 

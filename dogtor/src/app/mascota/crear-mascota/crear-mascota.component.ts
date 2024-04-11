@@ -32,19 +32,21 @@ export class CrearMascotaComponent {
 
 
   addMascotaForm() {
-
     this.sendMascota = Object.assign({}, this.formMascota);
-
+  
     this.mascotaService.findAll().subscribe((mascotas: mascota[]) => {
       this.listMascotas = mascotas;
+  
+      console.log("RECIBIENDO MASCOTA DEL FORMULARIO")
+      console.log(this.sendMascota.nombre)
+      
+      console.log(this.listMascotas.length)
+      this.sendMascota.id = this.listMascotas.length + 1;
+  
+      this.addMascotaEvent.emit(this.sendMascota);
+  
+      this.mascotaService.agregarMascota(this.sendMascota);
     });
-    
-    console.log(this.listMascotas.length)
-    this.sendMascota.id=(this.listMascotas.length+1);
-
-    this.addMascotaEvent.emit(this.sendMascota);
-
-    this.mascotaService.agregarMascota(this.sendMascota);
-
   }
+  
 }
