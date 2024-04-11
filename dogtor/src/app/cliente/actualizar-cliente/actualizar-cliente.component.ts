@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-cliente',
@@ -26,6 +27,21 @@ export class ActualizarClienteComponent {
   updateCliente() {
     this.sendCliente = Object.assign({}, this.formCliente);
     this.clienteService.actualizarCliente(this.sendCliente);
-    this.router.navigate(['/cliente/all']);
+    this.mostrarAlerta();
+  }
+
+  mostrarAlerta(){
+    Swal.fire({
+      title: 'CLIENTE ACTUALIZADO',
+      text: 'Cliente actualizado exitosamente',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/cliente/all']);
+      }
+    });
+
+    
   }
 }

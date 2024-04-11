@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
+import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-cliente',
@@ -16,7 +18,7 @@ export class CrearClienteComponent {
 
   sendCliente!: Cliente;
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router) { }
 
   formCliente: Cliente = {
    
@@ -42,7 +44,24 @@ export class CrearClienteComponent {
       this.addClienteEvent.emit(this.sendCliente);
   
       this.clienteService.agregarCliente(this.sendCliente);
+
+      this.mostrarAlerta();
     });
+  }
+
+  mostrarAlerta(){
+    Swal.fire({
+      title: 'CLIENTE REGISTRADO',
+      text: 'Cliente registrado exitosamente',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/cliente/all']);
+      }
+    });
+
+    
   }
 
 }

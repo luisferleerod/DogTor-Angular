@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-mascota',
@@ -41,6 +42,21 @@ export class ActualizarMascotaComponent {
     console.log(this.sendMascota.nombre)
     console.log(this.sendMascota.enfermedad)
     console.log(this.sendMascota.estado)
-    this.router.navigate(['/mascota/all']);
+    this.mostrarAlerta();
+   
+  }
+
+  mostrarAlerta(){
+    Swal.fire({
+      title: 'MASCOTA ACTUALIZADA',
+      text: 'Mascota actualizada exitosamente',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/mascota/all']);
+      }
+    });
+
   }
 }

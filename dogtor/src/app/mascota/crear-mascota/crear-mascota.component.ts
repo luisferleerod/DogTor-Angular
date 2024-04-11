@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-crear-mascota',
@@ -16,7 +19,9 @@ export class CrearMascotaComponent {
 
   sendMascota!: mascota;
 
-  constructor(private mascotaService: MascotaService) { }
+  constructor( private mascotaService: MascotaService,
+    private route: ActivatedRoute,
+    private router: Router,) { }
 
   formMascota: mascota = {
    
@@ -46,7 +51,23 @@ export class CrearMascotaComponent {
       this.addMascotaEvent.emit(this.sendMascota);
   
       this.mascotaService.agregarMascota(this.sendMascota);
+
+      this.mostrarAlerta();
     });
   }
   
+  mostrarAlerta(){
+    Swal.fire({
+      title: 'MASCOTA REGISTRADA',
+      text: 'Mascota registrada exitosamente',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/mascota/all']);
+      }
+    });
+
+    
+  }
 }
