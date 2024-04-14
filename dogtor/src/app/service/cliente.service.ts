@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cliente } from '../cliente/cliente';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { mascota } from '../mascota/mascota';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,12 @@ export class ClienteService {
 
   agregarCliente(cliente: Cliente) {
     this.http.put<Cliente>("http://localhost:8090/cliente/add",cliente).subscribe();
+  }
+
+  findMascotas(id: Number): Observable<mascota[]> {
+    console.log("recibiendo ID DESDE FIND BY CEDULA CLIENTE SERVICE: "+id)
+   
+    return this.http.get<mascota[]>("http://localhost:8090/cliente/mascotas/"+id);
   }
 }
 

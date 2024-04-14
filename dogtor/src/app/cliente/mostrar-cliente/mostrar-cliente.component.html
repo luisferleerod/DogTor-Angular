@@ -70,13 +70,13 @@
                 <th class="titulo-tabla borer-radius2">Información</th>
             </tr>
             <!-- Iterar sobre las mascotas del dueño y mostrar sus detalles -->
-            <tr th:each="mascota, iterStat : ${dueno.mascotas}"
+            <tr *ngFor="let mascota of mascotas"
                 th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
-                <td th:text="${mascota.nombre}" class="contenido-tabla"></td>
-                <td th:text="${mascota.raza}" class="contenido-tabla"></td>
+                <td class="contenido-tabla">{{mascota.nombre}}</td>
+                <td class="contenido-tabla">{{mascota.raza}}</td>
 
                 <td class="boton-tabla">
-                    <a class="ver-info" th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">ver Información </a> 
+                    <a class="ver-info" [routerLink]="['/mascota/mostrar/', mascota.id]" >Ver</a> 
                 </td>
                 
             </tr>
