@@ -1,39 +1,18 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/logo_basico_fondo.png" type="img/logo_basico">
-
-    <script th:if="${cedulaNoExiste}">
-        alert("No existe esa cédula");
-    </script>
-    <title>Iniciar Sesión</title>
-</head>
-<body>
-    <section>
-        <img src="../../../assets/fondo-login.png" class="fondo" alt="">
-        <div class="contenedor-login">
-            <div class="logo">
-                <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
-            </div>
-            <form  method="post" >
-                <h1>Iniciar Sesión</h1>
-                <label for="cedula">Cédula</label>
-                <br>
-                <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
-                <br>
-                <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
-                <div *ngIf="mensajeError" class="alert alert-danger mt-3">{{ mensajeError }}</div>
-            </form>
+<section class="body">
+    <div class="contenedor-login">
+        <div class="logo">
+            <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
         </div>
-        
-    </section>
-
+        <form  method="post" >
+            <h1>Iniciar Sesión</h1>
+            <p>Cliente</p>
+            <label for="cedula">Cédula</label>
+            <br>
+            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
+            <br>
+            <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
+            <div *ngIf="mensajeError" class="alert alert-danger mt-3">{{ mensajeError }}</div>
+        </form>
+    </div>
     
-</body>
-</html>
+</section>

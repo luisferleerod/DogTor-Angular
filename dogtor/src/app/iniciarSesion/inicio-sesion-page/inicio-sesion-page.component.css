@@ -6,21 +6,17 @@
     --font-dosis: 'Dosis', sans-serif;
 }
 
-body {
+.body {
     box-sizing: border-box;
     font-family: var(--font-dosis);
     margin: 0;
     padding: 0;
-}
-
-.fondo {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-
+    background: url(../../../assets/fondo_login3.jpg);
+    background-color: inherit;
+    display: flex;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 .contenedor-login {
@@ -28,11 +24,11 @@ body {
     place-items: center;
     background-color: #E9F6FB;
     padding: 2rem 2rem 1rem 2rem;
-    border-radius: .7rem;
+    border-radius: 1rem;
     text-align: center;
-    width: 18rem;
-    height: 20rem;
-    margin-left: 10rem;
+    width: 23rem;
+    height: 25rem;
+    margin-left: 7rem;
     margin-top: 8rem;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
@@ -40,8 +36,8 @@ body {
 .logo {
     background-color: #D9D9D9;
     border-radius: 50%;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 7rem;
+    width: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,14 +45,19 @@ body {
 }
 
 .logo img {
-    width: 4.2rem;
+    width: 4rem;
     height: auto;
 }
 
 h1 {
     font-size: 35px;
-    margin: 1rem;
+    margin: 1rem 1rem .2rem 1rem; 
     font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    margin: 0;
 }
 
 form {
@@ -69,6 +70,8 @@ form label {
     text-align: left;
     color: black;
     text-transform: uppercase;
+    font-weight: bold;
+    margin-left: .5rem;
 }
 
 form input {
@@ -84,8 +87,16 @@ form input {
     padding: .5rem;
     border: none;
     background-color: var(--color-contraste);
-    color: white;
+    color: black;
     border-radius: .3rem;
     cursor: pointer;
     margin: 1rem 0 1rem 0;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.boton:hover {
+    background-color: var(--color-secundario);
+    color: white;
+    transition: .3s;
 }
