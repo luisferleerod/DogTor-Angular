@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { mascota } from '../mascota/mascota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Cliente } from '../cliente/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -30,18 +31,33 @@ export class MascotaService {
   }
 
   actualizarMascota(mascota: mascota) {
+
+  if(mascota.cliente != null){
     console.log("recibiendo MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+mascota)
     console.log(mascota.id)
     console.log(mascota.nombre)
     console.log(mascota.enfermedad)
     console.log(mascota.estado)
+    console.log(mascota.cliente.cedula)
     this.http.put<mascota>("http://localhost:8090/mascotas/update/"+mascota.id, mascota).subscribe();
+
+    // this.http.put<Cliente>("http://localhost:8090/cliente/update/"+mascota.cliente.id, mascota.cliente).subscribe();
   }
+
+  else{
+    console.log("CLIENTE NULOOOOO")
+  }
+
+}
   
 
   deleteById(id: number) {
     
     this.http.delete("http://localhost:8090/mascotas/delete/"+id).subscribe();
+  }
+
+  findCliente(id: Number): Observable<Cliente> {
+    return this.http.get<Cliente>("http://localhost:8090/mascotas/cliente/"+id);
   }
 
 
