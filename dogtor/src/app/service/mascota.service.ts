@@ -23,12 +23,34 @@ export class MascotaService {
   }
 
   agregarMascota(mascota: mascota) {
-    console.log("Agregando mascota en la bd")
-    console.log(mascota.id)
-    this.http.put<mascota>("http://localhost:8090/mascotas/add",mascota).subscribe();
+    if(mascota.cliente != null){
+      console.log("recibiendo MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+mascota)
+      console.log(mascota.id)
+      console.log(mascota.nombre)
+      console.log(mascota.enfermedad)
+      console.log(mascota.estado)
+      console.log(mascota.cliente.cedula)
+  
+  
+      const data = {
+        mascota: mascota,
+        cliente: mascota.cliente
+      };
+
+      console.log("--------------------")
+      console.log("DATA CLIENTE:")
+
+      console.log(data.cliente.cedula)
+      console.log(data.cliente.nombre)
+
+      this.http.put("http://localhost:8090/mascotas/add", data).subscribe();
+    // console.log("Agregando mascota en la bd")
+    // console.log(mascota.id)
+    // this.http.put<mascota>("http://localhost:8090/mascotas/add",mascota).subscribe();
     
 
   }
+}
 
   actualizarMascota(mascota: mascota) {
 
