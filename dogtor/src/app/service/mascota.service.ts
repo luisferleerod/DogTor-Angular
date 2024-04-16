@@ -39,7 +39,16 @@ export class MascotaService {
     console.log(mascota.enfermedad)
     console.log(mascota.estado)
     console.log(mascota.cliente.cedula)
-    this.http.put<mascota>("http://localhost:8090/mascotas/update/"+mascota.id, mascota).subscribe();
+
+
+    const data = {
+      mascota: mascota,
+      cliente: mascota.cliente
+    };
+    
+    this.http.put("http://localhost:8090/mascotas/update/"+mascota.id, data).subscribe();
+    
+    // this.http.put<mascota>("http://localhost:8090/mascotas/update/"+mascota.id, mascota).subscribe();
 
     // this.http.put<Cliente>("http://localhost:8090/cliente/update/"+mascota.cliente.id, mascota.cliente).subscribe();
   }
