@@ -92,11 +92,13 @@ form input {
     cursor: pointer;
     margin: 1rem 0 1rem 0;
     text-transform: uppercase;
+    font-weight: bold;
     transition: .3s;
 }
 
 .boton:hover {
-    background-color: var(--color-secundario);
+    background-color:#e55807;
     color: white;
     transition: .3s;
+    font-weight: bold;
 }

@@ -14,3 +14,30 @@
     width: 100vw;
     height: 100vh;
 }
+
+.volver {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #e55807;
+    margin: 3rem 0 0 13rem;
+    border-radius: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.volver:hover {
+    transition: .2s;
+    scale: 1.1;
+    cursor: pointer;
+}
+
+
+
+.volver img {
+    margin-right: .2rem;
+    width: 80%;
+    height: auto;
+}
+
