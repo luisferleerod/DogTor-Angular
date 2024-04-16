@@ -10,7 +10,11 @@
             <br>
             <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
             <br>
+            
             <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
+            <a href="#" class="ingreso-trabajador">
+                <p>Ingresar como trabajador</p>
+            </a>
             <div *ngIf="mensajeError" class="alert alert-danger mt-3">{{ mensajeError }}</div>
         </form>
     </div>

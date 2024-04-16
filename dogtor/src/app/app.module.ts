@@ -23,6 +23,7 @@ import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.com
 import { ActualizarMascotaComponent } from './mascota/actualizar-mascota/actualizar-mascota.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 import { FormsModule } from '@angular/forms';
+import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-trabajador/inicio-sesion-trabajador.component';
 
 
 
@@ -52,6 +53,7 @@ import { FormsModule } from '@angular/forms';
     ActualizarClienteComponent,
     CrearClienteComponent,
     MostrarClienteComponent,
+    InicioSesionTrabajadorComponent,
   ],
   imports: [
     BrowserModule,
