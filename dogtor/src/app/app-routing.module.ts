@@ -12,6 +12,7 @@ import { MostrarMascotaComponent } from './mascota/mostrar-mascota/mostrar-masco
 import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.component';
 import { ActualizarMascotaComponent } from './mascota/actualizar-mascota/actualizar-mascota.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
+import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-trabajador/inicio-sesion-trabajador.component';
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'mascota/crear', component: CrearMascotaComponent},
   { path: 'mascota/all', component: MascotaMostrarTodasComponent},
   { path: 'mascota/mostrar/:id', component: MostrarMascotaComponent},
-  { path: 'iniciarSesion', component: InicioSesionPageComponent },
+  { path: 'iniciarSesion', component: InicioSesionPageComponent },  
+  { path: 'iniciarSesionTrabajador', component: InicioSesionTrabajadorComponent},
   { path: 'cliente/actualizar/:id', component: ActualizarClienteComponent},
   { path: 'cliente/crear', component: CrearClienteComponent},
   { path: 'cliente/mostrar/:id', component: MostrarClienteComponent},

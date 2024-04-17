@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { veterinario } from 'src/app/veterinario/veterinario';
 
 @Component({
   selector: 'app-inicio-sesion-trabajador',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class InicioSesionTrabajadorComponent {
 
+  formTrabajador!:veterinario
+
+
+
+  constructor(){
+    
+  }
+
+
+  iniciarSesion(){
+    
+  }
 }

@@ -12,7 +12,8 @@
             <br>
             
             <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
-            <a href="#" class="ingreso-trabajador">
+
+            <a [routerLink]="['/iniciarSesionTrabajador']" class="ingreso-trabajador">
                 <p>Ingresar como trabajador</p>
             </a>
             <div *ngIf="mensajeError" class="alert alert-danger mt-3">{{ mensajeError }}</div>
