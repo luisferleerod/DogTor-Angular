@@ -24,13 +24,7 @@ export class MascotaService {
 
   agregarMascota(mascota: mascota) {
     if(mascota.cliente != null){
-      console.log("recibiendo MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+mascota)
-      console.log(mascota.id)
-      console.log(mascota.nombre)
-      console.log(mascota.enfermedad)
-      console.log(mascota.estado)
-      console.log(mascota.cliente.cedula)
-  
+      
   
       const data = {
         mascota: mascota,

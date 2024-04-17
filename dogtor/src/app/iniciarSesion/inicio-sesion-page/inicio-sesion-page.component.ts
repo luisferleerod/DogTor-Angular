@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/cliente/cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion-page',
@@ -30,8 +31,12 @@ export class InicioSesionPageComponent {
         this.router.navigate(['/cliente/mostrar', response.cedula]);
       },
       (error) => {
-        // Si hay un error, puedes manejarlo aquí, por ejemplo, mostrar un mensaje de error al usuario
-        this.mensajeError = 'Credenciales inválidas';
+        Swal.fire({
+          title: 'Error',
+          text: 'Credenciales inválidas',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
     );
   }
