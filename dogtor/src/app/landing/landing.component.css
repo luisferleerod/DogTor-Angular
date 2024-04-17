@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 
@@ -20,6 +21,7 @@ html {
     width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    overflow: hidden
 }
   
 *{
@@ -88,7 +90,7 @@ nav{
     align-items: center; 
     font-weight: bold;
     font-size: 20px;
-    margin: 0;
+    margin: 0 0 0 4rem;
 }
 
 .menu-principal a{
@@ -134,6 +136,8 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+    padding: 0;
 
 }
 

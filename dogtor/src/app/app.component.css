@@ -6,12 +6,8 @@
     --font-dosis: 'Dosis', sans-serif;
 }
 
-app-landing {
-    box-sizing: border-box;
-    background-color: var(--color-primario);
-    font-family: var(--font-dosis);
-    margin: 4rem 0rem 0rem 0rem;
-    width: 100%;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+.router-outlet {
+    overflow: hidden;
 }
+
+
