@@ -54,29 +54,63 @@ export class ActualizarMascotaComponent {
       
   });
 }
+
+camposLlenos(): boolean {
+
+  return this.formMascota.nombre !== '' && 
+         this.formMascota.raza !== '' &&
+         this.formMascota.edad !== 0 &&
+         this.formMascota.peso !== 0 &&
+         this.formMascota.foto !== '' &&
+         this.formMascota.enfermedad !== '' &&
+         this.formClient.cedula !== '' &&
+         this.formMascota.estado !== '' 
+
+}
+
+ validarLink(link: string): boolean {
+  const regex: RegExp = /^(http|https):\/\/[^ "]+$/;
+  return regex.test(link);
+}
+
   updateMascota() {
+
+    if (!this.validarLink(this.formMascota.foto)) {
+      // Mostrar un mensaje de error si el correo electrónico no es válido
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor ingrese un enlace  válido',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return; // Salir del método si el correo electrónico no es válido
+    }
 
     this.clienteService.findByCedula(this.formClient.cedula).subscribe((cliente: Cliente) => {
 
+      if(cliente == null){
+        Swal.fire({
+          title: 'Error',
+          text: 'Por favor ingrese una cedula válida',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+        return; 
+      }
+      
       this.sendClient = Object.assign({}, cliente);
+      this.sendMascota = Object.assign({}, this.formMascota);
+      this.sendMascota.cliente=this.sendClient;
+      
+  
+  
+      this.mascotaService.actualizarMascota(this.sendMascota);
+  
+      this.mostrarAlerta();
       
     })
     
-    this.sendMascota = Object.assign({}, this.formMascota);
-    this.sendMascota.cliente=this.sendClient;
-    console.log("-------------------------------")
-    console.log(this.sendClient.cedula)
-    console.log(this.sendMascota.cliente.cedula)
 
-
-    this.mascotaService.actualizarMascota(this.sendMascota);
-    console.log("MANDANDO MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+this.sendMascota)
-    console.log(this.sendMascota.id)
-    console.log(this.sendMascota.nombre)
-    console.log(this.sendMascota.enfermedad)
-    console.log(this.sendMascota.estado)
-    console.log(this.sendMascota.cliente?.cedula)
-    this.mostrarAlerta();
    
   }
 

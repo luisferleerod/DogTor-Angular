@@ -49,12 +49,12 @@
                         <input  type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese la enfermedad del paciente" required [(ngModel)]=formMascota.enfermedad>
     
                         <label for="estado" hidden>Estado</label>
-                        <input  type="hidden" name="estado" id="estado" value="Activo" [(ngModel)]=formMascota.estado>
+                        <input  type="hidden" name="estado" id="estado" value="activo" [(ngModel)]=formMascota.estado>
     
                         <label for="cedulaDueno">Cédula del Dueño:</label>
                         <input  type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required [(ngModel)]=formClient.cedula>
 
-                        <button  type="submit" (click)="addMascotaForm()" >Agregar Paciente</button>
+                        <button  type="submit" (click)="addMascotaForm()" [disabled]="!camposLlenos()" >Agregar Paciente</button>
                     </div>
                 </div>
 

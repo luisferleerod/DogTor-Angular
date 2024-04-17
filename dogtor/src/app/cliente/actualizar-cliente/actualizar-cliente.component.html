@@ -32,7 +32,7 @@
                     <label for="celular">Celular</label>
                     <input type="number" name="celular" id="celular" [(ngModel)]="formCliente.celular">
 
-                    <button type="submit" (click)="updateCliente()" class="boton">Actualizar</button>
+                    <button type="submit" (click)="updateCliente()" [disabled]="!camposLlenos()" class="boton">Actualizar</button>
 
                 </form>
         </div>

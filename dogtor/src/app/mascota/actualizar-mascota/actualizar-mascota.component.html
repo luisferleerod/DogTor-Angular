@@ -51,12 +51,12 @@
 
                         <label for="estado">Estado</label>
                         <select id="estado" name="estado" [(ngModel)]="formMascota.estado">
-                            <option value="Activo">Activo</option>
-                            <option value="Desactivado">Desactivado</option>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit" (click)="updateMascota()">Actualizar</button>
+                <button type="submit" (click)="updateMascota()" [disabled]="!camposLlenos()">Actualizar</button>
 
 
             </form>

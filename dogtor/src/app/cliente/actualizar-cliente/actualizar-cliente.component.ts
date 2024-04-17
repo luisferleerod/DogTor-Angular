@@ -24,7 +24,31 @@ export class ActualizarClienteComponent {
     });
   }
 
+  camposLlenos(): boolean {
+
+    return this.formCliente.nombre !== '' && 
+           this.formCliente.cedula !== '' && 
+           this.formCliente.correo !== '' && 
+           this.formCliente.celular !== 0;
+  }
+
+  validarCorreo(correo: string): boolean {
+    const regex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(correo);
+}
+
   updateCliente() {
+
+    if (!this.validarCorreo(this.formCliente.correo)) {
+      // Mostrar un mensaje de error si el correo electrónico no es válido
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor ingrese un correo electrónico válido',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return; // Salir del método si el correo electrónico no es válido
+    }
     this.sendCliente = Object.assign({}, this.formCliente);
     this.clienteService.actualizarCliente(this.sendCliente);
     this.mostrarAlerta();

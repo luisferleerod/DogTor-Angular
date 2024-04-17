@@ -20,20 +20,22 @@
             </div>
 
             <h1>Nuevo Cliente</h1>
-            <form method="post"id="nuevoClienteForm">
+            <form  method="post"id="nuevoClienteForm" >
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required [(ngModel)]=formCliente.nombre>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" [(ngModel)]=formCliente.nombre required>
 
                 <label for="cedula">Cédula:</label>
-                <input type="text" id="cedula" name="cedula" placeholder="Ingrese su cédula" required [(ngModel)]=formCliente.cedula>
+                <input type="text" id="cedula" name="cedula" placeholder="Ingrese su cédula" [(ngModel)]=formCliente.cedula required>
 
                 <label for="correo">Correo:</label>
-                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" required [(ngModel)]=formCliente.correo>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo"  [(ngModel)]=formCliente.correo required>
 
                 <label for="celular">Celular:</label>
-                <input type="number" id="celular" name="celular" placeholder="Ingrese su celular" required [(ngModel)]=formCliente.celular>
+                <input type="number" id="celular" name="celular" placeholder="Ingrese su celular"  [(ngModel)]=formCliente.celular required>
 
-                <button type="submit" (click)="addClienteForm()">Agregar Cliente</button>
+
+                <button type="submit" (click)="addClienteForm()" [disabled]="!camposLlenos()">Agregar Cliente</button>
+
             </form>
         </div>
     </div>

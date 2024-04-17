@@ -44,7 +44,7 @@ export class CrearMascotaComponent {
     cedula: "",
     nombre: "",
     correo: "",
-    celular: "",
+    celular: 0,
 
   }
 
@@ -53,26 +53,61 @@ export class CrearMascotaComponent {
     cedula: "",
     nombre: "",
     correo: "",
-    celular: "",
+    celular: 0
   }
 
 
+  camposLlenos(): boolean {
+
+    return this.formMascota.nombre !== '' && 
+           this.formMascota.raza !== '' &&
+           this.formMascota.edad !== 0 &&
+           this.formMascota.peso !== 0 &&
+           this.formMascota.foto !== '' &&
+           this.formMascota.enfermedad !== '' &&
+           this.formClient.cedula !== '' &&
+           this.formMascota.estado !== '' 
+  
+  }
+
+  
+  validarLink(link: string): boolean {
+    const regex: RegExp = /^(http|https):\/\/[^ "]+$/;
+    return regex.test(link);
+  }
+
   addMascotaForm() {
 
+    if (!this.validarLink(this.formMascota.foto)) {
+      // Mostrar un mensaje de error si el correo electrónico no es válido
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor ingrese un enlace  válido',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return; // Salir del método si el correo electrónico no es válido
+    }
     
-    console.log(this.formClient.cedula)
+
     this.clienteService.findByCedula(this.formClient.cedula).subscribe((cliente: Cliente) => {
 
-      console.log("ESTAMOS PROBANDO QUE CREAR UNA AMSSCOTA FUNCIONE")
-      console.log(cliente.nombre)
+      if(cliente == null){
+        Swal.fire({
+          title: 'Error',
+          text: 'Por favor ingrese una cedula válida',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+        return; 
+      }
+     
       this.sendClient = Object.assign({}, cliente);
-      console.log(this.sendClient.cedula)
+     
 
       this.sendMascota = Object.assign({}, this.formMascota);
       this.sendMascota.cliente=this.sendClient;
-      console.log("VAMOS BIEN POR AHORA")
-      console.log(this.sendClient.cedula)
-      console.log(this.sendMascota.cliente.cedula)
+
     
       this.mascotaService.findAll().subscribe((mascotas: mascota[]) => {
         this.listMascotas = mascotas;
