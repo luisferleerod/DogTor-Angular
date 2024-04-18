@@ -4,9 +4,17 @@
             <img src="../../../assets/logo_basico_blanco.png" alt="">
             <h1>Veterinario: </h1>
         </div>
-        
+
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
+
+
+                <label class="switchBtn" (click)="toggleSlide($event)">
+                    <input class="punto" type="checkbox">
+                    <div class="slide round">{{ toggleText }}</div>
+                </label>
+
+
                 <a href="#datos-dueno"><li>Perfil</li></a>
                 <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
@@ -16,7 +24,9 @@
     <div class="titulo-mascotas">
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todas las Mascotas</h1>
+
             <a type="button" class="mas" [routerLink]="['/mascota/crear']"><img src="../../../assets/mas.png" alt=""></a>
+            
         </div>
     </div>
     

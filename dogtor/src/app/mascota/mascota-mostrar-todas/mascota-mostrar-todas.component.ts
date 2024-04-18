@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { mascota } from '../mascota';
-
-
 import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MascotaMostrarTodasComponent {
   listaMascotas!: mascota[];
+  toggleText: string = 'Mascotas'; // Agrega esta variable
 
   //@Output() 
   //modificarMascotaEvent = new EventEmitter<mascota>();
@@ -39,4 +38,14 @@ export class MascotaMostrarTodasComponent {
      const index = this.listaMascotas.findIndex(m => m.id === mascota.id);
      this.listaMascotas[index].estado = 'inactivo';
   }
+
+
+  toggleSlide(event: Event) {
+    event.stopPropagation(); // Evita que el evento se propague
+    this.toggleText = this.toggleText === 'Mascotas' ? 'Clientes' : 'Mascotas';
+  }
+  
+  
+  
+  
 }

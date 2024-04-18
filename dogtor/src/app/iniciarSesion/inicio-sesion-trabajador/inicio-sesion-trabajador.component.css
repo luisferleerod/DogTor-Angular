@@ -27,9 +27,9 @@
     border-radius: 1rem;
     text-align: center;
     width: 23rem;
-    height: 25rem;
+    height: 30rem;
     margin-left: 7rem;
-    margin-top: 8rem;
+    margin-top: 6rem;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -72,6 +72,10 @@ form label {
     text-transform: uppercase;
     font-weight: bold;
     margin-left: .5rem;
+}
+
+.contrasena {
+    margin-top: .6rem;
 }
 
 form input {
