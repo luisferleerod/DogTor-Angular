@@ -30,8 +30,9 @@ export class InicioSesionTrabajadorComponent {
   iniciarSesion() {
     this.veterinarioService.iniciarSesion(this.usuario, this.contrasena).subscribe(
       (response: veterinario) => {
+        this.veterinarioService.setVeterinario(response);
         // Si la respuesta es un Veterinario, navega a una ruta específica para Veterinarios
-        this.router.navigate(['/mascota/all', response.id]);
+        this.router.navigate(['/mascota/all']);
       },
       (error) => {
         // Si ocurre un error o la respuesta no es un Veterinario, intenta iniciar sesión como Administrador

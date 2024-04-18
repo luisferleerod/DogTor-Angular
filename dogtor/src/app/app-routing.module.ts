@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
   { path: 'mascota/actualizar/:id', component: ActualizarMascotaComponent},
   { path: 'mascota/crear', component: CrearMascotaComponent},
-  { path: 'mascota/all/:id', component: MascotaMostrarTodasComponent},
+  { path: 'mascota/all', component: MascotaMostrarTodasComponent},
   { path: 'mascota/mostrar/:id', component: MostrarMascotaComponent},
   { path: 'iniciarSesion', component: InicioSesionPageComponent },  
   { path: 'iniciarSesionTrabajador', component: InicioSesionTrabajadorComponent},

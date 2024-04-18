@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { veterinario } from 'src/app/veterinario/veterinario';
+import { VeterinarioService } from 'src/app/service/veterinario.service';
 
 @Component({
   selector: 'app-mascota-mostrar-todas',
@@ -16,12 +18,18 @@ export class MascotaMostrarTodasComponent {
   //modificarMascotaEvent = new EventEmitter<mascota>();
 
   mascotaAct!: mascota;
+
   // Constructior es para inyectar dependencias
 
-  constructor(private mascotaService: MascotaService, private route: ActivatedRoute, private router: Router) {
+  veterinario!: veterinario;
+
+  constructor(private mascotaService: MascotaService, private route: ActivatedRoute, private router: Router, private veterinarioService: VeterinarioService) {
   }
 
   ngOnInit(): void {
+    this.veterinario = this.veterinarioService.getVeterinario();
+    
+
     this.mascotaService.findAll().subscribe((mascotas) => this.listaMascotas = mascotas, (error) => {
       
     })
