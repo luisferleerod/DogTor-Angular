@@ -11,8 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CrearClienteComponent {
 
-  @Output()
-  addClienteEvent = new EventEmitter<Cliente>();
+  // @Output()
+  // addClienteEvent = new EventEmitter<Cliente>();
 
   listClientes!: Cliente[]
 
@@ -62,13 +62,10 @@ export class CrearClienteComponent {
     this.clienteService.findAll().subscribe((mascotas: Cliente[]) => {
       this.listClientes = mascotas;
   
-      console.log("RECIBIENDO MASCOTA DEL FORMULARIO")
-      console.log(this.sendCliente.nombre)
-      
-      console.log(this.listClientes.length)
+     
       this.sendCliente.id = this.listClientes.length + 1;
   
-      this.addClienteEvent.emit(this.sendCliente);
+      // this.addClienteEvent.emit(this.sendCliente);
   
       this.clienteService.agregarCliente(this.sendCliente);
 
