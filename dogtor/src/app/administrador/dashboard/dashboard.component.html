@@ -1,0 +1,121 @@
+<div class="body">
+    <header>
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Bienvenido</h1>
+            <h2>administrador.nombre</h2>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a><li class="cerrar-sesion">Veterinarios</li></a>
+                <a><li class="cerrar-sesion">Tratamientos</li></a>
+                <a><li class="cerrar-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <section class="datos-tratamientos-imagen">
+
+            <div class="datos-tratamientos">
+                <div class="titulo">
+                    <h1>Tratamientos Top</h1>
+                    <a type="button" class="info" [routerLink]="['/tratamiento/all']"><img src="../../../assets/info.png" alt=""></a>
+                </div>
+                
+
+                <table class="tabla-info">
+                    <tr>
+                        <td class="titulo-tabla borer-radius1">Tratamiento 1</td>
+                        <td class="contenido-tabla borer-radius2">99</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Tratamiento 2</td>
+                        <td  class="contenido-tabla">99</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Tratamiento 3</td>
+                        <td class="contenido-tabla">99</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="datos-imagen">
+                <img class="imagen-dueno" src="https://www.tuproyectodevida.pe/wp-content/uploads/2020/07/Cualidades-de-un-administrador-de-empresas-1200x628.png" alt="">
+            </div>
+    </section>
+
+    <!-- Sección para mostrar las mascotas, veterinarios y tratamientos -->
+    <section class="info-general" id="mascotas">
+        <div class="ventas">
+            <div class="titulo">
+                <h1>Ganancias y ventas</h1>            
+            </div>
+            <table class="tabla-info">
+                <tr>
+                    <td class="titulo-tabla borer-radius1">Ganancias Totales</td>
+                    <td class="contenido-tabla borer-radius2">99,999,999</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Ventas Totales</td>
+                    <td  class="contenido-tabla">99,999,999</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="veterinarios">
+            <div class="titulo">
+                <h1>Veterinarios | Mascotas</h1>  
+                <a type="button" class="info" [routerLink]="['/tratamiento/all']"><img src="../../../assets/info.png" alt=""></a>
+          
+            </div>
+            <table class="tabla-info">
+                <tr>
+                    <td class="titulo-tabla borer-radius1">Veterinarios Activos</td>
+                    <td class="contenido-tabla borer-radius2">10</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Veterinarios Inactivos</td>
+                    <td  class="contenido-tabla">4</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Mascotas Activas</td>
+                    <td class="contenido-tabla">10</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Mascotas Totales</td>
+                    <td class="contenido-tabla">40</td>
+                </tr>
+            </table>
+
+        </div>
+        
+    </section>
+
+
+    <footer>
+        <div class="datos-GENERALR">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <img src="../../../assets/facebook.png" alt="facebook">
+            <img src="../../../assets/instagram.png" alt="instagram">
+            <img src="../../../assets/whatsapp.png" alt="whatsapp">
+        </div>
+        
+    </footer>
+</div>
+    
+    
