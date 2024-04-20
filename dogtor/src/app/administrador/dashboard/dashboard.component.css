@@ -16,7 +16,6 @@ html {
 
 .body {
     box-sizing: border-box;
-    background-color: var(--color-primario);
     font-family: var(--font-dosis);
     max-width: 100%;
     overflow-y: scroll;
@@ -28,40 +27,55 @@ html {
 
 }
 
-
-
 h1{
     transition: .3s;
 }
 
 /* Estilos Para la primera seccion */
 
-.datos-tratamientos-imagen {
+.datos-ganancias-imagen {
     display: flex;
     max-width: 100%;
+    justify-content: space-between;
 }
 
-.datos-tratamientos {
-    transition: .3s;
+.ventas {
     margin: 1rem 2rem 0 3rem;
-    display: block;
     align-items: center;
-    width: 700px;
+    width: 50%;
     height: auto;
-    box-shadow: inset;
     border-radius: .7rem;
     padding: 1rem;
-    
+    transition: .3s;
 }
 
-.datos-tratamientos:hover {
+.ventas:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .2s;
+    transition: .3s;
     .titulo {
-        transition: .2s;
+        transition: .3s;
         background-color: #e55807;
-    }
+    }    
 }
+
+.ventas .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: .3rem 3rem 0rem 3rem;
+    background-color: #e55807;
+    margin: 0rem 0 .2rem 0;
+    border-radius: .7rem;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.ventas .titulo:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .3s;
+}
+
 
 .datos-imagen {
     width: 50%;
@@ -81,7 +95,6 @@ table {
     border-radius: .7rem;
     width: 100%;
     overflow: hidden;
-    background-color: #035A6C;
     color: white;
 }
 
@@ -101,13 +114,11 @@ table {
 
 .titulo{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     color: white;
     padding: .3rem 3rem .3rem 3rem;
     background-color: #1B9AB5;
     margin: 0rem 0 .2rem 0;
-    text-align: center;
     border-radius: .7rem;
     text-transform: uppercase;
     transition: .3s;
@@ -117,13 +128,13 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .2s;
+    transition: .3s;
     padding: .5rem;
     border-radius: .1rem;
 }
 
 .info:hover{
-    transition: .2s;
+    transition: .3s;
     background-color: var(--color-secundario);
     border-radius: .7rem;
 }
@@ -140,24 +151,30 @@ table {
     display: flex;
 }
 
-.ventas {
+
+.datos-tratamientos {
     transition: .3s;
     margin: 1rem 2rem 0 3rem;
     display: block;
     align-items: center;
+    width: 47%;
     height: auto;
+    box-shadow: inset;
     border-radius: .7rem;
     padding: 1rem;
+    
 }
 
-.ventas:hover {
+.datos-tratamientos:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .2s;
+    transition: .3s;
     .titulo, .titulo h1{
-        transition: .2s;
+        transition: .3s;
         background-color: #e55807;
-    }   
+    }  
 }
+
+
 
 .contenido-tabla {
     text-align: center;
@@ -174,33 +191,10 @@ a {
     color: black;
 }
 
-.boton-tabla {
-    text-align: center;
-    width: 70%;
-    background-color: #D5FCFF;
-    color: black;
-    font-weight: bold;
-    font-style: none;
-}
-
-.boton-tabla:hover {
-    transition: .2s;
-    background-color: #66ecfa;
-    color: black;
-    border: none;
-    cursor: pointer;
-    padding: 1rem 0 1rem 0;
-    margin: 0;
-
-}
 
 .info-general table {
     border-radius: .7rem .7rem 0 0;
     width: 100%;
-}
-
-.ventas {
-    width: 50%;
 }
 
 .info-general h1 {
@@ -236,7 +230,7 @@ a {
 }
 
 .veterinarios {
-    width: 500px;
+    width: 43%;
     height: auto;
     transition: .3s;
     align-items: center;
@@ -248,9 +242,9 @@ a {
 
 .veterinarios:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .2s;
+    transition: .3s;
     .titulo, .titulo h1{
-        transition: .2s;
+        transition: .3s;
         background-color: #e55807;
     }   
 }
