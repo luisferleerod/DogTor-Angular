@@ -330,24 +330,32 @@ nav{
     background-color: var(--color-contraste);
 }
 
-footer{
+/* Estilos para el pie de pagina */
+footer {
     display: flex;
-    width: 100%;
     background-color: var(--color-secundario);
-    bottom: 0;
-    color : white;
+    padding: 0rem 0rem 0rem 0rem;
+    color: white;
     text-align: justify;
-    padding: 0;
-    font-size: 20px;
+    font-size: 19px;
+    max-width: 100%;
+    justify-content: space-between;
 }
 
-.datos{
+
+.datos-negocio{
     text-align: justify;
-    margin-right: 5rem;
+    margin: 0 0 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 25%;
+}
+
+.datos-negocio p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 .derechos{
@@ -358,15 +366,15 @@ footer{
 }
 
 .redes-sociales {
-    margin: 2rem 0 2rem 2rem;
+    margin: 2rem 0 1rem 2rem;
     display: flex;
     justify-content: center;
     width: 30%;
 }
 
 .redes-sociales img {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     margin: 1rem;
 }
 

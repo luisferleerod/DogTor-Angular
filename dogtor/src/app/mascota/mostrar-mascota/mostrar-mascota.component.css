@@ -14,7 +14,7 @@ html {
     scroll-margin-top: 70px;
 }
 
-body {
+.body {
     box-sizing: border-box;
     background-color: var(--color-primario);
     font-family: var(--font-dosis);
@@ -24,7 +24,7 @@ body {
     background-color: #ffffff;
     margin: 4rem 0rem 0rem 0rem;
     padding: 0;
-
+    overflow: hidden;
 }
 
 h2{
@@ -44,7 +44,7 @@ h2{
 
 .datos-paciente {
     transition: .3s;
-    margin: 2rem 2rem 0 3rem;
+    margin: 2rem 1rem 0 3rem;
     display: block;
     align-items: center;
     width: 700px;
@@ -71,8 +71,8 @@ h2{
 
 .imagen-perro {
     width: 450px;
-    max-height: 300px;
-    margin: 2rem 0 0 2rem;
+    max-height: auto;
+    margin: 3rem 0 0 1rem;
     border-radius: 5%;
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
@@ -116,11 +116,11 @@ table {
     transition: .3s;
     color: white;
     background-color: var(--color-secundario);
-    width: 91.5%;
-    padding: .4rem 3rem;
-    text-align: center;
+    width: 100%;
+    padding: .5rem .3rem;
+    text-transform: uppercase;
     border-radius: .7rem;
-    margin: 0 0 .2rem 0;
+    text-align: center;
 }
 
 .tratamientos {
@@ -217,25 +217,34 @@ a {
     border-radius: 0 0 0 .6rem;
 }
 
+/* Estilos para el footer */
+
 footer {
     display: flex;
     background-color: var(--color-secundario);
-    padding: 0rem 3rem 0rem 3rem;
+    padding: 0rem 0rem 0rem 0rem;
     color: white;
     text-align: justify;
-    font-size: 20px;
+    font-size: 19px;
     max-width: 100%;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    justify-content: space-between;
 }
 
 
-.datos{
+.datos-negocio{
     text-align: justify;
-    margin-right: 5rem;
+    margin: 0 0 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 25%;
+}
+
+.datos-negocio p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 .derechos{
@@ -246,7 +255,7 @@ footer {
 }
 
 .redes-sociales {
-    margin: 2rem 0 2rem 2rem;
+    margin: 2rem 0 1rem 2rem;
     display: flex;
     justify-content: center;
     width: 30%;
@@ -263,7 +272,6 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
-
 
 header {
     background-color: #04bcd6;
@@ -342,7 +350,7 @@ nav{
 }
 
 .menu-principal li:hover{
-    background-color: var(--color-contraste);
+    background-color: #e55807;
     color: white;
     border-radius: .7rem;
     transition-duration: 300ms;

@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
-    <link rel="stylesheet" href="/css/mostrarMascota.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
-    <title>Bienvenido a DOGTOR</title>
-</head>
-<body>
+<div class="body">
     <header>
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
@@ -22,8 +8,6 @@
         
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
-                <a href="#datos-mascota"><li>Información del Paciente</li></a>
-                <a href="#tratamientos"><li>Tratamientos</li></a>
                 <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
         </nav>
@@ -61,8 +45,8 @@
     </section>
 
 
-    <section class="tratamientos" id="tratamientos">
-            <h1 class="titulo2">TRATAMIENTOS</h1>
+    <section class="tratamientos">
+        <h1 class="titulo2">TRATAMIENTOS</h1>
         <table>
             <th class="titulo-tabla borer-radius1">FECHA</th>
             <th class="titulo-tabla borer-radius2">DROGA</th>
@@ -80,7 +64,7 @@
     </section>
 
     <footer>
-        <div class="datos">
+        <div class="datos-negocio">
             <p>
                 Numero: +57 000 000 0000<br>
                 Email: consultor@dogtor.com<br>
@@ -103,5 +87,4 @@
         
     </footer>
     
-</body>
-</html>
+</div>

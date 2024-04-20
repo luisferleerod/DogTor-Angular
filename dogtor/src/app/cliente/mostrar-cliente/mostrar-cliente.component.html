@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
-    <link rel="stylesheet" href="/css/mostrarDueno.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
-    <title>Dueno</title>
-</head>
-<body>
+<div class="body">
     <header>
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
@@ -22,8 +8,6 @@
         
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
-                <a href="#datos-dueno"><li>Tu Información</li></a>
-                <a href="#mascotas"><li>Tus Mascotas</li></a>
                 <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
         </nav>
@@ -56,7 +40,7 @@
             </div>
 
             <div class="datos-imagen">
-                <img class="imagen-dueno" src="../../../assets/dueno_especifico.jpg" alt="">
+                <img class="imagen-dueno" src="https://st.depositphotos.com/1518767/4291/i/600/depositphotos_42917347-stock-photo-happy-family-sitting-on-couch.jpg" alt="">
             </div>
     </section>
 
@@ -85,7 +69,7 @@
 
 
     <footer>
-        <div class="datos">
+        <div class="datos-negocio">
             <p>
                 Numero: +57 000 000 0000<br>
                 Email: consultor@dogtor.com<br>
@@ -105,6 +89,6 @@
         </div>
         
     </footer>
+</div>
     
-</body>
-</html>
+    
