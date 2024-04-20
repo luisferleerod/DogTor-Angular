@@ -64,16 +64,16 @@ h1{
     justify-content: center;
     color: white;
     padding: .3rem 3rem 0rem 3rem;
-    background-color: #e55807;
+    background-color: var(--color-secundario);
     margin: 0rem 0 .2rem 0;
     border-radius: .7rem;
     text-transform: uppercase;
     transition: .3s;
 }
 
-.ventas .titulo:hover {
-    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+.ventas:hover .titulo {
     transition: .3s;
+    background-color: #e55807;
 }
 
 
@@ -256,22 +256,29 @@ a {
 footer {
     display: flex;
     background-color: var(--color-secundario);
-    padding: 0rem 3rem 0rem 3rem;
+    padding: 0rem 0rem 0rem 0rem;
     color: white;
     text-align: justify;
-    font-size: 20px;
+    font-size: 19px;
     max-width: 100%;
     margin-top: 1rem;
+    justify-content: space-between;
 }
 
 
-.datos{
+.datos-negocio{
     text-align: justify;
-    margin-right: 5rem;
+    margin: 0 0 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 25%;
+}
+
+.datos-negocio p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 .derechos{
@@ -282,7 +289,7 @@ footer {
 }
 
 .redes-sociales {
-    margin: 2rem 0 2rem 2rem;
+    margin: 2rem 0 1rem 2rem;
     display: flex;
     justify-content: center;
     width: 30%;
@@ -381,6 +388,7 @@ nav{
     color: white;
     border-radius: .7rem;
     transition-duration: 300ms;
+    cursor: pointer;
 }
 
 .indice-secciones{
