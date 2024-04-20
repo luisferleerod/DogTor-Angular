@@ -19,83 +19,44 @@
     overflow: hidden;
 }
 
-.contenido {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 10rem;
-}
 
-.izquierda {
-    width: 80%;
-    display: flex;
-    margin: 1rem 1rem 1rem 3rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: .7rem;
-    transition: .2s;
-}
-
-.izquierda:hover {
-    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .2s;
-    .titulo-tratamiento {
-        background-color: #e55807;
-        transition: .2s;
-    }
-}
-
-
-.derecha {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-    background-color: #035A6C;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    border-radius: .7rem;
-    transition: .2s;
-    margin-left: 1rem;
-    margin-right: 3rem;
-}
-
-.derecha h1{
-    font-weight: bold;
-}
-
-.derecha:hover {
-    background-color: #9EF0F7;
-    color: black;
-    transition: .2s;
-    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    cursor: pointer;
-}
-
-.derecha h1 {
-    font-size: 30px;
-}
-
-.titulo {
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    padding: .3rem;
-}
-
-.titulo-tratamiento {
+.titulo-mascotas {
     width: 90%;
     margin: 1rem 5% .5rem 5%;
     background-color: #035A6C;
     border-radius: .7rem;
+
+
+}
+
+.titulo-todas-las-mascotas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 93%;
+    margin-left: 1rem;
+}
+
+.mas {
+    display: flex; 
     justify-content: center;
     align-items: center;
+    margin-left: 30rem;
+    background-color: white;
+    border-radius: 70%;
+    transition: .2s;
+}
+
+.mas:hover {
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+.titulo-mascotas img {
+    
+    width: 3rem;
+    height: 3rem;
 }
 
 a {
@@ -247,7 +208,7 @@ nav{
 }
 
 .menu-principal li:hover{
-    background-color: #e55807;
+    background-color: var(--color-contraste);
     color: white;
     border-radius: .7rem;
     transition-duration: 300ms;
@@ -274,12 +235,12 @@ footer {
     width: 100%; /* Asegura que el footer ocupe todo el ancho */
     display: flex;
     background-color: var(--color-secundario);
-    padding: 0rem; /* Ajusta el relleno según sea necesario */
     color: white;
     text-align: justify;
     font-size: 19px;
     justify-content: space-between;
 }
+
 
 
 .datos-negocio{
@@ -322,5 +283,3 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
-
-

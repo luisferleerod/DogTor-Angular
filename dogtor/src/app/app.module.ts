@@ -25,6 +25,7 @@ import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear
 import { FormsModule } from '@angular/forms';
 import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-trabajador/inicio-sesion-trabajador.component';
 import { DashboardComponent } from './administrador/dashboard/dashboard.component';
+import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
 
 
 
@@ -56,6 +57,7 @@ import { DashboardComponent } from './administrador/dashboard/dashboard.componen
     MostrarClienteComponent,
     InicioSesionTrabajadorComponent,
     DashboardComponent,
+    VeterinarioMostrarTodosComponent,
   ],
   imports: [
     BrowserModule,
