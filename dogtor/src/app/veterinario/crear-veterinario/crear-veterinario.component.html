@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/nuevoCliente.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-  <title>Nuevo Veterinario</title>
-</head>
-<body>
+<div class="body">
 
     <img class="fondo-imagen" src="../../../assets/nuevoFondoFormulario.jpg" alt="Fondo">
 
@@ -22,32 +11,38 @@
             <h1>Nuevo Veterinario</h1>
 
             <form action="#" method="post" id="nuevoVeterinarioForm">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required [(ngModel)]=formVeterinario.nombre>
+                <div class="formulario">
+                    <div class="izquierda">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required [(ngModel)]=formVeterinario.nombre>
+    
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario>
+                        
+                        <label for="especialidad">Especialidad:</label>
+                        <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad del veterinario" required [(ngModel)]=formVeterinario.especialidad>
+    
+                    </div>
+    
+                    <div class="derecha">
+                        <label for="foto">Foto (URL):</label>
+                        <input type="url" id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required [(ngModel)]=formVeterinario.foto>
+    
+                        <label for="contrasena">Contrasena:</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required [(ngModel)]=formVeterinario.contrasena>
+    
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required [(ngModel)]=formVeterinario.estado>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
 
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario>
+                </div>
                 
-                <label for="especialidad">Especialidad:</label>
-                <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad del veterinario" required [(ngModel)]=formVeterinario.especialidad>
-
-                <label for="foto">Foto (URL):</label>
-                <input type="url" id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required [(ngModel)]=formVeterinario.foto>
-
-                <label for="contrasena">Contrasena:</label>
-                <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required [(ngModel)]=formVeterinario.contrasena>
-
-                <label for="estado">Estado:</label>
-                <select id="estado" name="estado" required [(ngModel)]=formVeterinario.estado>
-                    <option value="activo">Activo</option>
-                    <option value="inactivo">Inactivo</option>
-                </select>
-
-
                 <button type="submit" (click)="addVeterinarioForm()" [disabled]="!camposLlenos()">Agregar Veterinario</button>
             </form>
         </div>
     </div>
 
-</body>
-</html>
+</div>

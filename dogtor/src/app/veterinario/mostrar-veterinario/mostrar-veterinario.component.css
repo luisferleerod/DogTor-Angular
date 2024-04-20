@@ -227,7 +227,6 @@ footer {
     width: 100%; /* Asegura que el footer ocupe todo el ancho */
     display: flex;
     background-color: var(--color-secundario);
-    padding: 1rem; /* Ajusta el relleno según sea necesario */
     color: white;
     text-align: justify;
     font-size: 19px;
