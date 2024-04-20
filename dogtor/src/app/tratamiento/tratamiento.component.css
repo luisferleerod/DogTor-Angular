@@ -1,0 +1,327 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+.body {
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    font-family: var(--font-dosis);
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    padding-top: 4.5rem;
+    margin: 0;
+    overflow: hidden;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+}
+
+.izquierda {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: .7rem;
+    transition: .2s;
+}
+
+.izquierda:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo-tratamiento {
+        background-color: #e55807;
+        transition: .2s;
+    }
+}
+
+
+.derecha {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    background-color: #035A6C;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: .7rem;
+    transition: .2s;
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+.derecha h1{
+    font-weight: bold;
+}
+
+.derecha:hover {
+    background-color: #9EF0F7;
+    color: black;
+    transition: .2s;
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    cursor: pointer;
+}
+
+.derecha h1 {
+    font-size: 30px;
+}
+
+.titulo {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+}
+
+.titulo-tratamiento {
+    width: 90%;
+    margin: 1rem 5% .5rem 5%;
+    background-color: #035A6C;
+    border-radius: .7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.borer-radius4 {
+    border-radius: 0 0 0 .6rem;
+}
+
+.tabla {
+    width: 90%;
+    margin: .5rem 5% 2rem 5%;
+    border-radius: .1rem;
+    overflow: hidden;
+    background-color: #035A6C;
+}
+
+thead {
+    background-color: #9EF0F7;
+    color: black;
+    padding: 1rem;
+}
+
+th {
+    padding: 1rem;
+    font-size: 20px;
+}
+
+td {
+    padding: .7rem;
+    font-size: 20px;
+    background-color: #D5FCFF;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 1.6rem;
+    color: #D5FCFF;
+    height: 26px;
+}
+
+.contenedor-boton,
+.contenedor-boton2,
+.contenedor-boton3 {
+  
+  display: flex; /* Utilizar flexbox para organizar las imágenes */
+  width: 50px;
+  height: 50px;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+
+.boton-borrar {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin: 0 auto; /* Center image horizontally and vertically */
+  }
+  
+
+.boton-borrar:hover {
+    opacity: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+header {
+    background-color: #04bcd6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-left: 0;
+    padding-bottom: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0 .3rem 0 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+.logo h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: #146076;
+}
+
+.logo img {
+    height: 4rem;
+    margin-left: 3.5rem;
+}
+
+nav{
+    display: flex; /* para que los elementos se alineen en lineas */
+    justify-content: space-between; /* para que los elementos se alineen en el espacio entre ellos */
+    padding: 0;
+    margin-right: 3rem;
+
+}
+
+
+.menu-principal{
+    list-style: none; /* para quitar los puntos */
+    padding:  .8rem;
+    display: flex;
+    justify-content: right; /* para que los elementos se alineen en el espacio entre ellos */
+    align-items: center; 
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.menu-principal a{
+    text-decoration: none;
+}
+
+.menu-principal ul{
+    margin-top: 1rem;
+}
+
+.menu-principal li{
+    margin: 0 1rem 0 1rem;
+    border-radius: .7rem;
+    padding: .4rem .7rem .4rem .7rem;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+
+.menu-principal li:hover{
+    background-color: #e55807;
+    color: white;
+    border-radius: .7rem;
+    transition-duration: 300ms;
+}
+
+.indice-secciones{
+    background-color: var(--color-secundario);
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+
+/* Estilos para el pie de pagina */
+footer {
+    position: fixed; /* Establece el posicionamiento fijo */
+    bottom: 0; /* Coloca el footer en la parte inferior de la pantalla */
+    left: 0; /* Alinea el footer a la izquierda */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    display: flex;
+    background-color: var(--color-secundario);
+    padding: 0rem; /* Ajusta el relleno según sea necesario */
+    color: white;
+    text-align: justify;
+    font-size: 19px;
+    justify-content: space-between;
+}
+
+
+.datos-negocio{
+    text-align: justify;
+    margin: 0 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.datos-negocio p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.derechos{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociales {
+    margin: 2rem 0 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.redes-sociales img {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+}
+
+.redes-sociales img:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
