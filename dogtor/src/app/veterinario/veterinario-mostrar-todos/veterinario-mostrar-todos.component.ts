@@ -24,5 +24,12 @@ export class VeterinarioMostrarTodosComponent {
     })
   }
 
+  inactivarVeterinario(veterinario: veterinario) {
+    this.veterinarioService.deleteById(veterinario.id);
+
+     const index = this.listaVeterinarios.findIndex(m => m.id === veterinario.id);
+     this.listaVeterinarios[index].estado = 'inactivo';
+  }
+
 
 }

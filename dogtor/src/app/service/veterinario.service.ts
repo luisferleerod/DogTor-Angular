@@ -45,4 +45,9 @@ export class VeterinarioService {
   
   }
 
+  deleteById(id: number) {
+    
+    this.http.delete("http://localhost:8090/veterinario/delete/"+id).subscribe();
+  }
+
 }
