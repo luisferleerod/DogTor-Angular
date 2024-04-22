@@ -3,14 +3,14 @@
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
             <h1>Veterinario:</h1>
-            <h2 >veterinario.nombre</h2>
+            <h2 >{{veterinario.nombre}}</h2>
         </div>
         
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
-                <a [routerLink]=""><li class="inicio-sesion">Home</li></a>
                 
-                <a [routerLink]=""><li class="inicio-sesion">Cerrar Sesión</li></a>
+                
+                <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
         </nav>
     </header>
@@ -23,25 +23,25 @@
             <table class="tabla-info">
                 <tr>
                     <td class="titulo-tabla borer-radius1">Nombre</td>
-                    <td  class="contenido-tabla borer-radius2">veterinario.nombre</td>
+                    <td  class="contenido-tabla borer-radius2">{{veterinario.nombre}}</td>
                 </tr>
                 <tr>
-                    <td class="titulo-tabla">Especialidad</td>
-                    <td class="contenido-tabla">veterinario.especialidad</td>
+                    <td class="titulo-tabla">Usuario</td>
+                    <td class="contenido-tabla">{{veterinario.usuario}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Atenciones</td>
-                    <td class="contenido-tabla">veterinario.atenciones</td>
+                    <td class="contenido-tabla">{{veterinario.numAtenciones}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla borer-radius4">Estado</td>
-                    <td class="contenido-tabla borer-radius3">veterinario.estado</td>
+                    <td class="contenido-tabla borer-radius3">{{veterinario.estado}}</td>
                 </tr>
             </table>
         </div>
 
         <div class="datos-imagen">
-            <img src="veterinario.foto" class="imagen-perro">
+            <img src="{{veterinario.foto}}" class="imagen-perro">
         </div>        
         
     </section>

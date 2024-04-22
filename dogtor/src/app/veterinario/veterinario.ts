@@ -1,10 +1,13 @@
+
+
 export interface veterinario {
     id: number;
     usuario: string;
     nombre: string;
-    especialidad: string;
+    especialidad: String;
     contrasena: string;
     foto: string;
-    num_atenciones: number;
+    numAtenciones: number;
     estado: string;
+   
 }

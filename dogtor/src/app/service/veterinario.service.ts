@@ -40,4 +40,9 @@ export class VeterinarioService {
     this.http.put<veterinario>("http://localhost:8090/veterinario/add",veterinario).subscribe();
   }
 
+  findById(id: number): Observable<veterinario> {
+    return this.http.get<veterinario>("http://localhost:8090/veterinario/find/"+id);
+  
+  }
+
 }

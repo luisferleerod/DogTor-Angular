@@ -25,7 +25,7 @@ export class CrearVeterinarioComponent {
     especialidad: "",
     contrasena: "",
     foto: "",
-    num_atenciones: 0,
+    numAtenciones: 0,
     estado: ""
   };
 

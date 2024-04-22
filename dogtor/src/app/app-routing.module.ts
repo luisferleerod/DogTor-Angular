@@ -13,6 +13,9 @@ import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.com
 import { ActualizarMascotaComponent } from './mascota/actualizar-mascota/actualizar-mascota.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-trabajador/inicio-sesion-trabajador.component';
+import { DashboardComponent } from './administrador/dashboard/dashboard.component';
+import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
+import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
@@ -26,6 +29,7 @@ const routes: Routes = [
   { path: 'cliente/crear', component: CrearClienteComponent},
   { path: 'cliente/mostrar/:id', component: MostrarClienteComponent},
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
+  { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: '**', component:ErrorPageComponent}
 ];
