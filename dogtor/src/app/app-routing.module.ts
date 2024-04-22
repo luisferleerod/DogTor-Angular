@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'cliente/mostrar/:id', component: MostrarClienteComponent},
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
   { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
+  {path: 'veterinario/all', component: VeterinarioMostrarTodosComponent},
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: '**', component:ErrorPageComponent}
 ];

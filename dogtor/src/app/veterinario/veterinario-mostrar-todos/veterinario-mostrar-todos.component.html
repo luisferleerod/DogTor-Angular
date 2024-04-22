@@ -8,7 +8,7 @@
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
 
-                <a href="#"><li>Home</li></a>
+                
                 <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
         </nav>
@@ -18,7 +18,7 @@
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todos los Veterinarios</h1>
 
-            <a type="button" class="mas" [routerLink]=""><img src="../../../assets/mas.png" alt=""></a>
+            <a type="button" class="mas" [routerLink]="['/veterinario/crear']"><img src="../../../assets/mas.png" alt=""></a>
             
         </div>
     </div>
@@ -36,12 +36,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr >
-                    <td>veterinario.nombre</td>
-                    <td>veterinario.usuario</td>
-                    <td>veterinario.especialidad</td>
-                    <td>veterinario.atenciones</td>
-                    <td>veterinario.estado</td>
+                <tr *ngFor="let veterinario of listaVeterinarios" >
+                    <td>{{veterinario.nombre}}</td>
+                    <td>{{veterinario.usuario}}</td>
+                    <td>{{veterinario.especialidad}}</td>
+                    <td>{{veterinario.numAtenciones}}</td>
+                    <td>{{veterinario.estado}}</td>
                     
                     <td class="td-botones">
                         <div class="contenedor-botones">

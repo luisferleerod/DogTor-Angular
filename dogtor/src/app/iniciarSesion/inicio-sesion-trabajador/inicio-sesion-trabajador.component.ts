@@ -31,8 +31,19 @@ export class InicioSesionTrabajadorComponent {
     this.veterinarioService.iniciarSesion(this.usuario, this.contrasena).subscribe(
       (response: veterinario) => {
         this.veterinarioService.setVeterinario(response);
-        // Si la respuesta es un Veterinario, navega a una ruta específica para Veterinarios
-        this.router.navigate(['/mascota/all']);
+        if(this.veterinarioService.getVeterinario().estado == "activo"){
+          this.router.navigate(['/mascota/all']);
+        }
+        else{
+          Swal.fire({
+            title: 'Error',
+            text: 'Usuario desactivado',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        }
+        
+        
       },
       (error) => {
         // Si ocurre un error o la respuesta no es un Veterinario, intenta iniciar sesión como Administrador

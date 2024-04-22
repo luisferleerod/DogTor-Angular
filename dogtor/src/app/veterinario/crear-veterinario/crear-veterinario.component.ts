@@ -81,7 +81,7 @@ export class CrearVeterinarioComponent {
       confirmButtonText: '¡Entendido!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.router.navigate(['/cliente/all']);
+        this.router.navigate(['/veterinario/all']);
       }
     });
 
