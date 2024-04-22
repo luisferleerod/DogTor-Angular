@@ -50,7 +50,7 @@ export class InicioSesionTrabajadorComponent {
         this.administradorService.iniciarSesion(this.usuario, this.contrasena).subscribe(
           (response: administrador) => {
             // Si la respuesta es un Administrador, navega a una ruta específica para Administradores
-            this.router.navigate(['/landing', response.id]);
+            this.router.navigate(['/admin/dashboard']);
           },
           (error) => {
             // Si ocurre un error o la respuesta no es un Administrador, muestra un mensaje de error

@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
   { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
   {path: 'veterinario/all', component: VeterinarioMostrarTodosComponent},
+  {path: 'admin/dashboard', component: DashboardComponent},
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: '**', component:ErrorPageComponent}
 ];
