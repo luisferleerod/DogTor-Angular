@@ -22,19 +22,19 @@
 
         <div class="ventas">
             <div class="titulo">
-                <h1>Ganancias y ventas</h1>            
+              <h1>Ganancias y ventas</h1>            
             </div>
             <table class="tabla-info">
-                <tr>
-                    <td class="titulo-tabla borer-radius1">Ganancias Totales</td>
-                    <td class="contenido-tabla borer-radius2">99,999,999</td>
-                </tr>
-                <tr>
-                    <td class="titulo-tabla">Ventas Totales</td>
-                    <td  class="contenido-tabla">99,999,999</td>
-                </tr>
+              <tr>
+                <td class="titulo-tabla borer-radius1">Ganancias Totales</td>
+                <td class="contenido-tabla borer-radius2">{{ obtenerTotalGanancias() }}</td>
+              </tr>
+              <tr>
+                <td class="titulo-tabla">Ventas Totales</td>
+                <td  class="contenido-tabla">{{ obtenerTotalVentas() }}</td>
+              </tr>
             </table>
-        </div>
+          </div>
 
             
 
@@ -49,22 +49,14 @@
         <div class="datos-tratamientos">
             <div class="titulo">
                 <h1>Drogas más vendidas</h1>
-                <a type="button" class="info" [routerLink]="['/tratamiento/all']"><img src="../../../assets/info.png" alt=""></a>
+                <a type="button" class="info" [routerLink]="['/admin/tratamientos']"><img src="../../../assets/info.png" alt=""></a>
             </div>
             
 
             <table class="tabla-info">
-                <tr>
-                    <td class="titulo-tabla borer-radius1">Tratamiento 1</td>
-                    <td class="contenido-tabla borer-radius2">99</td>
-                </tr>
-                <tr>
-                    <td class="titulo-tabla">Tratamiento 2</td>
-                    <td  class="contenido-tabla">99</td>
-                </tr>
-                <tr>
-                    <td class="titulo-tabla borer-radius4">Tratamiento 3</td>
-                    <td class="contenido-tabla borer-radius3">99</td>
+                <tr *ngFor="let droga of drogasMasVendidas">
+                  <td class="titulo-tabla borer-radius1">{{ droga.nombre }}</td>
+                  <td class="contenido-tabla borer-radius2">{{ droga.unidadesVendidas }}</td>
                 </tr>
             </table>
         </div>
@@ -72,29 +64,28 @@
 
         <div class="veterinarios">
             <div class="titulo">
-                <h1>Veterinarios | Mascotas</h1>  
-                <a type="button" class="info" [routerLink]="['/tratamiento/all']"><img src="../../../assets/info.png" alt=""></a>
-          
+                <h1>Veterinarios | Mascotas</h1>
+                <a type="button" class="info" [routerLink]="['/veterinario/all']"><img src="../../../assets/info.png" alt=""></a>
             </div>
+    
             <table class="tabla-info">
                 <tr>
                     <td class="titulo-tabla borer-radius1">Veterinarios Activos</td>
-                    <td class="contenido-tabla borer-radius2">10</td>
+                    <td class="contenido-tabla borer-radius2">{{ cantidadVeterinariosActivos }}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Veterinarios Inactivos</td>
-                    <td  class="contenido-tabla">4</td>
+                    <td class="contenido-tabla">{{ cantidadVeterinariosInactivos }}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Mascotas Activas</td>
-                    <td class="contenido-tabla">10</td>
+                    <td class="contenido-tabla">{{ cantidadMascotasActivas }}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla borer-radius4">Mascotas Totales</td>
-                    <td class="contenido-tabla borer-radius3">40</td>
+                    <td class="contenido-tabla borer-radius3">{{ cantidadMascotasTotales }}</td>
                 </tr>
             </table>
-
         </div>
         
     </section>

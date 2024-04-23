@@ -16,6 +16,7 @@ import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-t
 import { DashboardComponent } from './administrador/dashboard/dashboard.component';
 import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
+import { TratamientoComponent } from './tratamiento/tratamiento.component';
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
   { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
   {path: 'veterinario/all', component: VeterinarioMostrarTodosComponent},
+  {path: 'admin/tratamientos', component: TratamientoComponent},
   {path: 'admin/dashboard', component: DashboardComponent},
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: '**', component:ErrorPageComponent}
