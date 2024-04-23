@@ -14,17 +14,18 @@
                 <div class="formulario">
                     <div class="izquierda">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required [(ngModel)]=formVeterinario.nombre>
     
                         <label for="usuario">Usuario:</label>
-                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required>
+                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario>
                         
                         
                         <label for="especialidad">Especialidad:</label>
 
-                        <select id="especialidad" name="especialidad" required>
-                            <option></option>
+                        <select id="especialidad" name="especialidad" required [(ngModel)]="formVeterinario.especialidad">
+                            <option *ngFor="let especialidad of listaEspecialidades" [value]="especialidad.id">{{ especialidad.especialidad }}</option>
                         </select>
+                        
                           
                         
                        
@@ -32,13 +33,13 @@
     
                     <div class="derecha">
                         <label for="foto">Foto (URL):</label>
-                        <input type="url" id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required >
+                        <input  id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required [(ngModel)]=formVeterinario.foto>
     
                         <label for="contrasena">Contrasena:</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required [(ngModel)]=formVeterinario.contrasena>
     
                         <label for="estado">Estado:</label>
-                        <select id="estado" name="estado" required>
+                        <select id="estado" name="estado" required [(ngModel)]=formVeterinario.estado>
                             <option value="activo">Activo</option>
                             <option value="inactivo">Inactivo</option>
                         </select>
@@ -46,7 +47,7 @@
 
                 </div>
                 
-                <button type="submit">Agregar Veterinario</button>
+                <button type="submit" (click)="actualizarVeterinario()" [disabled]="!camposLlenos()">Agregar Veterinario</button>
             </form>
         </div>
     </div>

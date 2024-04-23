@@ -51,4 +51,8 @@ export class VeterinarioService {
     this.http.delete("http://localhost:8090/veterinario/delete/"+id).subscribe();
   }
 
+  actualizarVeterinario(veterinario: veterinario) {
+    this.http.put<veterinario>("http://localhost:8090/veterinario/update/"+veterinario.id, veterinario).subscribe();
+ }
+
 }
