@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { veterinario } from '../veterinario';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { especialidad } from 'src/app/especialidad/especialidad';
 import Swal from 'sweetalert2';
+import { EspecialidadService } from 'src/app/service/especialidad.service';
 
 @Component({
   selector: 'app-crear-veterinario',
@@ -15,25 +17,48 @@ export class CrearVeterinarioComponent {
 
   sendVeterinario!: veterinario;
 
-  constructor(private veterinarioService: VeterinarioService, private route: ActivatedRoute, private router: Router) { }
+  listaEspecialidades!: especialidad[]
+
+  especialidad!: especialidad
+
+ 
+
+  constructor(private veterinarioService: VeterinarioService, private route: ActivatedRoute, private router: Router, private especialidadService: EspecialidadService) { }
+
+  formEspecialidad: especialidad = {
+
+    id: 0,
+    especialidad: ""
+  }
 
   formVeterinario: veterinario = {
    
     id: 0,
     usuario: "",
     nombre: "",
-    especialidad: "",
     contrasena: "",
     foto: "",
     numAtenciones: 0,
-    estado: ""
+    estado: "",
+    especialidad: {
+      id: 0,
+      especialidad: ""}
+   
   };
+
+  ngOnInit(): void {
+    this.especialidadService.findAll().subscribe((especialidad: especialidad[]) => {
+      this.listaEspecialidades = especialidad;
+    });
+
+    
+  }
 
   camposLlenos(): boolean {
 
     return this.formVeterinario.nombre !== '' && 
            this.formVeterinario.foto !== '' && 
-           this.formVeterinario.especialidad !== '' && 
+           this.formVeterinario.especialidad !== null && 
            this.formVeterinario.usuario !== '' &&
            this.formVeterinario.contrasena !== '';
 
@@ -64,9 +89,23 @@ export class CrearVeterinarioComponent {
       
       this.listVeterinarios = veterinario;
 
+      console.log(this.formEspecialidad.especialidad)
       this.sendVeterinario.id = this.listVeterinarios.length + 1;
 
-      this.veterinarioService.agregarVeterinario(this.sendVeterinario);
+      for(let i = 0; i < this.listaEspecialidades.length; i++) {
+        
+
+        if(this.formEspecialidad.especialidad == this.listaEspecialidades[i].especialidad) {
+          
+
+          this.sendVeterinario.especialidad =Object.assign({}, this.listaEspecialidades[i]);
+
+          
+        
+      }
+    }
+
+      this.veterinarioService.agregarVeterinario(this.sendVeterinario)
 
       this.mostrarAlerta();
     })

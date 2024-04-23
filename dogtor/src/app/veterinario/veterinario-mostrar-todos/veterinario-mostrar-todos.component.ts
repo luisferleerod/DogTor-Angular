@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { veterinario } from '../veterinario';
+import { EspecialidadService } from 'src/app/service/especialidad.service';
 
 @Component({
   selector: 'app-veterinario-mostrar-todos',
@@ -12,13 +13,12 @@ export class VeterinarioMostrarTodosComponent {
 
   listaVeterinarios!: veterinario[]
   veterinario!: veterinario
-  constructor(private veterinarioService: VeterinarioService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private veterinarioService: VeterinarioService, private route: ActivatedRoute, private router: Router, private especialidadService: EspecialidadService) { }
 
 
   ngOnInit(): void {
-    this.veterinario = this.veterinarioService.getVeterinario();
     
-
+    
     this.veterinarioService.findAll().subscribe((veterinarios) => this.listaVeterinarios = veterinarios, (error) => {
       
     })

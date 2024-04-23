@@ -19,9 +19,15 @@
                         <label for="usuario">Usuario:</label>
                         <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario>
                         
+                        
                         <label for="especialidad">Especialidad:</label>
-                        <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad del veterinario" required [(ngModel)]=formVeterinario.especialidad>
-    
+
+                        <select id="especialidad" name="especialidad" required [(ngModel)]="formEspecialidad.especialidad">
+                            <option *ngFor="let especialidad of listaEspecialidades">{{especialidad.especialidad}}</option>
+                        </select>
+                          
+                        
+                       
                     </div>
     
                     <div class="derecha">

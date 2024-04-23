@@ -32,13 +32,7 @@ export class MostrarClienteComponent {
           this.mascotas = mascotas;
 
           // Verificar si hay mascotas antes de acceder a sus propiedades
-          if (this.mascotas.length > 0) {
-            console.log("MASCOTAS DESDE MOSTRAR CLIENTE");
-            console.log(this.mascotas[0].nombre);
-            console.log(this.mascotas[0].id);
-
-            
-          }
+          
         });
       });
     });

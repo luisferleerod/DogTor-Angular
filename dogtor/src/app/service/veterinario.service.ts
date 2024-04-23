@@ -32,8 +32,9 @@ export class VeterinarioService {
     return this.http.get<veterinario>('http://localhost:8090/veterinario/iniciarSesionTrabajador/' + usuario + '/' + contrasena);
   }
 
-  findAll(): Observable<veterinario[]> {
+  findAll(): Observable<veterinario[]>  {
     return this.http.get<veterinario[]>("http://localhost:8090/veterinario/all");
+   
   }
 
   agregarVeterinario(veterinario: veterinario) {

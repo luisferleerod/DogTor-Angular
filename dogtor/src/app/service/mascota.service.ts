@@ -31,11 +31,7 @@ export class MascotaService {
         cliente: mascota.cliente
       };
 
-      console.log("--------------------")
-      console.log("DATA CLIENTE:")
-
-      console.log(data.cliente.cedula)
-      console.log(data.cliente.nombre)
+     
 
       this.http.put("http://localhost:8090/mascotas/add", data).subscribe();
     // console.log("Agregando mascota en la bd")
@@ -49,13 +45,6 @@ export class MascotaService {
   actualizarMascota(mascota: mascota) {
 
   if(mascota.cliente != null){
-    console.log("recibiendo MASCOTA DESDE ACTUALIZAR MASCOTA COMPONENT"+mascota)
-    console.log(mascota.id)
-    console.log(mascota.nombre)
-    console.log(mascota.enfermedad)
-    console.log(mascota.estado)
-    console.log(mascota.cliente.cedula)
-
 
     const data = {
       mascota: mascota,
@@ -64,10 +53,7 @@ export class MascotaService {
     
     this.http.put("http://localhost:8090/mascotas/update/"+mascota.id, data).subscribe();
     
-    // this.http.put<mascota>("http://localhost:8090/mascotas/update/"+mascota.id, mascota).subscribe();
-
-    // this.http.put<Cliente>("http://localhost:8090/cliente/update/"+mascota.cliente.id, mascota.cliente).subscribe();
-  }
+    }
 
   else{
     console.log("CLIENTE NULOOOOO")
