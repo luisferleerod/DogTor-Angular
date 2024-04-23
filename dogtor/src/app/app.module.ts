@@ -27,6 +27,7 @@ import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-t
 import { DashboardComponent } from './administrador/dashboard/dashboard.component';
 import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
+import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 
 
 
@@ -60,6 +61,7 @@ import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/m
     DashboardComponent,
     VeterinarioMostrarTodosComponent,
     MostrarVeterinarioComponent,
+    ActualizarVeterinarioComponent,
   ],
   imports: [
     BrowserModule,

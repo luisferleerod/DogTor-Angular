@@ -4,7 +4,8 @@
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #80CBE9;
+    background: url("../../../assets//nuevoFondoFormulario.jpg");
+    background-size: cover;
     font-family: "Abel", sans-serif;
     font-size: 14px;
 }
@@ -24,20 +25,13 @@ input::-webkit-inner-spin-button {
     z-index: -1;
 }
 
-.formulario-container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #333;
-}
-
 .contenedor-formulario {
-    width: 350px;
-    padding: 20px; /* Reducir el espaciado interno */
+    width: 500px;
+    padding: 1.5rem; /* Reducir el espaciado interno */
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0rem 0 0rem 30rem;
+    margin: 0rem 0 0rem 40rem;
     background-color: #fff;
 }
 
@@ -59,9 +53,8 @@ h1 {
     font-size: 40px;
 }
 
-form {
+.formulario {
     display: flex;
-    flex-direction: column;
 }
 
 label {

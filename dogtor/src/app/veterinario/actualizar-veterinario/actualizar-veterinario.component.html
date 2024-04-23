@@ -1,0 +1,54 @@
+<div class="body">
+
+    <img class="fondo-imagen" src="../../../assets/nuevoFondoFormulario.jpg" alt="Fondo">
+
+    <div class="formulario-container">
+        <div class="contenedor-formulario">
+            <div class="logo-container">
+                <img src="../../../assets/logo_basico.png" alt="Logo">
+            </div>
+
+            <h1>Actualizar Veterinario</h1>
+
+            <form action="#" method="post" id="nuevoVeterinarioForm">
+                <div class="formulario">
+                    <div class="izquierda">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required>
+    
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required>
+                        
+                        
+                        <label for="especialidad">Especialidad:</label>
+
+                        <select id="especialidad" name="especialidad" required>
+                            <option></option>
+                        </select>
+                          
+                        
+                       
+                    </div>
+    
+                    <div class="derecha">
+                        <label for="foto">Foto (URL):</label>
+                        <input type="url" id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required >
+    
+                        <label for="contrasena">Contrasena:</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required>
+    
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+
+                </div>
+                
+                <button type="submit">Agregar Veterinario</button>
+            </form>
+        </div>
+    </div>
+
+</div>
