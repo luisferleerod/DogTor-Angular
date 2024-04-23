@@ -48,6 +48,10 @@ export class ClienteService {
    
     return this.http.get<mascota[]>("http://localhost:8090/cliente/mascotas/"+id);
   }
+
+  delete(id: number) {
+    this.http.delete("http://localhost:8090/cliente/delete/"+id).subscribe();
+  }
 }
 
   
