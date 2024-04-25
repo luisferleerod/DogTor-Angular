@@ -14,5 +14,12 @@ export class DrogaService {
     return this.http.get<droga[]>("http://localhost:8090/drogas/all");
   }
   
+  masVendidas(): Observable<droga[]> {
+    return this.http.get<droga[]>("http://localhost:8090/drogas/masVendidas");
+  }
+
+  totalVentas(): Observable<number> {
+    return this.http.get<number>("http://localhost:8090/drogas/totalVentas");
+  }
 }
   
