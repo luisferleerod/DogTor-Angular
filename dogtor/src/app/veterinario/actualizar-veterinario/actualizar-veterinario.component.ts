@@ -35,11 +35,7 @@ export class ActualizarVeterinarioComponent {
       
     });
 
-    this.especialidadService.findAll().subscribe((especialidad: especialidad[]) => {
-      this.listaEspecialidades = especialidad;
-
-      console.log(this.listaEspecialidades)
-    });
+    
     
   }
 

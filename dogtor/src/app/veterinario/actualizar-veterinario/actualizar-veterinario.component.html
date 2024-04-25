@@ -21,10 +21,8 @@
                         
                         
                         <label for="especialidad">Especialidad:</label>
-
-                        <select id="especialidad" name="especialidad" required [(ngModel)]="formVeterinario.especialidad">
-                            <option *ngFor="let especialidad of listaEspecialidades" [value]="especialidad.id">{{ especialidad.especialidad }}</option>
-                        </select>
+                        <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad" required [(ngModel)]=formVeterinario.especialidad>
+                        
                         
                           
                         

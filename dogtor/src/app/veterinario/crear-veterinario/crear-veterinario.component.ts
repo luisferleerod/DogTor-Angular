@@ -40,10 +40,7 @@ export class CrearVeterinarioComponent {
     foto: "",
     numAtenciones: 0,
     estado: "",
-    especialidad: {
-      id: 0,
-      especialidad: ""}
-   
+    especialidad: ""
   };
 
   ngOnInit(): void {
@@ -89,27 +86,18 @@ export class CrearVeterinarioComponent {
       
       this.listVeterinarios = veterinario;
 
-      console.log(this.formEspecialidad.especialidad)
       this.sendVeterinario.id = this.listVeterinarios.length + 1;
 
-      for(let i = 0; i < this.listaEspecialidades.length; i++) {
-        
-
-        if(this.formEspecialidad.especialidad == this.listaEspecialidades[i].especialidad) {
-          
-
-          this.sendVeterinario.especialidad =Object.assign({}, this.listaEspecialidades[i]);
-
-          
-        
-      }
-    }
+     
+            })
 
       this.veterinarioService.agregarVeterinario(this.sendVeterinario)
 
       this.mostrarAlerta();
-    })
+    
   }
+
+
 
 
   mostrarAlerta(){
