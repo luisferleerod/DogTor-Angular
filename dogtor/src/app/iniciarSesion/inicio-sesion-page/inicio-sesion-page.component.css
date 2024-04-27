@@ -11,8 +11,7 @@
     font-family: var(--font-dosis);
     margin: 0;
     padding: 0;
-    background: url(../../../assets/fondo_login3.jpg);
-    background-color: inherit;
+    background: url(../../../assets/fondo_login.jpg);
     display: flex;
     background-size: cover;
     width: 100vw;

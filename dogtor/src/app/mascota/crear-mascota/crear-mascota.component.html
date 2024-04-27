@@ -1,54 +1,42 @@
-<div class="body">
+<section class="body">
+    <div class="contenedor-formulario">
+        <div class="logo">
+            <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
+        </div>
+        <h1>Nuevo Paciente</h1>
+        <form>
+            <label for="foto">Foto (URL):</label>
+            <input type="url" id="foto" name="foto" placeholder="Ingrese la URL del paciente" required [(ngModel)]=formMascota.foto >
 
-    <img class="fondo-imagen" src="../../../assets/nuevoFondoForms.jpg" alt="Fondo">
+            <div class="contenedor-inputs">
+                <div class="primera-columna">
+                    <label for="nombre">Nombre:</label>
+                    <input  type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del paciente" required [(ngModel)]=formMascota.nombre>
 
-    <div class="formulario-container">
-        <div class="contenedor-formulario">
-            <div class="logo-container">
-                <img src="../../../assets/logo_basico.png" alt="Logo">
-            </div>
+                    <label for="raza">Raza:</label>
+                    <input  type="text" id="raza" name="raza" placeholder="Ingrese la raza del paciente" required [(ngModel)]=formMascota.raza>
 
-            <h1>Nuevo Paciente</h1>
-
-            <form  class="formulario">
-
-                <div class="contenedor-inputs">
-                    <div class="primera-columna">
-                        <label for="nombre">Nombre:</label>
-                        <input  type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del paciente" required [(ngModel)]=formMascota.nombre>
-    
-                        <label for="raza">Raza:</label>
-                        <input  type="text" id="raza" name="raza" placeholder="Ingrese la raza del paciente" required [(ngModel)]=formMascota.raza>
-    
-                        <label for="edad">Edad:</label>
-                        <input  type="number" id="edad" name="edad" placeholder="Ingrese la edad del paciente" required inputmode="numeric" [(ngModel)]=formMascota.edad>
-    
-                        <label for="peso">Peso (KG):</label>
-                        <input  type="number" id="peso" name="peso" placeholder="Ingrese el peso del paciente" required inputmode="numeric" [(ngModel)]=formMascota.peso>
-                    </div>
-    
-                    <div class="segunda-columna">
-                        <label for="foto">Foto (URL):</label>
-                        <input type="url" id="foto" name="foto" placeholder="Ingrese la URL del paciente" required [(ngModel)]=formMascota.foto >
-    
-                        <label for="enfermedad">Enfermedad</label>
-                        <input  type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese la enfermedad del paciente" required [(ngModel)]=formMascota.enfermedad>
-    
-                        <label for="estado" hidden>Estado</label>
-                        <input  type="hidden" name="estado" id="estado" value="activo" [(ngModel)]=formMascota.estado>
-    
-                        <label for="cedulaDueno">Cédula del Dueño:</label>
-                        <input  type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required [(ngModel)]=formClient.cedula>
-
-                        <button  type="submit" (click)="addMascotaForm()" [disabled]="!camposLlenos()" >Agregar Paciente</button>
-                    </div>
+                    <label for="edad">Edad:</label>
+                    <input  type="number" id="edad" name="edad" placeholder="Ingrese la edad del paciente" required inputmode="numeric" [(ngModel)]=formMascota.edad>
                 </div>
 
+                <div class="segunda-columna">
+                    <label for="peso">Peso (KG):</label>
+                    <input  type="number" id="peso" name="peso" placeholder="Ingrese el peso del paciente" required inputmode="numeric" [(ngModel)]=formMascota.peso>
+                    
+                    <label for="enfermedad">Enfermedad</label>
+                    <input  type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese la enfermedad del paciente" required [(ngModel)]=formMascota.enfermedad>
+
+                    <label for="estado" hidden>Estado</label>
+                    <input  type="hidden" name="estado" id="estado" value="activo" [(ngModel)]=formMascota.estado>
+
+                    <label for="cedulaDueno">Cédula del Dueño:</label>
+                    <input  type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required [(ngModel)]=formClient.cedula>
+                </div>
                 
-            </form>
+            </div>
+            <button  type="submit" (click)="addMascotaForm()" [disabled]="!camposLlenos()">AGREGAR PACIENTE</button>
 
-            
-        </div>
+        </form>
     </div>
-
-</div>
+</section>

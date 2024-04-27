@@ -1,51 +1,49 @@
-<div class="body">
-    <img class="fondo-imagen" src="../../../assets/nuevoFondoForms.jpg" alt="Fondo">
-    <div class="formulario-container">
-        <div class="contenedor-formulario">
-            <div class="logo-container">
-                <img src="../../../assets/logo_basico.png" alt="Logo">
-            </div>
-
-            <h1>Editar Paciente</h1>
-            <form class="formulario" method="post">
-                <div class="contenedor-inputs">
-                    <div class="primera-columna">
-                        <label for="nombre">Nombre</label>
-                        <input  type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre">
-
-                        <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
-                        <input  type="hidden" name="id" id="id" [(ngModel)]="formMascota.id">
-
-                        <label for="raza">Raza</label>
-                        <input  type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza">
-
-                        <label for="edad">Edad</label>
-                        <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad">
-
-                        <label for="peso">Peso</label>
-                        <input  type="number" name="peso" id="peso" [(ngModel)]="formMascota.peso">
-                    </div>
-                    <div class="segunda-columna">
-                        <label for="foto">Foto</label>
-                        <input  type="text" name="foto" id="foto" [(ngModel)]="formMascota.foto">
-
-                        <label for="enfermedad">Enfermedad</label>
-                        <input  type="text" name="enfermedad" id="enfermedad" [(ngModel)]="formMascota.enfermedad">
-
-                        <label for="cedulaDueno">Cédula del Dueño:</label>
-                        <input  type="text" id="cedulaDueno" name="cedulaDueno" [(ngModel)]="formClient.cedula">
-
-                        <label for="estado">Estado</label>
-                        <select id="estado" name="estado" [(ngModel)]="formMascota.estado">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" (click)="updateMascota()" [disabled]="!camposLlenos()">Actualizar</button>
-
-
-            </form>
+<section class="body">
+    <div class="contenedor-formulario">
+        <div class="logo">
+            <img src="../../../assets/logo_basico.png" alt="Logo">
         </div>
+        <h1>Editar Paciente</h1>
+        <form method="post">
+
+            <div class="contenedor-inputs">
+                <div class="primera-columna">
+                    <label for="nombre">Nombre</label>
+                    <input  type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre">
+
+                    <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
+                    <input  type="hidden" name="id" id="id" [(ngModel)]="formMascota.id">
+
+                    <label for="raza">Raza</label>
+                    <input  type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza">
+
+                    <label for="edad">Edad</label>
+                    <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad">
+
+                    <label for="foto">Foto</label>
+            <input  type="text" name="foto" id="foto" [(ngModel)]="formMascota.foto">
+                </div>
+                <div class="segunda-columna">
+                    <label for="peso">Peso</label>
+                    <input  type="number" name="peso" id="peso" [(ngModel)]="formMascota.peso">
+
+                    <label for="enfermedad">Enfermedad</label>
+                    <input  type="text" name="enfermedad" id="enfermedad" [(ngModel)]="formMascota.enfermedad">
+
+                    <label for="cedulaDueno">Cédula del Dueño:</label>
+                    <input  type="text" id="cedulaDueno" name="cedulaDueno" [(ngModel)]="formClient.cedula">
+
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" [(ngModel)]="formMascota.estado">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+
+                </div>
+            </div>
+            <button type="submit" (click)="updateMascota()" [disabled]="!camposLlenos()">ACTUALIZAR MASCOTA</button>
+
+        </form>
     </div>
-</div>
+</section>
+
