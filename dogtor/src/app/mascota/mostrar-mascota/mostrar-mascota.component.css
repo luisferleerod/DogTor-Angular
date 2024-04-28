@@ -16,7 +16,6 @@ html {
 
 .body {
     box-sizing: border-box;
-    background-color: var(--color-primario);
     font-family: var(--font-dosis);
     max-width: 100%;
     overflow-y: scroll;
@@ -81,7 +80,6 @@ table {
     border-radius: .7rem;
     width: 100%;
     overflow: hidden;
-    background-color: #035A6C;
     color: white;
 }
 
@@ -97,6 +95,7 @@ table {
 .datos-paciente td{
     padding: 1rem 6rem 1rem 6rem;
     margin: 0;
+    border-bottom: #48b6c2 solid 1px;
 }
 
 .titulo{
@@ -152,7 +151,7 @@ table {
     font-weight: bold;
     padding: 1rem;
     font-size: 18px;
-    
+    border-bottom: #48b6c2 solid 1px;
 }
 
 a { 

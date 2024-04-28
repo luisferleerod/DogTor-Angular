@@ -28,6 +28,7 @@ import { DashboardComponent } from './administrador/dashboard/dashboard.componen
 import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
+import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear-tratamiento.component';
 
 
 
@@ -62,6 +63,7 @@ import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterin
     VeterinarioMostrarTodosComponent,
     MostrarVeterinarioComponent,
     ActualizarVeterinarioComponent,
+    CrearTratamientoComponent,
   ],
   imports: [
     BrowserModule,

@@ -84,22 +84,22 @@ thead {
 }
 
 th {
-    padding: 1rem;
+    padding: 1.1rem;
     font-size: 20px;
 }
 
 td {
-    padding: .7rem;
+    padding: 1rem;
     font-size: 20px;
     background-color: #D5FCFF;
-    justify-content: center;
-    align-items: center;
+    text-transform: capitalize;
+    border-bottom: #18a3be 1px solid;
 
 }
 
 .contenedor-botones {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-right: 1.6rem;
     color: #D5FCFF;
     height: 26px;
@@ -208,7 +208,7 @@ nav{
 }
 
 .menu-principal li:hover{
-    background-color: var(--color-contraste);
+    background-color: #e55807;
     color: white;
     border-radius: .7rem;
     transition-duration: 300ms;

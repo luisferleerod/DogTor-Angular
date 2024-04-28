@@ -1,0 +1,144 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+.body {
+    box-sizing: border-box;
+    font-family: var(--font-dosis);
+    margin: 0;
+    padding: 0;
+    background-image: url("../../../assets/fondo-forms-mascotas.png");
+    display: flex;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+/*Esto es para que el input no muestre las flechas cuando es numerico*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.contenedor-formulario {
+    width: 500px;
+    height: 400px;
+    padding: 1rem;
+    background-color: #ecf8f9;
+    border-radius: .7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 0rem 4.2rem 45rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo img {
+    width: 4rem;
+    height: auto;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 1rem 1rem .2rem 1rem; 
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    margin: 0;
+}
+
+form {
+    margin-top: 1rem;
+    width: 95%;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: .5rem;
+}
+
+form input {
+    width: 95%;
+    padding: .4rem; 
+    border: none;
+    border-radius: .3rem;
+    background-color: #9DEEFF;
+}
+
+input,
+select {
+    padding: 8px; /* Reducir el espaciado interno */
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
+    color: #818181;
+    background-color: #9DEEFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contenedor-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Otra opción es usar space-around o space-evenly según tu preferencia */
+}
+
+.primera-columna,
+.segunda-columna {
+    box-sizing: border-box;
+    width: 48%; /* Puedes ajustar este porcentaje según tu diseño */
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
+}
+
+.primera-columna label,
+.segunda-columna label {
+    text-align: left; /* Alinear el texto del label a la izquierda */
+}
+
+.segunda-columna button{
+    margin-top: 26px;
+}
+
+button {
+    margin-top: 1rem;
+    padding: .5rem;
+    width: 100%;
+    background-color: var(--color-secundario);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2S;
+}
+
+button:hover {
+    background-color: #e55807;
+    transition: .2s;
+}
