@@ -46,23 +46,21 @@
 
 
     <section class="tratamientos">
-        <h1 class="titulo2">TRATAMIENTOS (QUEMADOS)</h1>
+        <h1 class="titulo2">TRATAMIENTOS</h1>
         <table>
-            <th class="titulo-tabla borer-radius1">DROGA</th>
-            <th class="titulo-tabla">VETERINARIO</th>
-            <th class="titulo-tabla borer-radius2">FECHA</th>
-            
-            <tr>
-                <td class="contenido-tabla">Keppra 5mg</td>
-                <td class="contenido-tabla">Pepita</td>
-                <td class="contenido-tabla">1/1/24</td>
-            </tr>
+            <thead>
+                <th class="titulo-tabla borer-radius1">DROGA</th>
+                <th class="titulo-tabla">VETERINARIO</th>
+                <th class="titulo-tabla borer-radius2">FECHA</th>
+            </thead>
 
-            <tr>
-                <td class="contenido-tabla">Keppra 5mg</td>
-                <td class="contenido-tabla">Pepito</td>
-                <td class="contenido-tabla">1/1/24</td>
-            </tr>
+            <tbody>
+                <tr *ngFor="let tratamiento of tratamientos">
+                    <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
+                    <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
+                    <td class="contenido-tabla">{{tratamiento.fecha}}</td>
+                </tr>
+            </tbody>
 
         </table>
 

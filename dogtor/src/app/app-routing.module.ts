@@ -18,6 +18,7 @@ import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-most
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 import { TratamientoComponent } from './tratamiento/tratamiento.component';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
+import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear-tratamiento.component';
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'veterinario/all', component: VeterinarioMostrarTodosComponent},
   {path: 'admin/tratamientos', component: TratamientoComponent},
   {path: 'admin/dashboard', component: DashboardComponent},
+  {path: 'tratamiento/crear/:id', component: CrearTratamientoComponent},
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: '**', component:ErrorPageComponent}
 ];
