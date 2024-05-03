@@ -16,6 +16,7 @@ export class ClienteMostrarTodosComponent {
   listaClientes!: Cliente[];
   clienteAct!: Cliente;
 
+  toggleText: string = 'Clientes';
   // Constructior es para inyectar dependencias
   constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router) {
     
@@ -61,6 +62,26 @@ export class ClienteMostrarTodosComponent {
 
   
   }
+
+  toggleSlide(event: Event) {
+    event.stopPropagation(); // Evita que el evento se propague
+
+    // Determinar la URL y el nuevo texto del toggle
+    let url: string;
+    let newText: string;
+    if (this.toggleText === 'Mascotas') {
+      url = '/cliente/all';
+      newText = 'Clientes';
+    } else {
+      url = '/mascota/all';
+      newText = 'Mascotas';
+    }
+
+    // Redirigir a la nueva URL y actualizar el texto del toggle
+    this.router.navigateByUrl(url);
+    this.toggleText = newText;
+}
+
 }
 
 

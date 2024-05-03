@@ -112,11 +112,6 @@ export class CrearMascotaComponent {
       this.mascotaService.findAll().subscribe((mascotas: mascota[]) => {
         this.listMascotas = mascotas;
     
-        console.log("RECIBIENDO MASCOTA DEL FORMULARIO")
-        console.log(this.sendMascota.nombre)
-        console.log(this.sendMascota.cliente?.cedula)
-        
-        console.log(this.listMascotas.length)
         this.sendMascota.id = this.listMascotas.length + 1;
     
         // this.addMascotaEvent.emit(this.sendMascota);
@@ -141,7 +136,6 @@ export class CrearMascotaComponent {
         this.router.navigate(['/mascota/all']);
       }
     });
-
     
   }
 }

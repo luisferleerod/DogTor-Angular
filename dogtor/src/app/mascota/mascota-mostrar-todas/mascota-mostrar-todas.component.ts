@@ -50,8 +50,23 @@ export class MascotaMostrarTodasComponent {
 
   toggleSlide(event: Event) {
     event.stopPropagation(); // Evita que el evento se propague
-    this.toggleText = this.toggleText === 'Mascotas' ? 'Clientes' : 'Mascotas';
-  }
+
+    // Determinar la URL y el nuevo texto del toggle
+    let url: string;
+    let newText: string;
+    if (this.toggleText === 'Mascotas') {
+      url = '/cliente/all';
+      newText = 'Clientes';
+    } else {
+      url = '/mascota/all';
+      newText = 'Mascotas';
+    }
+
+    // Redirigir a la nueva URL y actualizar el texto del toggle
+    this.router.navigateByUrl(url);
+    this.toggleText = newText;
+}
+
   
   
   
