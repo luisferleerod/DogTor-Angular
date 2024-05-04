@@ -90,9 +90,10 @@ addTratamientoForm() {
         this.drogaAux=Object.assign({}, this.drogas[i])
         console.log(this.drogaAux)
         i=this.drogas.length
-        
+
       }
   }
+  if(this.drogaAux.unidadesDisponibles>0){
 
   this.sendTratamiento = Object.assign({}, this.formTratamiento);
   this.sendTratamiento.fecha=this.fecha
@@ -111,6 +112,14 @@ addTratamientoForm() {
     this.mostrarAlerta();
 
   })
+}else{
+  Swal.fire({
+    title: 'ERROR',
+    text: 'No hay unidades disponibles',
+    icon: 'error',
+    confirmButtonText: '¡Entendido!'
+  })
+}
 }
 }
 
