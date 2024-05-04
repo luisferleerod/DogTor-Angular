@@ -7,6 +7,10 @@
         
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
+                <label class="switchBtn" (click)="toggleSlide($event)">
+                    <input class="punto" type="checkbox">
+                    <div class="slide round">{{ toggleText }}</div>
+                </label>
                 <a href="#datos-dueno"><li>Tu Información</li></a>
                 <a href="#mascotas"><li>Tus Mascotas</li></a>
                 <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>

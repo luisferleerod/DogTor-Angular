@@ -4,27 +4,26 @@
             <img src="../../../assets/logo_basico.png" alt="oddie-blanco">
         </div>
         <h1>Nuevo Tratamiento Para:</h1>
-        <h3>mascota.nombre</h3>
+        <h3>{{mascota.nombre}}</h3>
         <form>
 
             <div class="contenedor-inputs">
                 <div class="primera-columna">
                     <label for="foto">Droga:</label>
-            <select name="droga" id="">
-                <option value="droga1">Droga 1 (Quemada)</option>
-                <option value="droga2">Droga 2 (Quemada)</option>
-                <option value="droga3">Droga 3 (Quemada)</option>
-            </select>
-
+                    <select name="drogaNombre" id="" [(ngModel)]="drogaSelect" >
+                        <option *ngFor="let droga of drogas" [value]="droga.nombre">{{ droga.nombre }}</option>
+                    </select>
+                
                 </div>
 
                 <div class="segunda-columna">
                     <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
+                    <input type="date" id="fecha" name="fecha" [(ngModel)]="fecha"  required>
+
                 </div>
                 
             </div>
-            <button  type="submit">AGREGAR TRATAMIENTO</button>
+            <button  type="submit" (click)="addTratamientoForm()"  >AGREGAR TRATAMIENTO</button>
 
         </form>
     </div>
