@@ -90,6 +90,7 @@ addTratamientoForm() {
         this.drogaAux=Object.assign({}, this.drogas[i])
         console.log(this.drogaAux)
         i=this.drogas.length
+        
       }
   }
 
