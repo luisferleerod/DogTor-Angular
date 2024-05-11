@@ -40,7 +40,7 @@ export class ClienteService {
   }
 
   agregarCliente(cliente: Cliente) {
-    this.http.put<Cliente>("http://localhost:8090/cliente/add",cliente).subscribe();
+    this.http.post<Cliente>("http://localhost:8090/cliente/add",cliente).subscribe();
   }
 
   findMascotas(id: Number): Observable<mascota[]> {

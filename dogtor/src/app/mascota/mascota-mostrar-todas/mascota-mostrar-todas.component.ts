@@ -22,6 +22,7 @@ export class MascotaMostrarTodasComponent {
   // Constructior es para inyectar dependencias
 
   veterinario!: veterinario;
+  searchTerm: any;
 
   constructor(private mascotaService: MascotaService, private route: ActivatedRoute, private router: Router, private veterinarioService: VeterinarioService) {
   }
@@ -65,6 +66,20 @@ export class MascotaMostrarTodasComponent {
     // Redirigir a la nueva URL y actualizar el texto del toggle
     this.router.navigateByUrl(url);
     this.toggleText = newText;
+}
+
+
+buscarMascotas() {
+  if (this.searchTerm.trim() !== '') {
+    this.listaMascotas = this.listaMascotas.filter(mascota =>
+      mascota.nombre.toLowerCase().includes(this.searchTerm.toLowerCase()) );
+  } else {
+    // Si el término de búsqueda está vacío, restaura la lista original
+    this.mascotaService.findAll().subscribe(
+      clientes => this.listaMascotas = clientes,
+      error => console.error(error)
+    );
+  }
 }
 
   

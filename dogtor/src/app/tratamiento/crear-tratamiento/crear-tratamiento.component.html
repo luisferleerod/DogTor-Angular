@@ -10,8 +10,8 @@
             <div class="contenedor-inputs">
                 <div class="primera-columna">
                     <label for="foto">Droga:</label>
-                    <select name="drogaNombre" id="" [(ngModel)]="drogaSelect" >
-                        <option *ngFor="let droga of drogas" [value]="droga.nombre">{{ droga.nombre }}</option>
+                    <select name="drogaNombre" id="nombreDrogas" [(ngModel)]="drogaSelect" >
+                        <option id="nameOptions" *ngFor="let droga of drogas" [value]="droga.nombre">{{ droga.nombre }}</option>
                     </select>
                 
                 </div>
@@ -23,7 +23,7 @@
                 </div>
                 
             </div>
-            <button  type="submit" (click)="addTratamientoForm()"  >AGREGAR TRATAMIENTO</button>
+            <button  type="submit" id="btnNuevoTratamiento" (click)="addTratamientoForm()"  >AGREGAR TRATAMIENTO</button>
 
         </form>
     </div>

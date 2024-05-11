@@ -8,8 +8,10 @@
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
 
-
-                <label class="switchBtn" (click)="toggleSlide($event)">
+                <div class="search-bar">
+                    <input id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar mascotas..." (input)="buscarMascotas()">
+                </div>
+                <label class="switchBtn" (click)="toggleSlide($event)" id="btnIrCliente">
                     <input class="punto" type="checkbox">
                     <div class="slide round">{{ toggleText }}</div>
                 </label>
@@ -26,7 +28,7 @@
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todas las Mascotas</h1>
 
-            <a type="button" class="mas" [routerLink]="['/mascota/crear']"><img src="../../../assets/mas.png" alt=""></a>
+            <a type="button" class="mas" id="btnCrearMascota" [routerLink]="['/mascota/crear']"><img src="../../../assets/mas.png" alt=""></a>
             
         </div>
     </div>
@@ -45,7 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let mascota of listaMascotas">
+                <tr *ngFor = "let mascota of listaMascotas" id="mascota">
                     <td>{{mascota.nombre}}</td>
                     <td>{{mascota.raza}}</td>
                     <td>{{mascota.edad}}</td>
@@ -57,17 +59,27 @@
                         <div class="contenedor-botones">
 
                             <div contenedor-boton3>
+                                
                                 <a [routerLink]="['/mascota/mostrar', mascota.id]">
                                     <img class="boton-borrar" src="../../../assets/ver_naranja.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/ver.png" alt="">
                                 </a>
+                                
+                                <!--
+                                Esto sirve para pruebas de sistema, si se desea hacer, descomentar esto y comentar lo de arriba
+                                <a type="button" class="boton-borrar" id="btnDetallesMascota" [routerLink]="['/mascota/mostrar', mascota.id]"><img src="../../../assets/ver.png"  alt=""></a>
+                                -->
                             </div>
 
-                            <div contenedor-boton2>
-                                <a [routerLink]="['/tratamiento/crear', mascota.id]" >
+                            <div contenedor-boton4>
+                                <a type="button" [routerLink]="['/tratamiento/crear', mascota.id]" id="btnCrearTratamiento">
                                     <img class="boton-borrar" src="../../../assets/tratamiento_verde.png" alt="">
                                     <img class="boton-borrar" src="../../../assets/tratamiento.png" alt="">
-                                </a>
+                                </a>                       
+                                <!--
+                                Esto sirve para pruebas de sistema, si se desea hacer, descomentar esto y comentar lo de arriba
+                                <a type="button" class="boton-borrar" id="btnCrearTratamiento" [routerLink]="['/tratamiento/crear', mascota.id]"><img src="../../../assets/tratamiento.png"  alt=""></a>
+                                -->
                             </div>
                             
                             <div contenedor-boton2>

@@ -11,7 +11,7 @@
             <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
             <br>
             
-            <input type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
+            <input id= "btnIngresar" type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">
 
             <a [routerLink]="['/iniciarSesionTrabajador']" class="ingreso-trabajador">
                 <p>Ingresar como trabajador</p>

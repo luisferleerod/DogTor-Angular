@@ -23,7 +23,7 @@
                 <input type="number" id="celular" name="celular" placeholder="Ingrese su celular"  [(ngModel)]=formCliente.celular required>
 
 
-                <button type="submit" (click)="addClienteForm()" [disabled]="!camposLlenos()">Agregar Cliente</button>
+                <button type="submit" id="btnCrearCliente" (click)="addClienteForm()" [disabled]="!camposLlenos()">Agregar Cliente</button>
 
             </form>
         </div>

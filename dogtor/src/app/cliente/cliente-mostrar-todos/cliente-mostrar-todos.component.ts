@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 export class ClienteMostrarTodosComponent {
   listaClientes!: Cliente[];
   clienteAct!: Cliente;
+  searchTerm: string = '';
 
   toggleText: string = 'Clientes';
   // Constructior es para inyectar dependencias
@@ -80,8 +81,22 @@ export class ClienteMostrarTodosComponent {
     // Redirigir a la nueva URL y actualizar el texto del toggle
     this.router.navigateByUrl(url);
     this.toggleText = newText;
-}
+  }
+
+  buscarClientes() {
+    if (this.searchTerm.trim() !== '') {
+      this.listaClientes = this.listaClientes.filter(cliente =>
+        cliente.nombre.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        cliente.correo.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    } else {
+      // Si el término de búsqueda está vacío, restaura la lista original
+      this.clienteService.findAll().subscribe(
+        clientes => this.listaClientes = clientes,
+        error => console.error(error)
+      );
+    }
+  }
+  
 
 }
-
-

@@ -107,7 +107,8 @@ td {
 
 .contenedor-boton,
 .contenedor-boton2,
-.contenedor-boton3 {
+.contenedor-boton3,
+.contenedor-boton4 {
   
   display: flex; /* Utilizar flexbox para organizar las imágenes */
   width: 50px;
@@ -124,6 +125,13 @@ td {
     margin: 0 auto; /* Center image horizontally and vertically */
   }
   
+
+  #btnCrearTratamiento{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin: 0 auto; 
+  }
 
 .boton-borrar:hover {
     opacity: 0;
