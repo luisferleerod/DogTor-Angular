@@ -285,6 +285,10 @@ header {
     z-index: 1000;
 }
 
+.inactivo{
+    background-color: grey;
+}
+
 .logo {
     display: flex;
     align-items: center;

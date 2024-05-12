@@ -2,20 +2,24 @@
     <header>
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
-            <h1>Veterinario: </h1>
+            <h1>Veterinario: {{veterinario.nombre}}</h1>
+
         </div>
         
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
+
                 <div class="search-bar">
-                    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar clientes..." (input)="buscarClientes()">
+                    <input id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar clientes..." (input)="buscarClientes()">
                 </div>
-                <label class="switchBtn" id="btnIrMascota" (click)="toggleSlide($event)">
+                <label class="switchBtn" (click)="toggleSlide($event)" id="btnIrCliente">
                     <input class="punto" type="checkbox">
                     <div class="slide round">{{ toggleText }}</div>
                 </label>
-                <a href="#datos-dueno"><li>Tu Información</li></a>
-                <a href="#mascotas"><li>Tus Mascotas</li></a>
+
+
+                <a [routerLink]="['/veterinario/mostrar', veterinario.id]"><li>Perfil</li></a>
+                
                 <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
             </ul>
         </nav>

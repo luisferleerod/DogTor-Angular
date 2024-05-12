@@ -5,6 +5,8 @@ import { ClienteService } from 'src/app/service/cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
+import { veterinario } from 'src/app/veterinario/veterinario';
+import { VeterinarioService } from 'src/app/service/veterinario.service';
 
 @Component({
   selector: 'app-cliente-mostrar-todos',
@@ -17,14 +19,18 @@ export class ClienteMostrarTodosComponent {
   clienteAct!: Cliente;
   searchTerm: string = '';
 
+  veterinario!: veterinario;
+
   toggleText: string = 'Clientes';
   // Constructior es para inyectar dependencias
-  constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router) {
+  constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router, private veterinarioService:VeterinarioService) {
     
   }
 
   // Llamado cuando ya esta cargada la interfaz
   ngOnInit(): void {
+    this.veterinario = this.veterinarioService.getVeterinario();
+
     this.clienteService.findAll().subscribe((clientes) => this.listaClientes = clientes, (error) => {
     })
   }

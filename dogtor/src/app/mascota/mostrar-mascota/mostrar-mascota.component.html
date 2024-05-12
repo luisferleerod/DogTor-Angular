@@ -1,16 +1,35 @@
 <div class="body">
-    <header>
+    <header *ngIf="mascota.estado == 'activo'" >
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
             <h1>Mascota:      </h1>
             <h2 >{{mascota.nombre}}</h2>
         </div>
         
-        <nav class="navegacion-principal">
-            <ul class="menu-principal">  
-                <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
-            </ul>
-        </nav>
+        
+            <nav class="navegacion-principal">
+                <ul class="menu-principal">  
+                    <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
+                </ul>
+            </nav>
+            
+    </header>
+
+    <header *ngIf="mascota.estado == 'inactivo'" class="inactivo">
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Mascota:      </h1>
+            <h2 >{{mascota.nombre}}</h2>
+        </div>
+        
+        
+            <nav class="navegacion-principal">
+                <ul class="menu-principal">  
+
+                    <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
+                </ul>
+            </nav>
+            
     </header>
 
     
@@ -36,10 +55,10 @@
                     <td class="contenido-tabla borer-radius3">{{mascota.enfermedad}}</td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td class="titulo-tabla borer-radius4">Estado</td>
                     <td class="contenido-tabla borer-radius3">{{mascota.estado}}</td>
-                </tr>
+                </tr> -->
             </table>
         </div>
 
