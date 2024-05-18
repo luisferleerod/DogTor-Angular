@@ -1,5 +1,5 @@
 <div class="body">
-    <header *ngIf="mascota.estado == 'activo'" >
+    <header >
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
             <h1>Mascota:      </h1>
@@ -9,23 +9,6 @@
         
             <nav class="navegacion-principal">
                 <ul class="menu-principal">  
-                    <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
-                </ul>
-            </nav>
-            
-    </header>
-
-    <header *ngIf="mascota.estado == 'inactivo'" class="inactivo">
-        <div class="logo">
-            <img src="../../../assets/logo_basico_blanco.png" alt="">
-            <h1>Mascota:      </h1>
-            <h2 >{{mascota.nombre}}</h2>
-        </div>
-        
-        
-            <nav class="navegacion-principal">
-                <ul class="menu-principal">  
-
                     <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
                 </ul>
             </nav>
@@ -33,9 +16,37 @@
     </header>
 
     
-    <section class="datos-paciente-imagen" id="datos-mascota">
+
+    
+    <section class="datos-paciente-imagen" id="datos-mascota" >
             
-        <div class="datos-paciente" >
+        <div class="datos-paciente" *ngIf="mascota.estado === 'activo'">
+            <h1 class="titulo">Info del Paciente</h1>
+            <table class="tabla-info">
+                <tr>
+                    <td class="titulo-tabla borer-radius1">Edad</td>
+                    <td  class="contenido-tabla borer-radius2">{{mascota.edad}}</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Raza</td>
+                    <td class="contenido-tabla">{{mascota.raza}}</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Peso</td>
+                    <td class="contenido-tabla">{{mascota.peso}}</td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla borer-radius4">Enfermedad</td>
+                    <td class="contenido-tabla borer-radius3">{{mascota.enfermedad}}</td>
+                </tr>
+
+                <!-- <tr>
+                    <td class="titulo-tabla borer-radius4">Estado</td>
+                    <td class="contenido-tabla borer-radius3">{{mascota.estado}}</td>
+                </tr> -->
+            </table>
+        </div>
+        <div class="datos-pacienteinac" *ngIf="mascota.estado === 'inactivo'" >
             <h1 class="titulo">Info del Paciente</h1>
             <table class="tabla-info">
                 <tr>
@@ -69,7 +80,28 @@
     </section>
 
 
-    <section class="tratamientos">
+    <section class="tratamientos" *ngIf="mascota.estado === 'activo'">
+        <h1 class="titulo2">TRATAMIENTOS</h1>
+        <table>
+            <thead>
+                <th class="titulo-tabla borer-radius1">DROGA</th>
+                <th class="titulo-tabla">VETERINARIO</th>
+                <th class="titulo-tabla borer-radius2">FECHA</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let tratamiento of tratamientos">
+                    <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
+                    <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
+                    <td class="contenido-tabla">{{tratamiento.fecha}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section class="tratamientosinac" *ngIf="mascota.estado === 'inactivo'">
         <h1 class="titulo2">TRATAMIENTOS</h1>
         <table>
             <thead>

@@ -54,12 +54,32 @@ h2{
     
 }
 
+.datos-pacienteinac {
+    transition: .3s;
+    margin: 2rem 1rem 0 3rem;
+    display: block;
+    align-items: center;
+    width: 700px;
+    height: auto;
+    box-shadow: inset;
+    border-radius: .7rem;
+    padding: 1rem;
+    
+}
 .datos-paciente:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
     transition: .2s;
     .titulo {
         transition: .2s;
         background-color: #e55807;
+    }
+}
+.datos-pacienteinac:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo {
+        transition: .2s;
+        background-color: grey;
     }
 }
 
@@ -135,12 +155,34 @@ table {
     border-radius: .7rem;
 }
 
+.tratamientosinac {
+    transition: .2s;
+    width: 89.5%;
+    padding: 1rem;
+    margin: 2rem 3rem  3rem;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
 .tratamientos:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
     transition: .2s;
     .titulo2{
         transition: .2s;
         background-color: #e55807;
+    }   
+}
+
+.tratamientosinac:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo2{
+        transition: .2s;
+        background-color: grey;
     }   
 }
 

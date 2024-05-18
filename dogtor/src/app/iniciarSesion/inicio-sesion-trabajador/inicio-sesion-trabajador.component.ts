@@ -6,8 +6,6 @@ import { veterinario } from 'src/app/veterinario/veterinario';
 import Swal from 'sweetalert2';
 import { administrador } from 'src/app/administrador/administrador';
 
-
-
 @Component({
   selector: 'app-inicio-sesion-trabajador',
   templateUrl: './inicio-sesion-trabajador.component.html',
