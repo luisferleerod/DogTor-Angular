@@ -20,6 +20,7 @@ export class MostrarClienteComponent {
   constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router, private mascotaService: MascotaService) { }
 
   ngOnInit(): void {
+    /*
     this.route.paramMap.subscribe(params => {
       const id = String(params.get('id'));
 
@@ -35,6 +36,10 @@ export class MostrarClienteComponent {
           
         });
       });
-    });
+    }); */
+
+    this.clienteService.clienteHome().subscribe((data)=>{
+      this.cliente = data;
+    })
   }
 }

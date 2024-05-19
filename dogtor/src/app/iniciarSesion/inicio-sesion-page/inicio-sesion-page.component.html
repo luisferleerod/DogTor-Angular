@@ -8,7 +8,7 @@
             <p>Cliente</p>
             <label for="cedula">Cédula</label>
             <br>
-            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formCliente">
+            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required  [(ngModel)]="formUser.username">
             <br>
             
             <input id= "btnIngresar" type="submit" (click)="iniciarSesion()" value="Ingresar" class="boton">

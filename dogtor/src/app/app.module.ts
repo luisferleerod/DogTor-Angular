@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -29,6 +29,8 @@ import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-most
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear-tratamiento.component';
+import { UserComponent } from './user/user.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 
 
@@ -64,6 +66,7 @@ import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear
     MostrarVeterinarioComponent,
     ActualizarVeterinarioComponent,
     CrearTratamientoComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,11 @@ import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

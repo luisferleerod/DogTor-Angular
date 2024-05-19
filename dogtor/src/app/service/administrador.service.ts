@@ -18,4 +18,8 @@ export class AdministradorService {
     return this.http.get<administrador[]>('http://localhost:8090/administrador/all');
   }
 
+  adminHome(): Observable<administrador> {
+    return this.http.get<administrador>("http://localhost:8090/administrador/details");
+  }
+
 }

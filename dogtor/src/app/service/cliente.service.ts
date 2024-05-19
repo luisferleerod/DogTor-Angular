@@ -3,6 +3,7 @@ import { Cliente } from '../cliente/cliente';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { mascota } from '../mascota/mascota';
+import { User } from '../user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -32,11 +33,17 @@ export class ClienteService {
     console.log(cliente.cedula)
     console.log(cliente.nombre)
 
-    this.http.put<Cliente>("http://localhost:8090/cliente/update/"+cliente.id, cliente).subscribe();
+    this.http.put<Cliente>("http://localhost:8090/cliente/update/" + cliente.id, cliente).subscribe();
   }
 
-  iniciarSesion(cliente: string) {
+  /*iniciarSesion(cliente: string) {
     return this.http.post<Cliente>('http://localhost:8090/cliente/inicioSesion/' + cliente, cliente);
+  }*/
+
+  iniciarSesion(user: User): Observable<String> {
+    return this.http.post('http://localhost:8090/cliente/inicioSesion/' + user.username, user,{
+      responseType: 'text'
+    });
   }
 
   agregarCliente(cliente: Cliente) {
@@ -51,6 +58,10 @@ export class ClienteService {
 
   delete(id: number) {
     this.http.delete("http://localhost:8090/cliente/delete/"+id).subscribe();
+  }
+
+  clienteHome(): Observable<Cliente> {
+    return this.http.get<Cliente>("http://localhost:8090/cliente/details");
   }
 }
 

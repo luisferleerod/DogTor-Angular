@@ -19,6 +19,7 @@ import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/m
 import { TratamientoComponent } from './tratamiento/tratamiento.component';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear-tratamiento.component';
+
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'cliente/all', component: ClienteMostrarTodosComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'iniciarSesionTrabajador', component: InicioSesionTrabajadorComponent},
   { path: 'cliente/actualizar/:id', component: ActualizarClienteComponent},
   { path: 'cliente/crear', component: CrearClienteComponent},
+  { path: 'cliente/home', component: MostrarClienteComponent}, 
   { path: 'cliente/mostrar/:id', component: MostrarClienteComponent},
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
   { path: 'veterinario/actualizar/:id', component: ActualizarVeterinarioComponent},
