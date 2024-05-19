@@ -36,7 +36,7 @@ export class ClienteService {
   }
 
   iniciarSesion(cliente: string) {
-    return this.http.get<Cliente>('http://localhost:8090/cliente/inicioSesion/' + cliente);
+    return this.http.post<Cliente>('http://localhost:8090/cliente/inicioSesion/' + cliente, cliente);
   }
 
   agregarCliente(cliente: Cliente) {

@@ -28,7 +28,6 @@ export class VeterinarioService {
 
 
   iniciarSesion(usuario: string, contrasena: string) {
-    
     return this.http.get<veterinario>('http://localhost:8090/veterinario/iniciarSesionTrabajador/' + usuario + '/' + contrasena);
   }
 
