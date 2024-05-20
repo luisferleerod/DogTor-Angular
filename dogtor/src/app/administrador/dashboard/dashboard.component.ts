@@ -39,9 +39,11 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     // Obtener el administrador
-    this.administradorService.getAdmin().subscribe((admin) => {
-      this.listaadmin = admin;
-      this.admin = this.listaadmin[0];
+    console.log('Obteniendo el administrador...');
+    this.administradorService.adminHome().subscribe((data) => {
+      //this.listaadmin = data;
+      //this.admin = this.listaadmin[0];
+      this.admin = data;
     });
 
     // Obtener la lista de drogas

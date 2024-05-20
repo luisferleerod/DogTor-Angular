@@ -8,12 +8,12 @@
             <p>Trabajador</p>
             <label for="Usuario">Usuario</label>
             <br>
-            <input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario" required [(ngModel)]="usuario">
+            <input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario" required [(ngModel)]="formUser.username">
             <br>
 
             <label class="contrasena" for="Usuario">Contraseña</label>
             <br>
-            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required [(ngModel)]="contrasena">
+            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required [(ngModel)]="formUser.contrasena">
             <br>
             
             <input type="submit" id="btnIngresar" value="Ingresar" (click)="iniciarSesion()" class="boton">

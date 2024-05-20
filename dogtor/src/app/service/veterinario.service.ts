@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { veterinario } from '../veterinario/veterinario';
 import { Observable, Subject } from 'rxjs';
+import { User } from '../user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,8 @@ export class VeterinarioService {
   iniciarSesion(usuario: string, contrasena: string) {
     return this.http.get<veterinario>('http://localhost:8090/veterinario/iniciarSesionTrabajador/' + usuario + '/' + contrasena);
   }
+
+  
 
   findAll(): Observable<veterinario[]>  {
     return this.http.get<veterinario[]>("http://localhost:8090/veterinario/all");

@@ -5,6 +5,7 @@ import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { veterinario } from 'src/app/veterinario/veterinario';
 import Swal from 'sweetalert2';
 import { administrador } from 'src/app/administrador/administrador';
+import { User } from 'src/app/user/user';
 
 @Component({
   selector: 'app-inicio-sesion-trabajador',
@@ -16,6 +17,11 @@ export class InicioSesionTrabajadorComponent {
   usuario!:string
   contrasena!:string
   mensajeError!: string;
+
+  formUser: User = {
+    username: '',
+    contrasena: ''
+  }
   
   constructor(    private veterinarioService: VeterinarioService,
     private administradorService: AdministradorService,
@@ -26,7 +32,25 @@ export class InicioSesionTrabajadorComponent {
 
 
   iniciarSesion() {
-    this.veterinarioService.iniciarSesion(this.usuario, this.contrasena).subscribe(
+    this.administradorService.iniciarSesion(this.formUser).subscribe(
+      (response) => {
+        localStorage.setItem('token', String(response));
+        // Si la respuesta es exitosa, redirige a la página de mostrar cliente
+        this.router.navigate(['/admin/dashboard']);
+      },
+      (error) => {
+        Swal.fire({
+          title: 'Error',
+          text: 'Credenciales inválidas',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+      }
+    );
+
+
+    /*
+    this.veterinarioService.iniciarSesion(this.formUser).subscribe(
       (response: veterinario) => {
         
         this.veterinarioService.setVeterinario(response);
@@ -47,8 +71,9 @@ export class InicioSesionTrabajadorComponent {
       (error) => {
         
         // Si ocurre un error o la respuesta no es un Veterinario, intenta iniciar sesión como Administrador
-        this.administradorService.iniciarSesion(this.usuario, this.contrasena).subscribe(
+        this.administradorService.iniciarSesion(this.fo).subscribe(
           (response: administrador) => {
+            localStorage.setItem('token', String(response));
             // Si la respuesta es un Administrador, navega a una ruta específica para Administradores
             this.router.navigate(['/admin/dashboard']);
           },
@@ -63,6 +88,6 @@ export class InicioSesionTrabajadorComponent {
           }
         );
       }
-    );
+    );*/
   }
 }
