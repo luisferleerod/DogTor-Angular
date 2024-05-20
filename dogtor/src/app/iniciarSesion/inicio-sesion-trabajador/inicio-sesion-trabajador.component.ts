@@ -34,17 +34,31 @@ export class InicioSesionTrabajadorComponent {
   iniciarSesion() {
     this.administradorService.iniciarSesion(this.formUser).subscribe(
       (response) => {
+      
         localStorage.setItem('token', String(response));
         // Si la respuesta es exitosa, redirige a la página de mostrar cliente
         this.router.navigate(['/admin/dashboard']);
       },
       (error) => {
-        Swal.fire({
-          title: 'Error',
-          text: 'Credenciales inválidas',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        });
+        
+        // Si ocurre un error o la respuesta no es un Administrador, muestra un mensaje de error
+        this.veterinarioService.iniciarSesion(this.formUser).subscribe(
+          
+          (response) => {
+            localStorage.setItem('token', String(response));
+            // Si la respuesta es exitosa, redirige a la página de mostrar cliente
+            this.router.navigate(['/mascota/all']);
+          },
+          (error) => {
+            Swal.fire({
+              title: 'Error',
+              text: 'Credenciales inválidas',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        )
+        
       }
     );
 
