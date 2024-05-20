@@ -20,10 +20,8 @@ export class AuthInterceptor implements HttpInterceptor {
         headers: request.headers.set('Authorization', 'Bearer ' + token)
       });
       console.log("Solicitud con token de autenticación:", cloned); // Agregar registro de depuración
-      console.log(cloned.headers.get('Authorization'));
       return next.handle(cloned);
     }
     return next.handle(request);
   }
 }
-

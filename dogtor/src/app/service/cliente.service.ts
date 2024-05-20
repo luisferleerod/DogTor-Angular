@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../cliente/cliente';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { mascota } from '../mascota/mascota';
 import { User } from '../user/user';
 
@@ -61,7 +61,11 @@ export class ClienteService {
   }
 
   clienteHome(): Observable<Cliente> {
-    return this.http.get<Cliente>("http://localhost:8090/cliente/details");
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+  });
+
+  return this.http.get<Cliente>('http://localhost:8090/cliente/details', { headers });
   }
 }
 

@@ -37,7 +37,7 @@ export class InicioSesionPageComponent {
       (response) => {
         localStorage.setItem('token', String(response));
         // Si la respuesta es exitosa, redirige a la página de mostrar cliente
-        this.router.navigate(['/cliente/home']);
+        this.router.navigate(['/cliente/mostrar']);
       },
       (error) => {
         Swal.fire({

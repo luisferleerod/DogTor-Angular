@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'cliente/actualizar/:id', component: ActualizarClienteComponent},
   { path: 'cliente/crear', component: CrearClienteComponent},
   { path: 'cliente/home', component: MostrarClienteComponent}, 
-  { path: 'cliente/mostrar/:id', component: MostrarClienteComponent},
+  { path: 'cliente/mostrar', component: MostrarClienteComponent},
   { path: 'veterinario/crear', component: CrearVeterinarioComponent},
   { path: 'veterinario/actualizar/:id', component: ActualizarVeterinarioComponent},
   { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
