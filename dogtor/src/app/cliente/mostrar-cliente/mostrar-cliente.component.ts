@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,41 +10,39 @@ import { MascotaService } from 'src/app/service/mascota.service';
   templateUrl: './mostrar-cliente.component.html',
   styleUrls: ['./mostrar-cliente.component.css']
 })
-export class MostrarClienteComponent {
-  @Input()
+export class MostrarClienteComponent implements OnInit {
   cliente!: Cliente;
+  mascotas: mascota[] = [];
 
-  idCliente!: number;
-
-  mascotas: mascota [] = [];
-  constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router, private mascotaService: MascotaService) { }
+  constructor(
+    private clienteService: ClienteService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private mascotaService: MascotaService
+  ) {}
 
   ngOnInit(): void {
+    this.clienteService.clienteHome().subscribe(
+      (data) => {
+        this.cliente = data;
+        this.cargarMascotas();
+      },
+      (error) => {
+        console.error("Error fetching client details", error);
+      }
+    );
+  }
 
-    console.log("\n\nCARGANDO DATOS DEL CLIENTE");
-    
-    /*
-    this.route.paramMap.subscribe(params => {
-      const id = String(params.get('id'));
-
-      this.clienteService.findByCedula(id).subscribe((cliente) => {
-        this.cliente = cliente;
-        this.idCliente = cliente.id;
-
-        // Ahora que tienes el ID del cliente, puedes realizar cualquier otra operación que necesite este ID, como buscar sus mascotas
-        this.clienteService.findMascotas(this.idCliente).subscribe((mascotas) => {
+  cargarMascotas(): void {
+    if (this.cliente && this.cliente.id) {
+      this.clienteService.findMascotas(this.cliente.id).subscribe(
+        (mascotas) => {
           this.mascotas = mascotas;
-
-          // Verificar si hay mascotas antes de acceder a sus propiedades
-          
-        });
-      });
-    }); */
-
-    this.clienteService.clienteHome().subscribe((data)=>{
-      this.cliente = data;
-      
-    })
-    console.log("\n\nCARGANDO DATOS DEL CLIENTE = "+this.cliente);
+        },
+        (error) => {
+          console.error("Error fetching pets", error);
+        }
+      );
+    }
   }
 }
