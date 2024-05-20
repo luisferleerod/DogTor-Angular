@@ -27,7 +27,7 @@ export class InicioSesionPageComponent {
 
   formUser: User = {
     username: '',
-    contrasena: ''
+    password: ''
   }
 
 
