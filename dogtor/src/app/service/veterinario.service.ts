@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { veterinario } from '../veterinario/veterinario';
 import { Observable, Subject } from 'rxjs';
@@ -28,8 +28,22 @@ export class VeterinarioService {
   }
 
 
-  iniciarSesion(usuario: string, contrasena: string) {
+  /*iniciarSesion(usuario: string, contrasena: string) {
     return this.http.get<veterinario>('http://localhost:8090/veterinario/iniciarSesionTrabajador/' + usuario + '/' + contrasena);
+  }*/
+
+  iniciarSesion(user: User): Observable<String> {
+    return this.http.post('http://localhost:8090/veterinario/inicioSesion' , user,{
+      responseType: 'text'
+    });
+  }
+
+  veterinarioHome(): Observable<veterinario> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+  });
+
+  return this.http.get<veterinario>('http://localhost:8090/veterinario/details', { headers });
   }
 
   

@@ -28,8 +28,12 @@ export class MascotaMostrarTodasComponent {
   }
 
   ngOnInit(): void {
-    this.veterinario = this.veterinarioService.getVeterinario();
-    
+    //this.veterinario = this.veterinarioService.getVeterinario();
+    this.veterinarioService.veterinarioHome().subscribe((data) => {
+      //this.listaadmin = data;
+      //this.admin = this.listaadmin[0];
+      this.veterinario = data;
+    });
 
     this.mascotaService.findAll().subscribe((mascotas) => this.listaMascotas = mascotas, (error) => {
       
