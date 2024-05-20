@@ -20,7 +20,7 @@ export class InicioSesionTrabajadorComponent {
 
   formUser: User = {
     username: '',
-    password: ''
+    contrasena: ''
   }
   
   constructor(    private veterinarioService: VeterinarioService,
