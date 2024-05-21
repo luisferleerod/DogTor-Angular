@@ -6,6 +6,7 @@ import { veterinario } from 'src/app/veterinario/veterinario';
 import Swal from 'sweetalert2';
 import { administrador } from 'src/app/administrador/administrador';
 import { User } from 'src/app/user/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-inicio-sesion-trabajador',
@@ -22,16 +23,36 @@ export class InicioSesionTrabajadorComponent {
     username: '',
     password: ''
   }
+
+  rol:number=0
   
   constructor(    private veterinarioService: VeterinarioService,
     private administradorService: AdministradorService,
     private route: ActivatedRoute,
-    private router: Router,){
+    private router: Router,
+  private userService:UserService) {
     
   }
 
 
+
   iniciarSesion() {
+    this.userService.encontrarRol(this.formUser.username).subscribe(
+      (response) => {
+        this.rol = response;
+        if (this.rol == 1) {
+          this.router.navigate(['/admin/dashboard']);
+        }
+        else if (this.rol == 2) {
+          this.router.navigate(['/mascota/all']);
+        }
+        else {
+          this.mostrarAlerta("Usuario no encontrado");
+        }
+      }
+   )
+
+    /*
     this.administradorService.iniciarSesion(this.formUser).subscribe(
       (response) => {
       
@@ -61,47 +82,15 @@ export class InicioSesionTrabajadorComponent {
         
       }
     );
+  }*/
+  }
 
-
-    /*
-    this.veterinarioService.iniciarSesion(this.formUser).subscribe(
-      (response: veterinario) => {
-        
-        this.veterinarioService.setVeterinario(response);
-        if(this.veterinarioService.getVeterinario().estado == "activo"){
-          this.router.navigate(['/mascota/all']);
-        }
-        else{
-          Swal.fire({
-            title: 'Error',
-            text: 'Usuario desactivado',
-            icon: 'error',
-            confirmButtonText: 'OK'
-          });
-        }
-        
-        
-      },
-      (error) => {
-        
-        // Si ocurre un error o la respuesta no es un Veterinario, intenta iniciar sesión como Administrador
-        this.administradorService.iniciarSesion(this.fo).subscribe(
-          (response: administrador) => {
-            localStorage.setItem('token', String(response));
-            // Si la respuesta es un Administrador, navega a una ruta específica para Administradores
-            this.router.navigate(['/admin/dashboard']);
-          },
-          (error) => {
-            // Si ocurre un error o la respuesta no es un Administrador, muestra un mensaje de error
-            Swal.fire({
-              title: 'Error',
-              text: 'Credenciales inválidas',
-              icon: 'error',
-              confirmButtonText: 'OK'
-            });
-          }
-        );
-      }
-    );*/
+  mostrarAlerta(mensaje: string) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Credenciales inválidas',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
   }
 }
