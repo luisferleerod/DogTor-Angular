@@ -41,10 +41,27 @@ export class InicioSesionTrabajadorComponent {
       (response) => {
         this.rol = response;
         if (this.rol == 1) {
-          this.router.navigate(['/admin/dashboard']);
+          this.administradorService.iniciarSesion(this.formUser).subscribe(
+            (response) => {
+            
+              localStorage.setItem('token', String(response));
+              // Si la respuesta es exitosa, redirige a la página de mostrar cliente
+              this.router.navigate(['/admin/dashboard']);
+            },
+            (error) => {
+              this.mostrarAlerta("Credenciales inválidas");
+            });
         }
         else if (this.rol == 2) {
-          this.router.navigate(['/mascota/all']);
+          this.veterinarioService.iniciarSesion(this.formUser).subscribe(
+          
+            (response) => {
+              localStorage.setItem('token', String(response));
+              // Si la respuesta es exitosa, redirige a la página de mostrar cliente
+              this.router.navigate(['/mascota/all']);
+            },(error) => {
+              this.mostrarAlerta("Credenciales inválidas");
+            });
         }
         else {
           this.mostrarAlerta("Usuario no encontrado");

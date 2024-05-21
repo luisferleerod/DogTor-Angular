@@ -33,7 +33,10 @@ export class MascotaMostrarTodasComponent {
       //this.listaadmin = data;
       //this.admin = this.listaadmin[0];
       this.veterinario = data;
+      console.log(this.veterinario);
     });
+
+    
 
     this.mascotaService.findAll().subscribe((mascotas) => this.listaMascotas = mascotas, (error) => {
       
