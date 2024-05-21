@@ -57,8 +57,8 @@ export class DashboardComponent {
 
     // Obtener la cantidad de veterinarios activos e inactivos
     this.veterinarioService.findAll().subscribe((veterinarios) => {
-      this.cantidadVeterinariosActivos = veterinarios.filter(veterinario => veterinario.estado === 'activo').length;
-      this.cantidadVeterinariosInactivos = veterinarios.filter(veterinario => veterinario.estado === 'inactivo').length;
+      this.cantidadVeterinariosActivos = veterinarios.filter(veterinario => veterinario.estado === 'Activo').length;
+      this.cantidadVeterinariosInactivos = veterinarios.filter(veterinario => veterinario.estado === 'Inactivo').length;
     });
 
     // Obtener la cantidad de mascotas activas e inactivas
