@@ -29,7 +29,12 @@ export class ClienteMostrarTodosComponent {
 
   // Llamado cuando ya esta cargada la interfaz
   ngOnInit(): void {
-    this.veterinario = this.veterinarioService.getVeterinario();
+    this.veterinarioService.veterinarioHome().subscribe((data) => {
+      //this.listaadmin = data;
+      //this.admin = this.listaadmin[0];
+      this.veterinario = data;
+      console.log(this.veterinario);
+    });
 
     this.clienteService.findAll().subscribe((clientes) => this.listaClientes = clientes, (error) => {
     })
