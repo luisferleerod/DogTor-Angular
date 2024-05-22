@@ -59,7 +59,10 @@
                 th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
                 <td class="contenido-tabla">{{mascota.nombre}}</td>
                 <td class="contenido-tabla">{{mascota.raza}}</td>
-                <td class="contenido-tabla">{{mascota.estado}}</td>
+                <td class="contenido-tabla">
+                    <span class="estado-punto" [ngClass]="{'activo': mascota.estado === 'activo', 'inactivo': mascota.estado === 'inactivo'}"></span>
+                    {{mascota.estado}}
+                </td>
 
                 <td class="boton-tabla">
                     <a class="ver-info" [routerLink]="['/mascota/mostrar/', mascota.id]" >Ver</a> 

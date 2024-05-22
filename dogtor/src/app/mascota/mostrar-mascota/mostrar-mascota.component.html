@@ -1,31 +1,25 @@
 <div class="body">
-    <header >
+    <header>
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
-            <h1>Mascota:      </h1>
-            <h2 >{{mascota.nombre}}</h2>
+            <h1>Mascota:</h1>
+            <h2>{{mascota.nombre}}</h2>
         </div>
         
-        
-            <nav class="navegacion-principal">
-                <ul class="menu-principal">  
-                    <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
-                </ul>
-            </nav>
-            
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">
+                <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
     </header>
 
-    
-
-    
-    <section class="datos-paciente-imagen" id="datos-mascota" >
-            
-        <div class="datos-paciente" *ngIf="mascota.estado === 'activo'">
+    <section class="datos-paciente-imagen" id="datos-mascota">
+        <div class="datos-paciente">
             <h1 class="titulo">Info del Paciente</h1>
             <table class="tabla-info">
                 <tr>
                     <td class="titulo-tabla borer-radius1">Edad</td>
-                    <td  class="contenido-tabla borer-radius2">{{mascota.edad}}</td>
+                    <td class="contenido-tabla borer-radius2">{{mascota.edad}}</td>
                 </tr>
                 <tr>
                     <td class="titulo-tabla">Raza</td>
@@ -36,49 +30,23 @@
                     <td class="contenido-tabla">{{mascota.peso}}</td>
                 </tr>
                 <tr>
-                    <td class="titulo-tabla borer-radius4">Enfermedad</td>
-                    <td class="contenido-tabla borer-radius3">{{mascota.enfermedad}}</td>
+                    <td class="titulo-tabla">Enfermedad</td>
+                    <td class="contenido-tabla">{{mascota.enfermedad}}</td>
                 </tr>
-
-                <!-- <tr>
+                <tr>
                     <td class="titulo-tabla borer-radius4">Estado</td>
-                    <td class="contenido-tabla borer-radius3">{{mascota.estado}}</td>
-                </tr> -->
-            </table>
-        </div>
-        <div class="datos-pacienteinac" *ngIf="mascota.estado === 'inactivo'" >
-            <h1 class="titulo">Info del Paciente</h1>
-            <table class="tabla-info">
-                <tr>
-                    <td class="titulo-tabla borer-radius1">Edad</td>
-                    <td  class="contenido-tabla borer-radius2">{{mascota.edad}}</td>
+                    <td class="contenido-tabla">
+                        <span class="estado-punto" [ngClass]="{'activo': mascota.estado === 'activo', 'inactivo': mascota.estado === 'inactivo'}"></span>
+                        {{mascota.estado}}
+                    </td>
                 </tr>
-                <tr>
-                    <td class="titulo-tabla">Raza</td>
-                    <td class="contenido-tabla">{{mascota.raza}}</td>
-                </tr>
-                <tr>
-                    <td class="titulo-tabla">Peso</td>
-                    <td class="contenido-tabla">{{mascota.peso}}</td>
-                </tr>
-                <tr>
-                    <td class="titulo-tabla borer-radius4">Enfermedad</td>
-                    <td class="contenido-tabla borer-radius3">{{mascota.enfermedad}}</td>
-                </tr>
-
-                <!-- <tr>
-                    <td class="titulo-tabla borer-radius4">Estado</td>
-                    <td class="contenido-tabla borer-radius3">{{mascota.estado}}</td>
-                </tr> -->
             </table>
         </div>
 
         <div class="datos-imagen">
             <img src="{{mascota.foto}}" class="imagen-perro">
-        </div>        
-        
+        </div>
     </section>
-
 
     <section class="tratamientos" *ngIf="mascota.estado === 'activo'">
         <h1 class="titulo2">TRATAMIENTOS</h1>
@@ -88,7 +56,6 @@
                 <th class="titulo-tabla">VETERINARIO</th>
                 <th class="titulo-tabla borer-radius2">FECHA</th>
             </thead>
-
             <tbody>
                 <tr *ngFor="let tratamiento of tratamientos">
                     <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
@@ -96,9 +63,7 @@
                     <td class="contenido-tabla">{{tratamiento.fecha}}</td>
                 </tr>
             </tbody>
-
         </table>
-
     </section>
 
     <section class="tratamientosinac" *ngIf="mascota.estado === 'inactivo'">
@@ -109,7 +74,6 @@
                 <th class="titulo-tabla">VETERINARIO</th>
                 <th class="titulo-tabla borer-radius2">FECHA</th>
             </thead>
-
             <tbody>
                 <tr *ngFor="let tratamiento of tratamientos">
                     <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
@@ -117,9 +81,7 @@
                     <td class="contenido-tabla">{{tratamiento.fecha}}</td>
                 </tr>
             </tbody>
-
         </table>
-
     </section>
 
     <footer>
@@ -131,19 +93,13 @@
                 Horario de atenciòn: 9:00 - 18:00
             </p>
         </div>
-        
         <div class="derechos">
             © 2024 DOGTOR. Todos los derechos reservados.
         </div>
-
         <div class="redes-sociales">
             <img src="../../../assets/facebook.png" alt="facebook">
             <img src="../../../assets/instagram.png" alt="instagram">
             <img src="../../../assets/whatsapp.png" alt="whatsapp">
         </div>
-
-        
-        
     </footer>
-    
 </div>

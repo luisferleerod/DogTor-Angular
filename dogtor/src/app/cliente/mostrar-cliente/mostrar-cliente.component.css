@@ -253,6 +253,24 @@ table {
     
 }
 
+/* Estilos para los puntos de estado */
+.estado-punto {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.estado-punto.activo {
+    background-color: rgb(28, 230, 28);
+}
+
+.estado-punto.inactivo {
+    background-color: red;
+}
+
+
 a { 
     text-decoration: none;
     color: black;
@@ -295,7 +313,7 @@ a {
 }
 
 .ver-info {
-    padding: 1rem 2rem;
+    padding: 1rem 10rem;
 }
 
 .borer-radius1 {

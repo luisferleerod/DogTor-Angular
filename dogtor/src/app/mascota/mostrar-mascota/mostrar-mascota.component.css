@@ -108,15 +108,33 @@ table {
     background-color: #9EF0F7;
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 1rem;
+    padding: .1rem;
     font-size: 18px;
 }
 
 .datos-paciente td{
-    padding: 1rem 6rem 1rem 6rem;
+    padding: .6rem 6rem;
     margin: 0;
     border-bottom: #48b6c2 solid 1px;
 }
+
+/* Estilos para los puntos de estado */
+.estado-punto {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.estado-punto.activo {
+    background-color: green;
+}
+
+.estado-punto.inactivo {
+    background-color: red;
+}
+
 
 .titulo{
     color: white;
@@ -191,9 +209,10 @@ table {
     background-color: #D5FCFF;
     color: black;
     font-weight: bold;
-    padding: 1rem;
+    padding: .1rem;
     font-size: 18px;
     border-bottom: #48b6c2 solid 1px;
+    text-transform: capitalize;
 }
 
 a { 
