@@ -23,6 +23,8 @@ export class InicioSesionTrabajadorComponent {
     username: '',
     password: ''
   }
+  
+  veterinario!:veterinario
 
   rol:number=0
   
@@ -57,8 +59,21 @@ export class InicioSesionTrabajadorComponent {
           
             (response) => {
               localStorage.setItem('token', String(response));
+              this.veterinarioService.veterinarioHome().subscribe((data) => {
+                //this.listaadmin = data;
+                //this.admin = this.listaadmin[0];
+                this.veterinario = data;
+                console.log(this.veterinario);
+
+                if(this.veterinario.estado == "Activo"){
+                  this.router.navigate(['/mascota/all']);
+                }
+                else if(this.veterinario.estado == "Inactivo"){
+                  this.mostrarAlerta("Usario desactivado");
+                }
+              });
               // Si la respuesta es exitosa, redirige a la página de mostrar cliente
-              this.router.navigate(['/mascota/all']);
+              
             },(error) => {
               this.mostrarAlerta("Credenciales inválidas");
             });
@@ -105,7 +120,7 @@ export class InicioSesionTrabajadorComponent {
   mostrarAlerta(mensaje: string) {
     Swal.fire({
       title: 'Error',
-      text: 'Credenciales inválidas',
+      text: mensaje,
       icon: 'error',
       confirmButtonText: 'OK'
     });
