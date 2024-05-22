@@ -31,6 +31,7 @@ import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterin
 import { CrearTratamientoComponent } from './tratamiento/crear-tratamiento/crear-tratamiento.component';
 import { UserComponent } from './user/user.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { VeterinarioMostrarClienteComponent } from './veterinario/veterinario-mostrar-cliente/veterinario-mostrar-cliente.component';
 
 
 
@@ -67,6 +68,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     ActualizarVeterinarioComponent,
     CrearTratamientoComponent,
     UserComponent,
+    VeterinarioMostrarClienteComponent,
   ],
   imports: [
     BrowserModule,

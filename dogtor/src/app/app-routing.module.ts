@@ -12,6 +12,7 @@ import { MostrarMascotaComponent } from './mascota/mostrar-mascota/mostrar-masco
 import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.component';
 import { ActualizarMascotaComponent } from './mascota/actualizar-mascota/actualizar-mascota.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
+import { VeterinarioMostrarClienteComponent } from './veterinario/veterinario-mostrar-cliente/veterinario-mostrar-cliente.component';
 import { InicioSesionTrabajadorComponent } from './iniciarSesion/inicio-sesion-trabajador/inicio-sesion-trabajador.component';
 import { DashboardComponent } from './administrador/dashboard/dashboard.component';
 import { VeterinarioMostrarTodosComponent } from './veterinario/veterinario-mostrar-todos/veterinario-mostrar-todos.component';
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'veterinario/actualizar/:id', component: ActualizarVeterinarioComponent},
   { path: 'veterinario/mostrar/:id', component: MostrarVeterinarioComponent},
   {path: 'veterinario/all', component: VeterinarioMostrarTodosComponent},
+  {path: 'veterinario/cliente/mostrar/:id', component: VeterinarioMostrarClienteComponent},
+
   {path: 'admin/tratamientos', component: TratamientoComponent},
   {path: 'admin/dashboard', component: DashboardComponent},
   {path: 'tratamiento/crear/:id', component: CrearTratamientoComponent},

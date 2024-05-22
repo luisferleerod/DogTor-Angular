@@ -1,0 +1,98 @@
+<div class="body">
+    <header>
+        <div class="logo">
+            <img src="../../../assets/logo_basico_blanco.png" alt="">
+            <h1>Cliente: </h1>
+            <h2 >{{cliente.nombre}}</h2>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a [routerLink]="['/landing']"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <section class="datos-dueno-imagen" id="datos-dueno">
+
+            <div class="datos-dueno">
+                <h1 class="titulo">Info del Dueño</h1>
+                <table class="tabla-info">
+                    <tr>
+                        <td class="titulo-tabla borer-radius1">Cedula</td>
+                        <td class="contenido-tabla borer-radius2">{{cliente.cedula}}</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Nombre</td>
+                        <td  class="contenido-tabla">{{cliente.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Correo</td>
+                        <td class="contenido-tabla">{{cliente.correo}}</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo-tabla">Celular</td>
+                        <td class="contenido-tabla">{{cliente.celular}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="datos-imagen">
+                <img class="imagen-dueno" src="https://www.gentedehoy.es/wp-content/uploads/2020/03/Mascota-familia_1-1104x736.jpg" alt="">
+            </div>
+    </section>
+
+    <!-- Sección para mostrar las mascotas -->
+    <section class="tus-mascotas" id="mascotas">
+        <h1 class="titulo2">Tus Mascotas</h1>
+        <table>
+            <tr>
+                <th class="titulo-tabla borer-radius1">Nombre</th>
+                <th class="titulo-tabla">Raza</th>
+                <th class="titulo-tabla">Estado</th>
+                <th class="titulo-tabla borer-radius2">Información</th>
+            </tr>
+            <!-- Iterar sobre las mascotas del dueño y mostrar sus detalles -->
+            <tr *ngFor="let mascota of mascotas"
+                th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
+                <td class="contenido-tabla">{{mascota.nombre}}</td>
+                <td class="contenido-tabla">{{mascota.raza}}</td>
+                <td class="contenido-tabla">
+                    <span class="estado-punto" [ngClass]="{'activo': mascota.estado === 'activo', 'inactivo': mascota.estado === 'inactivo'}"></span>
+                    {{mascota.estado}}
+                </td>
+
+                <td class="boton-tabla">
+                    <a class="ver-info" [routerLink]="['/mascota/mostrar/', mascota.id]" >Ver</a> 
+                </td>
+                
+            </tr>
+        </table>
+    </section>
+
+
+    <footer>
+        <div class="datos-negocio">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram.png" alt="instagram"></a>
+            <img src="../../assets/whatsapp.png" alt="whatsapp">
+        </div>    
+    </footer>
+</div>
+    
+    
