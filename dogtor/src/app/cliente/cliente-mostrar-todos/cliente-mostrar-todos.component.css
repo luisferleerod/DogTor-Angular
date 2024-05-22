@@ -6,6 +6,7 @@
     --font-dosis: 'Dosis', sans-serif;
 }
 
+
 .body {
     box-sizing: border-box;
     background-color: var(--color-primario);
@@ -16,6 +17,7 @@
     background-color: #ffffff;
     padding-top: 4.5rem;
     margin: 0;
+    overflow: hidden;
 }
 
 
@@ -227,54 +229,6 @@ nav{
 }
 
 
-
-/*  FOOTER */ 
-footer{
-    display: flex;
-    width: 100%;
-    background-color: var(--color-secundario);
-    bottom: 0;
-    color : white;
-    text-align: justify;
-    padding: 0;
-    font-size: 20px;
-}
-
-.datos{
-    text-align: justify;
-    margin-right: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-}
-
-.derechos{
-    width: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.redes-sociales {
-    margin: 2rem 0 2rem 2rem;
-    display: flex;
-    justify-content: center;
-    width: 30%;
-}
-
-.redes-sociales img {
-    width: 3rem;
-    height: 3rem;
-    margin: 1rem;
-}
-
-.redes-sociales img:hover{
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-}
-
 /* Toggle */
 
 .switchBtn {
@@ -341,4 +295,61 @@ input:checked + .slide:before {
 .slide.round:before {
     border-radius: 3rem;
 
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    padding: 0rem 0rem 0rem 0rem;
+    background-color: var(--color-primario);
+    color: #146076;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 19px;
+    max-width: 100%;
+    justify-content: space-between;
+}
+
+
+.datos{
+    text-align: justify;
+    margin: 0 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.datos-negocio p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.derechos{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociales {
+    margin: 2rem 0 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.redes-sociales img {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+    transition: .2s;
+}
+
+.redes-sociales img:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }

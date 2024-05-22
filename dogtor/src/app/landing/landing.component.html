@@ -3,13 +3,13 @@
         <nav class="navegacion-principal">
             <a href="#"><img src="../../assets/logo_horizontal.png" alt=""></a>
             <ul class="menu-principal">  
-                <a href="#quienes-somos"><li>¿Quiénes somos?</li></a>
-                <a href="#servicios"><li>Servicios</li></a>
-                <a href="#estado-mascotas"><li>Estado de mascotas</li></a>
-                <a href="#contacto"><li>Contáctanos</li></a>
-                <a href="http://localhost:4200/iniciarSesion"><li class="inicio-sesion">Iniciar Sesión</li></a>
-                </ul>
-            </nav>
+                <li (click)="scrollTo('quienes-somos')">¿Quiénes somos?</li>
+                <li (click)="scrollTo('servicios')">Servicios</li>
+                <li (click)="scrollTo('estado-mascotas')">Estado de mascotas</li>
+                <li (click)="scrollTo('contacto')">Contáctanos</li>
+                <li [routerLink]="['/iniciarSesion']" class="inicio-sesion">Iniciar Sesión</li>
+            </ul>
+        </nav>
     </header>
 
     <section class="banner-principal">
@@ -89,7 +89,7 @@
                 calidad, manteniéndote informado en cada paso para asegurar que tu querido compañero reciba el amor 
                 y la atención que merece.
             </p>
-            <a href="http://localhost:8090/dueno/inicioSesion"><button>Estado de tu mascota</button></a>
+            <a href="http://localhost:4200/iniciarSesion"><button>Estado de tu mascota</button></a>
         </div>
     </section>
 
@@ -121,13 +121,10 @@
         </div>
 
         <div class="redes-sociales">
-            <img src="../../assets/facebook.png" alt="facebook">
-            <img src="../../assets/instagram.png" alt="instagram">
+            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram.png" alt="instagram"></a>
             <img src="../../assets/whatsapp.png" alt="whatsapp">
-        </div>
-
-        
-        
+        </div>   
     </footer>
 </div>    
     

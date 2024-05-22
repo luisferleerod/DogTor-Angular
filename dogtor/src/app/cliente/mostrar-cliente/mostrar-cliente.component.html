@@ -40,7 +40,7 @@
             </div>
 
             <div class="datos-imagen">
-                <img class="imagen-dueno" src="https://st.depositphotos.com/1518767/4291/i/600/depositphotos_42917347-stock-photo-happy-family-sitting-on-couch.jpg" alt="">
+                <img class="imagen-dueno" src="https://www.gentedehoy.es/wp-content/uploads/2020/03/Mascota-familia_1-1104x736.jpg" alt="">
             </div>
     </section>
 
@@ -51,6 +51,7 @@
             <tr>
                 <th class="titulo-tabla borer-radius1">Nombre</th>
                 <th class="titulo-tabla">Raza</th>
+                <th class="titulo-tabla">Estado</th>
                 <th class="titulo-tabla borer-radius2">Información</th>
             </tr>
             <!-- Iterar sobre las mascotas del dueño y mostrar sus detalles -->
@@ -58,6 +59,7 @@
                 th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
                 <td class="contenido-tabla">{{mascota.nombre}}</td>
                 <td class="contenido-tabla">{{mascota.raza}}</td>
+                <td class="contenido-tabla">{{mascota.estado}}</td>
 
                 <td class="boton-tabla">
                     <a class="ver-info" [routerLink]="['/mascota/mostrar/', mascota.id]" >Ver</a> 
@@ -83,11 +85,10 @@
         </div>
 
         <div class="redes-sociales">
-            <img src="../../../assets/facebook.png" alt="facebook">
-            <img src="../../../assets/instagram.png" alt="instagram">
-            <img src="../../../assets/whatsapp.png" alt="whatsapp">
-        </div>
-        
+            <img src="../../assets/facebook_blanco.png" alt="facebook">
+            <img src="../../assets/instagram_blanco.png" alt="instagram">
+            <img src="../../assets/whatsapp_blanco.png" alt="whatsapp">
+        </div>   
     </footer>
 </div>
     

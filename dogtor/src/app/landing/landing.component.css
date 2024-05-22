@@ -115,6 +115,7 @@ nav{
     color: white;
     border-radius: .7rem;
     transition-duration: 300ms;
+    cursor: pointer;
 }
 
 .indice-secciones{
@@ -236,13 +237,13 @@ nav{
     text-align: center;
     box-shadow: none;
     color: black;
+    transition: .2s;
 }
 
 .servicio:hover{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
     transition-duration: 400ms;
-    cursor: pointer;
-    background-color: rgb(203, 217, 222);
+    background-color: white;
 }
 
 .servicio h2 {
@@ -291,6 +292,7 @@ nav{
 
 .estado-mascotas button{
     background-color: var(--color-secundario);
+    font-weight: bold;
     padding: .7rem;
     border: none;
     border-radius: .7rem;
@@ -303,8 +305,8 @@ nav{
 }
 
 .estado-mascotas button:hover{
-    background-color: var(--color-contraste);
-    color: black;
+    background-color:#e55807;
+    color: white;
     cursor: pointer;
     box-shadow: none;
     transition-duration: 200ms;
@@ -312,10 +314,10 @@ nav{
 
 /* Estilos para la seccion contacto*/
 .contacto {
-    background-color: #fe9739;
+    background-color: var(--color-secundario);
     color: white;
     display: flex;
-    height: 25rem;
+    height: 35.1rem;
     padding: 1rem 3rem 1rem 3rem;
 }
 
@@ -328,7 +330,7 @@ nav{
     width: 20%;
     display: flex;
     align-items: center;
-    margin-right: 2remm;
+    margin-right: 4rem;
 }
 
 .mapa-section {
@@ -348,20 +350,22 @@ nav{
 }
 
 .menu-principal .inicio-sesion{
-    color: var(--color-contraste);
+    color:#e55807;
+    transition: .2s;
 }
 
 .menu-principal .inicio-sesion:hover{
     color: white;
-    background-color: var(--color-contraste);
+    background-color:#e55807;
 }
 
 /* Estilos para el pie de pagina */
 footer {
     display: flex;
-    background-color: var(--color-secundario);
     padding: 0rem 0rem 0rem 0rem;
-    color: white;
+    background-color: var(--color-primario);
+    color: #146076;
+    font-weight: bold;
     text-align: justify;
     font-size: 19px;
     max-width: 100%;
@@ -402,6 +406,7 @@ footer {
     width: 4rem;
     height: 4rem;
     margin: 1rem;
+    transition: .2s;
 }
 
 .redes-sociales img:hover{
