@@ -177,8 +177,6 @@ h2{
 table {
     border-radius: .7rem;
     width: 100%;
-    overflow: hidden;
-    background-color: #035A6C;
     color: white;
 }
 
@@ -193,13 +191,14 @@ table {
 }
 
 .datos-dueno td{
-    padding: 1rem 6rem 1rem 6rem;
+    padding: 1rem 6rem;
     margin: 0;
+    border-bottom: #48b6c2 solid 1px;
 }
 
 .titulo{
     color: white;
-    padding: .3rem 3rem .3rem 3rem;
+    padding: .3rem 3rem;
     background-color: #1B9AB5;
     margin: 0rem 0 .2rem 0;
     text-align: center;
@@ -250,7 +249,7 @@ table {
     font-weight: bold;
     padding: 1rem;
     font-size: 18px;
-    
+    border-bottom: #48b6c2 solid 1px;
 }
 
 /* Estilos para los puntos de estado */
@@ -283,6 +282,7 @@ a {
     color: black;
     font-weight: bold;
     font-style: none;
+    border-bottom: #48b6c2 solid 1px;
 }
 
 .boton-tabla:hover {
@@ -339,7 +339,6 @@ footer {
     padding: 0rem 0rem 0rem 0rem;
     background-color: var(--color-secundario);
     color: white;
-    font-weight: bold;
     text-align: justify;
     font-size: 19px;
     max-width: 100%;
