@@ -28,7 +28,7 @@ export class VeterinarioMostrarTodosComponent {
     this.veterinarioService.deleteById(veterinario.id);
 
      const index = this.listaVeterinarios.findIndex(m => m.id === veterinario.id);
-     this.listaVeterinarios[index].estado = 'inactivo';
+     this.listaVeterinarios[index].estado = 'Inactivo';
   }
 
 

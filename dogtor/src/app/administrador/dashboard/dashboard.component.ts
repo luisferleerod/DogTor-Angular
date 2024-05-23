@@ -75,7 +75,6 @@ export class DashboardComponent {
       console.log("ARREGLO DE DROGAS"+this.drogasMasVendidas);
     })
     
-    
   }
 
   obtenerTotalVentas(): void {

@@ -284,3 +284,25 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
+
+
+/* Punto Verde y Rojo */
+.estado {
+    display: flex;
+    align-items: center;
+}
+
+.estado div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.estado .activo {
+    background-color: green;
+}
+
+.estado .inactivo {
+    background-color: red;
+}

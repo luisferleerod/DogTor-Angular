@@ -19,52 +19,9 @@
 
 
     <section class="datos-ganancias-imagen">
-
-        <div class="ventas">
-            <div class="titulo">
-              <h1>Ganancias y ventas</h1>            
-            </div>
-            <table class="tabla-info">
-              <tr>
-                <td class="titulo-tabla borer-radius1">Ganancias Totales</td>
-                <td class="contenido-tabla borer-radius2">{{ obtenerTotalGanancias() }}</td>
-              </tr>
-              <tr>
-                <td class="titulo-tabla">Ventas Totales</td>
-                <td  class="contenido-tabla">{{ totalVentas }}</td>
-              </tr>
-            </table>
-          </div>
-
-            
-
-            <div class="datos-imagen">
-                <img class="imagen-dueno" src="https://www.tuproyectodevida.pe/wp-content/uploads/2020/07/Cualidades-de-un-administrador-de-empresas-1200x628.png" alt="">
-            </div>
-    </section>
-
-    <!-- Sección para mostrar las mascotas, veterinarios y tratamientos -->
-    <section class="info-general" id="mascotas">
-
-        <div class="datos-tratamientos">
-            <div class="titulo">
-                <h1>Drogas más vendidas</h1>
-                <a type="button" class="info" [routerLink]="['/admin/tratamientos']"><img src="../../../assets/info.png" alt=""></a>
-            </div>
-            
-
-            <table class="tabla-info">
-                <tr *ngFor="let droga of drogasMasVendidas">
-                  <td class="titulo-tabla borer-radius1">{{ droga.nombre }}</td>
-                  <td class="contenido-tabla borer-radius2">{{ droga.unidadesVendidas }}</td>
-                </tr>
-            </table>
-        </div>
-        
-
         <div class="veterinarios">
             <div class="titulo">
-                <h1>Veterinarios | Mascotas</h1>
+                <h1>Estados Actuales</h1>
                 <a type="button" class="info" [routerLink]="['/veterinario/all']"><img src="../../../assets/info.png" alt=""></a>
             </div>
     
@@ -86,7 +43,47 @@
                     <td class="contenido-tabla borer-radius3">{{ cantidadMascotasTotales }}</td>
                 </tr>
             </table>
+        </div>     
+
+        <div class="datos-imagen">
+            <img class="imagen-dueno" src="https://www.tuproyectodevida.pe/wp-content/uploads/2020/07/Cualidades-de-un-administrador-de-empresas-1200x628.png" alt="">
         </div>
+    </section>
+
+    <!-- Sección para mostrar las mascotas, veterinarios y tratamientos -->
+    <section class="info-general" id="mascotas">
+
+        <div class="datos-tratamientos">
+            <div class="titulo">
+                <h1>Drogas más vendidas</h1>
+                <a type="button" class="info" [routerLink]="['/admin/tratamientos']"><img src="../../../assets/info.png" alt=""></a>
+            </div>
+            
+
+            <table class="tabla-info">
+                <tr *ngFor="let droga of drogasMasVendidas">
+                  <td class="titulo-tabla">{{ droga.nombre }}</td>
+                  <td class="contenido-tabla">{{ droga.unidadesVendidas }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="ventas">
+            <div class="titulo">
+              <h1>Ganancias y ventas</h1>            
+            </div>
+            <table class="tabla-info">
+              <tr>
+                <td class="titulo-tabla borer-radius1">Ganancias Totales</td>
+                <td class="contenido-tabla borer-radius2">{{ obtenerTotalGanancias() }}</td>
+              </tr>
+              <tr>
+                <td class="titulo-tabla">Ventas Totales</td>
+                <td  class="contenido-tabla">{{ totalVentas }}</td>
+              </tr>
+            </table>
+          </div>
+        
         
     </section>
 
@@ -106,10 +103,10 @@
         </div>
 
         <div class="redes-sociales">
-            <img src="../../../assets/facebook.png" alt="facebook">
-            <img src="../../../assets/instagram.png" alt="instagram">
-            <img src="../../../assets/whatsapp.png" alt="whatsapp">
-        </div>
+            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook_blanco.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram_blanco.png" alt="instagram"></a>
+            <img src="../../assets/whatsapp_blanco.png" alt="whatsapp">
+        </div>    
         
     </footer>
 </div>

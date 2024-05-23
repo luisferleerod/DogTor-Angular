@@ -42,6 +42,7 @@ export class InicioSesionTrabajadorComponent {
     this.userService.encontrarRol(this.formUser.username).subscribe(
       (response) => {
         this.rol = response;
+        console.log("RRRRROOOOLLLLL: " + this.rol)
         if (this.rol == 1) {
           this.administradorService.iniciarSesion(this.formUser).subscribe(
             (response) => {
@@ -78,8 +79,9 @@ export class InicioSesionTrabajadorComponent {
             },(error) => {
               this.mostrarAlerta("Credenciales inválidas");
             });
-        }
-        else {
+        } else if (this.rol == 0) {
+          this.mostrarAlerta("Credenciales inválidas");
+        } else {
           this.mostrarAlerta("Usuario no encontrado");
         }
       }

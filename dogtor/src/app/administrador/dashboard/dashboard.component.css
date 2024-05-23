@@ -28,34 +28,43 @@ html {
 }
 
 h1{
-    transition: .3s;
+    transition: .2s;
 }
+
+.titulo h1{
+    margin-right: 4rem;
+} 
 
 /* Estilos Para la primera seccion */
 
 .datos-ganancias-imagen {
     display: flex;
     max-width: 100%;
-    justify-content: space-between;
+    margin: 0 3rem;
 }
 
 .ventas {
-    margin: 1rem 2rem 0 3rem;
+    margin: 1rem 2rem 0 0rem;
     align-items: center;
     width: 50%;
     height: auto;
     border-radius: .7rem;
     padding: 1rem;
-    transition: .3s;
+    transition: .2s;
 }
 
 .ventas:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .3s;
-    .titulo {
-        transition: .3s;
+    transition: .2s;
+    .titulo, .titulo h1{
+        transition: .2s;
         background-color: #e55807;
     }    
+
+}
+
+.ventas td {
+    padding: .9rem;
 }
 
 .ventas .titulo {
@@ -68,26 +77,26 @@ h1{
     margin: 0rem 0 .2rem 0;
     border-radius: .7rem;
     text-transform: uppercase;
-    transition: .3s;
+    transition: .2s;
+}
+
+.ventas .titulo h1 {
+    font-size: 30px;
+    background-color: transparent;
+    padding: .3rem;
 }
 
 .ventas:hover .titulo {
-    transition: .3s;
+    transition: .2s;
     background-color: #e55807;
 }
 
 
-.datos-imagen {
-    width: 50%;
-    height: auto;
-}
-
 .imagen-dueno {
-    width: 500px;
-    height: auto;
-    max-height: 300px;
+    width: 600px;
+    height: 310px;
     margin: 1.5rem 0 0 1rem;
-    border-radius: 5%;
+    border-radius: .7rem;
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
@@ -96,6 +105,16 @@ table {
     width: 100%;
     overflow: hidden;
     color: white;
+}
+
+tabla-info {
+    border-radius: .7rem;
+    width: 100%;
+    color: white;
+}
+
+td {
+    border-bottom: #04bcd6 1px solid;
 }
 
 .titulo-tabla {
@@ -121,20 +140,20 @@ table {
     margin: 0rem 0 .2rem 0;
     border-radius: .7rem;
     text-transform: uppercase;
-    transition: .3s;
+    transition: .2s;
 }
 
 .info {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: .2s;
     padding: .5rem;
     border-radius: .1rem;
 }
 
 .info:hover{
-    transition: .3s;
+    transition: .2s;
     background-color: var(--color-secundario);
     border-radius: .7rem;
 }
@@ -153,11 +172,11 @@ table {
 
 
 .datos-tratamientos {
-    transition: .3s;
-    margin: 1rem 2rem 0 3rem;
+    transition: .2s;
+    margin: 1rem 0rem 0 3rem;
     display: block;
     align-items: center;
-    width: 47%;
+    width: 50%;
     height: auto;
     box-shadow: inset;
     border-radius: .7rem;
@@ -167,11 +186,25 @@ table {
 
 .datos-tratamientos:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .3s;
+    transition: .2s;
     .titulo, .titulo h1{
-        transition: .3s;
+        transition: .2s;
         background-color: #e55807;
     }  
+    .titulo a {
+        transition: .2s;
+        background-color: #1B9AB5;
+        border-radius: .7rem;
+    }
+}
+
+.datos-tratamientos .titulo a:hover {
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.datos-tratamientos td {
+    padding: .3rem;
 }
 
 
@@ -230,9 +263,8 @@ a {
 }
 
 .veterinarios {
-    width: 43%;
-    height: auto;
-    transition: .3s;
+    width: 50%;
+    transition: .2s;
     align-items: center;
     height: auto;
     border-radius: .7rem;
@@ -242,13 +274,35 @@ a {
 
 .veterinarios:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .3s;
-    .titulo, .titulo h1{
-        transition: .3s;
+    transition: .2s;
+    .titulo{
+        transition: .2s;
         background-color: #e55807;
-    }   
+    }  
+    .titulo a {
+        transition: .2s;
+        background-color: #1B9AB5;
+        border-radius: .7rem;
+    } 
 }
 
+.veterinarios .titulo{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    
+}
+
+.veterinarios .titulo a:hover {
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.veterinarios h1{
+    font-size: 30px;
+    margin-right: 4rem;
+}
 
 
 /* Estilos para el footer */

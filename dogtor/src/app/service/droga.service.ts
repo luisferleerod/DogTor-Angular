@@ -13,6 +13,10 @@ export class DrogaService {
   findAll(): Observable<droga[]> {
     return this.http.get<droga[]>("http://localhost:8090/drogas/all");
   }
+
+  findAllAll(): Observable<droga[]> {
+    return this.http.get<droga[]>("http://localhost:8090/drogas/all");
+  }
   
   masVendidas(): Observable<droga[]> {
     return this.http.get<droga[]>("http://localhost:8090/drogas/masVendidas");
