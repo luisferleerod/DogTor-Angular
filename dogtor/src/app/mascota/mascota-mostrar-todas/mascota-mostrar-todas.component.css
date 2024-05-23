@@ -177,6 +177,7 @@ td {
     height: 26px;
 }
 
+
 .contenedor-boton,
 .contenedor-boton2,
 .contenedor-boton3,
@@ -308,67 +309,3 @@ nav {
     padding: .4rem;
 }
 
-/* Toggle */
-
-.switchBtn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 7.5rem;
-    height: 2.2rem;
-}
-
-.switchBtn input {
-    display: none;
-}
-
-.slide {
-    position: absolute;
-    content: "";
-    cursor: pointer;
-    top: 0;
-    left: 10px;
-    right: 0;
-    bottom: 0;
-    background-color: #035A6C;
-    -webkit-transition: .4s;
-    transition: .4s;
-    padding: 1.2rem;
-    color: #fff;
-}
-
-.slide:before {
-    position: absolute;
-    content: "";
-    cursor: pointer;
-    height: 26px;
-    width: 26px;
-    left: 78px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slide {
-    background-color: #e55807;
-    padding-left: 34px;
-}
-
-input:checked + .slide:before {
-    -webkit-transform: translateX(10px);
-    -ms-transform: translateX(50px);
-    transform: translateX(25px);
-    left: -20px;
-}
-
-.slide.round {
-    display: flex;
-    align-items: center;
-    border-radius: 3rem;
-}
-
-.slide.round:before {
-    border-radius: 3rem;
-}
