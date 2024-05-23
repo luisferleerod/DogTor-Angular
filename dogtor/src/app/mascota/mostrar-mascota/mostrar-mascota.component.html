@@ -70,7 +70,7 @@
         </table>
     </section>
 
-    <section class="tratamientosinac" *ngIf="mascota.estado === 'inactivo'">
+    <section class="tratamientos-mascota-inac" *ngIf="mascota.estado === 'inactivo'">
         <h1 *ngIf="tratamientos && tratamientos.length > 0; else noTratamientosTitulo" class="titulo2">TRATAMIENTOS DE {{mascota.nombre}}</h1>
         <table>
             <thead>

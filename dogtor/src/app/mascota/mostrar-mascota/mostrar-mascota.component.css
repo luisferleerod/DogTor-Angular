@@ -184,7 +184,33 @@ table {
     border-radius: .7rem;
 }
 
+.tratamientos-mascota-inac {
+    transition: .2s;
+    width: 89.5%;
+    padding: 1rem;
+    margin: 2rem 3rem  3rem;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
 .tratamientos:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo2{
+        transition: .2s;
+        background-color: #e55807;
+    }   
+    .titulo2-inac{
+        transition: .2s;
+        background-color: grey;
+    }
+}
+
+.tratamientos-mascota-inac:hover {
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
     transition: .2s;
     .titulo2{
@@ -194,7 +220,7 @@ table {
     .titulo2-inac{
         transition: .2s;
         background-color: grey;
-    }  
+    }
 }
 
 .contenido-tabla {
