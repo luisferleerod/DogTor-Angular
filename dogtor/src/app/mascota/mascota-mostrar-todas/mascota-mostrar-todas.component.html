@@ -31,9 +31,7 @@
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todas las Mascotas</h1>
 
-            <div >
-                <input class="search-bar" id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar Mascotas Por Nombre..." (input)="buscarMascotas()">
-            </div>
+            <input class="search-bar" id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar Por Nombre..." (input)="buscarMascotas()">
 
             <a type="button" class="mas" id="btnCrearMascota" [routerLink]="['/mascota/crear']"><img src="../../../assets/mas.png" alt=""></a>
             
@@ -60,7 +58,11 @@
                     <td>{{mascota.edad}}</td>
                     <td>{{mascota.peso}}</td>
                     <td>{{mascota.enfermedad}}</td>
-                    <td>{{mascota.estado}}</td>
+                    <td>
+                        <span [ngClass]="{'estado-activo': mascota.estado === 'activo', 'estado-inactivo': mascota.estado === 'inactivo'}"></span>
+                        {{mascota.estado}}
+                    </td>
+                    
                     
                     <td class="td-botones">
                         <div class="contenedor-botones">
