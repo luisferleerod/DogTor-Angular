@@ -2,21 +2,24 @@
     <header>
         <div class="logo">
             <img src="../../../assets/logo_basico_blanco.png" alt="">
-            <h1>Veterinario: {{veterinario.nombre}}</h1>
+            <h1>Veterinario: <span>{{veterinario.nombre}}</span></h1>
         </div>
 
         <nav class="navegacion-principal">
             <ul class="menu-principal">  
 
-                <div class="search-bar">
-                    <input id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar mascotas..." (input)="buscarMascotas()">
-                </div>
-                <label class="switchBtn" (click)="toggleSlide($event)" id="btnIrCliente">
+                
+
+                <!-- <label class="switchBtn" (click)="toggleSlide($event)" id="btnIrCliente">
                     <input class="punto" type="checkbox">
                     <div class="slide round">{{ toggleText }}</div>
-                </label>
+                </label> -->
 
 
+
+
+                <a class="activo" [routerLink]="['/mascota/all']"><li>Mascotas</li></a>
+                <a [routerLink]="['/cliente/all']"><li>Clientes</li></a>
                 <a [routerLink]="['/veterinario/mostrar', veterinario.id]"><li>Perfil</li></a>
                 
                 <a href="http://localhost:4200"><li class="inicio-sesion">Cerrar Sesión</li></a>
@@ -27,6 +30,10 @@
     <div class="titulo-mascotas">
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todas las Mascotas</h1>
+
+            <div >
+                <input class="search-bar" id="searchBar" type="text" [(ngModel)]="searchTerm" placeholder="Buscar Mascotas Por Nombre..." (input)="buscarMascotas()">
+            </div>
 
             <a type="button" class="mas" id="btnCrearMascota" [routerLink]="['/mascota/crear']"><img src="../../../assets/mas.png" alt=""></a>
             
@@ -103,28 +110,7 @@
         </table>
     </div>
 
-    <footer>
-        <div class="datos-negocio">
-            <p>
-                Numero: +57 000 000 0000<br>
-                Email: consultor@dogtor.com<br>
-                Direccion: Calle 1 # 1-1<br>
-                Horario de atenciòn: 9:00 - 18:00
-            </p>
-        </div>
-        
-        <div class="derechos">
-            © 2024 DOGTOR. Todos los derechos reservados.
-        </div>
 
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook.png" alt="facebook"></a>
-            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram.png" alt="instagram"></a>
-            <img src="../../assets/whatsapp.png" alt="whatsapp">
-        </div>  
-
-    
-    </footer>
 </div>
 
     

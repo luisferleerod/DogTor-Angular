@@ -19,19 +19,65 @@
     overflow: hidden;
 }
 
-
 .titulo-mascotas {
     width: 90%;
     margin: 1rem 5% .5rem 5%;
     background-color: #035A6C;
     border-radius: .7rem;
+}
 
+a.activo {
+    text-decoration: none; /* Eliminar cualquier subrayado por defecto */
+}
 
+a.activo li {
+    position: relative; /* Necesario para usar ::after */
+}
+
+a.activo li::after,
+.menu-principal li:hover::after {
+    content: "";
+    display: block;
+    width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+    height: 4px; /* Ajusta el grosor de la línea */
+    background-color: #e55807; /* Color de la línea */
+    position: absolute;
+    bottom: 0; /* Poner la línea en la parte inferior del elemento */
+    left: 0;
+    border-radius: .2rem;
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+a:not(.activo) li::after {
+    content: none; /* Elimina el subrayado de las opciones no activas */
+}
+
+.menu-principal li {
+    position: relative;
+    margin: 0 1rem;
+    padding: .4rem .7rem;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.menu-principal li:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color:#9EF0F7;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: .2rem;
+    transition: .2s;
 }
 
 .titulo-todas-las-mascotas {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     color: white;
     width: 93%;
@@ -39,7 +85,7 @@
 }
 
 .mas {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 30rem;
@@ -49,12 +95,11 @@
 }
 
 .mas:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: .2s;
 }
 
 .titulo-mascotas img {
-    
     width: 3rem;
     height: 3rem;
 }
@@ -94,7 +139,6 @@ td {
     background-color: #D5FCFF;
     text-transform: capitalize;
     border-bottom: #18a3be 1px solid;
-
 }
 
 .contenedor-botones {
@@ -109,29 +153,26 @@ td {
 .contenedor-boton2,
 .contenedor-boton3,
 .contenedor-boton4 {
-  
-  display: flex; /* Utilizar flexbox para organizar las imágenes */
-  width: 50px;
-  height: 50px;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+    display: flex; /* Utilizar flexbox para organizar las imágenes */
+    width: 50px;
+    height: 50px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
-
 
 .boton-borrar {
     width: 25px;
     height: 25px;
     position: absolute;
     margin: 0 auto; /* Center image horizontally and vertically */
-  }
-  
+}
 
-  #btnCrearTratamiento{
+#btnCrearTratamiento {
     width: 25px;
     height: 25px;
     position: absolute;
-    margin: 0 auto; 
-  }
+    margin: 0 auto;
+}
 
 .boton-borrar:hover {
     opacity: 0;
@@ -163,6 +204,11 @@ header {
     font-weight: bold;
     font-size: 30px;
     color: white;
+    text-transform: capitalize;
+}
+
+h1 span {
+    color: #146076;
 }
 
 .logo h2 {
@@ -178,51 +224,44 @@ header {
     margin-left: 3.5rem;
 }
 
-nav{
+nav {
     display: flex; /* para que los elementos se alineen en lineas */
     justify-content: space-between; /* para que los elementos se alineen en el espacio entre ellos */
     padding: 0;
     margin-right: 3rem;
-
 }
 
-
-.menu-principal{
+.menu-principal {
     list-style: none; /* para quitar los puntos */
-    padding:  .8rem;
+    padding: .8rem;
     display: flex;
     justify-content: right; /* para que los elementos se alineen en el espacio entre ellos */
-    align-items: center; 
+    align-items: center;
     font-weight: bold;
     font-size: 20px;
     margin: 0;
 }
 
-.menu-principal a{
+.menu-principal a {
     text-decoration: none;
 }
 
-.menu-principal ul{
+.menu-principal ul {
     margin-top: 1rem;
 }
 
-.menu-principal li{
-    margin: 0 1rem 0 1rem;
+.menu-principal li {
+    margin: 0 1rem;
     border-radius: .7rem;
-    padding: .4rem .7rem .4rem .7rem;
+    padding: .4rem .7rem;
     text-decoration: none;
     color: white;
     font-size: 23px;
+    position: relative; /* Necesario para el pseudo-elemento ::after */
+    transition: .2s;
 }
 
-.menu-principal li:hover{
-    background-color: #e55807;
-    color: white;
-    border-radius: .7rem;
-    transition-duration: 300ms;
-}
-
-.indice-secciones{
+.indice-secciones {
     background-color: var(--color-secundario);
     width: 100%;
     margin-top: 0;
@@ -234,61 +273,13 @@ nav{
     font-size: 20px;
 }
 
-
-/* Estilos para el pie de pagina */
-footer {
-    display: flex;
-    background-color: var(--color-secundario);
-    padding: 0rem 0rem 0rem 0rem;
-    color: white;
-    text-align: justify;
-    font-size: 19px;
-    max-width: 100%;
-    justify-content: space-between;
+.search-bar {
+    border: none;
+    width: 20rem;
+    margin-right: 4rem;
+    border-radius: 2rem;
+    padding: .4rem;
 }
-
-
-.datos-negocio{
-    text-align: justify;
-    margin: 0 0 0 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-}
-
-.datos-negocio p{
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-.derechos{
-    width: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.redes-sociales {
-    margin: 2rem 0 1rem 2rem;
-    display: flex;
-    justify-content: center;
-    width: 30%;
-}
-
-.redes-sociales img {
-    width: 4rem;
-    height: 4rem;
-    margin: 1rem;
-}
-
-.redes-sociales img:hover{
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-}
-
 
 /* Toggle */
 
@@ -302,7 +293,7 @@ footer {
 }
 
 .switchBtn input {
-    display:none;
+    display: none;
 }
 
 .slide {
@@ -316,9 +307,8 @@ footer {
     background-color: #035A6C;
     -webkit-transition: .4s;
     transition: .4s;
-    padding: 8px;
+    padding: 1.2rem;
     color: #fff;
-    
 }
 
 .slide:before {
@@ -335,10 +325,9 @@ footer {
 }
 
 input:checked + .slide {
-    background-color:#e55807;
+    background-color: #e55807;
     padding-left: 34px;
 }
-
 
 input:checked + .slide:before {
     -webkit-transform: translateX(10px);
@@ -355,5 +344,4 @@ input:checked + .slide:before {
 
 .slide.round:before {
     border-radius: 3rem;
-
 }
