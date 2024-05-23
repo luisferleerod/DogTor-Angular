@@ -66,6 +66,7 @@ export class InicioSesionTrabajadorComponent {
                 console.log(this.veterinario);
 
                 if(this.veterinario.estado == "Activo"){
+                  this.veterinarioService.setVeterinario(this.veterinario);
                   this.router.navigate(['/mascota/all']);
                 }
                 else if(this.veterinario.estado == "Inactivo"){
