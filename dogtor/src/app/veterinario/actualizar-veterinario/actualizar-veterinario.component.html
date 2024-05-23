@@ -17,14 +17,11 @@
                         <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del veterinario" required [(ngModel)]=formVeterinario.nombre>
     
                         <label for="usuario">Usuario:</label>
-                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario>
+                        <input type="text" id="cedula" name="usuario" placeholder="Ingrese la cédula del veterinario" required [(ngModel)]=formVeterinario.usuario readonly>
                         
                         
                         <label for="especialidad">Especialidad:</label>
-                        <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad" required [(ngModel)]=formVeterinario.especialidad>
-                        
-                        
-                          
+                        <input type="text" id="especialidad" name="especialidad" placeholder="Ingrese la especialidad" required [(ngModel)]=formVeterinario.especialidad >
                         
                        
                     </div>
@@ -34,7 +31,7 @@
                         <input  id="foto" name="foto" placeholder="Ingrese la URL de la foto del veterinario" required [(ngModel)]=formVeterinario.foto>
     
                         <label for="contrasena">Contrasena:</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required [(ngModel)]=formVeterinario.contrasena>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contrasena del veterinario" required [(ngModel)]=formVeterinario.contrasena readonly>
     
                         <label for="estado">Estado:</label>
                         <select id="estado" name="estado" required [(ngModel)]=formVeterinario.estado>

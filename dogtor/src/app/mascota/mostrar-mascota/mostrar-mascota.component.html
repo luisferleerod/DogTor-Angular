@@ -14,7 +14,7 @@
     </header>
 
     <section class="datos-paciente-imagen" id="datos-mascota">
-        <div class="datos-paciente">
+        <div [ngClass]="{'datos-paciente': true, 'datos-pacienteinac': mascota.estado === 'inactivo'}">
             <h1 class="titulo">Info del Paciente</h1>
             <table class="tabla-info">
                 <tr>
@@ -42,47 +42,70 @@
                 </tr>
             </table>
         </div>
-
         <div class="datos-imagen">
             <img src="{{mascota.foto}}" class="imagen-perro">
         </div>
     </section>
+    
 
     <section class="tratamientos" *ngIf="mascota.estado === 'activo'">
-        <h1 class="titulo2">TRATAMIENTOS</h1>
+        <h1 *ngIf="tratamientos && tratamientos.length > 0; else noTratamientosTitulo" class="titulo2">TRATAMIENTOS DE {{mascota.nombre}}</h1>
         <table>
             <thead>
-                <th class="titulo-tabla borer-radius1">DROGA</th>
-                <th class="titulo-tabla">VETERINARIO</th>
-                <th class="titulo-tabla borer-radius2">FECHA</th>
+                <tr *ngIf="tratamientos && tratamientos.length > 0; else noTratamientos">
+                    <th class="titulo-tabla borer-radius1">DROGA</th>
+                    <th class="titulo-tabla">VETERINARIO</th>
+                    <th class="titulo-tabla borer-radius2">FECHA</th>
+                </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let tratamiento of tratamientos">
-                    <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
-                    <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
-                    <td class="contenido-tabla">{{tratamiento.fecha}}</td>
-                </tr>
+                <ng-container *ngIf="tratamientos && tratamientos.length > 0; else noTratamientosBody">
+                    <tr *ngFor="let tratamiento of tratamientos">
+                        <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
+                        <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
+                        <td class="contenido-tabla">{{tratamiento.fecha}}</td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </section>
 
     <section class="tratamientosinac" *ngIf="mascota.estado === 'inactivo'">
-        <h1 class="titulo2">TRATAMIENTOS</h1>
+        <h1 *ngIf="tratamientos && tratamientos.length > 0; else noTratamientosTitulo" class="titulo2">TRATAMIENTOS DE {{mascota.nombre}}</h1>
         <table>
             <thead>
-                <th class="titulo-tabla borer-radius1">DROGA</th>
-                <th class="titulo-tabla">VETERINARIO</th>
-                <th class="titulo-tabla borer-radius2">FECHA</th>
+                <tr *ngIf="tratamientos && tratamientos.length > 0; else noTratamientos">
+                    <th class="titulo-tabla borer-radius1">DROGA</th>
+                    <th class="titulo-tabla">VETERINARIO</th>
+                    <th class="titulo-tabla borer-radius2">FECHA</th>
+                </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let tratamiento of tratamientos">
-                    <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
-                    <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
-                    <td class="contenido-tabla">{{tratamiento.fecha}}</td>
-                </tr>
+                <ng-container *ngIf="tratamientos && tratamientos.length > 0; else noTratamientosBody">
+                    <tr *ngFor="let tratamiento of tratamientos">
+                        <td class="contenido-tabla">{{tratamiento.droga?.nombre}}</td>
+                        <td class="contenido-tabla">{{tratamiento.veterinario?.nombre}}</td>
+                        <td class="contenido-tabla">{{tratamiento.fecha}}</td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </section>
+
+    <ng-template #noTratamientosTitulo>
+        <h1 class="titulo2-inac">TRATAMIENTOS DE {{mascota.nombre}}</h1>
+    </ng-template>
+    
+
+    <ng-template #noTratamientos>
+        <tr>
+            <th class="titulo-tabla" colspan="3">{{mascota.nombre}} no tiene tratamientos</th>
+        </tr>
+    </ng-template>
+
+    <ng-template #noTratamientosBody>
+        
+    </ng-template>
 
     <footer>
         <div class="datos-negocio">
@@ -97,9 +120,9 @@
             © 2024 DOGTOR. Todos los derechos reservados.
         </div>
         <div class="redes-sociales">
-            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook.png" alt="facebook"></a>
-            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram.png" alt="instagram"></a>
-            <img src="../../assets/whatsapp.png" alt="whatsapp">
+            <a href="https://www.facebook.com/JuanGArenas18?mibextid=ZbWKwL" target="_blank"><img src="../../assets/facebook_blanco.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/juan_g_arenas?igsh=bjhxeGhiZWpyMnNv" target="_blank"><img src="../../assets/instagram_blanco.png" alt="instagram"></a>
+            <img src="../../assets/whatsapp_blanco.png" alt="whatsapp">
         </div>  
     </footer>
 </div>

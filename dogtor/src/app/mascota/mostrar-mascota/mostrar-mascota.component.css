@@ -90,7 +90,7 @@ h2{
 
 .imagen-perro {
     width: 450px;
-    max-height: auto;
+    height: 330px;
     margin: 3rem 0 0 1rem;
     border-radius: 5%;
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
@@ -160,20 +160,18 @@ table {
     text-align: center;
 }
 
-.tratamientos {
-    transition: .2s;
-    width: 89.5%;
-    padding: 1rem;
-    margin: 2rem 3rem  3rem;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem;
+.titulo2-inac {
+    transition: .3s;
+    color: white;
+    background-color: var(--color-secundario);
+    width: 100%;
+    padding: .5rem .3rem;
+    text-transform: uppercase;
     border-radius: .7rem;
+    text-align: center;
 }
 
-.tratamientosinac {
+.tratamientos {
     transition: .2s;
     width: 89.5%;
     padding: 1rem;
@@ -192,16 +190,11 @@ table {
     .titulo2{
         transition: .2s;
         background-color: #e55807;
-    }   
-}
-
-.tratamientosinac:hover {
-    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
-    transition: .2s;
-    .titulo2{
+    }
+    .titulo2-inac{
         transition: .2s;
         background-color: grey;
-    }   
+    }  
 }
 
 .contenido-tabla {
