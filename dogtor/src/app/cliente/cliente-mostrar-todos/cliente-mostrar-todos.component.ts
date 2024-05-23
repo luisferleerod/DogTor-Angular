@@ -43,20 +43,30 @@ export class ClienteMostrarTodosComponent {
   modificarCliente(cliente: Cliente) {
     this.clienteAct=Object.assign({},cliente);
   }
-
   delete(cliente: Cliente) {
-
-    this.clienteService.delete(cliente.id) ;
-      this.clienteService.findAll().subscribe((clientes) => this.listaClientes = clientes, (error) => {
-      })
-
-      const index = this.listaClientes.findIndex(m => m.id === cliente.id);
+    // Primero eliminamos el cliente
+    this.clienteService.delete(cliente.id);
+  
+    // Actualizamos la lista de clientes
+    const index = this.listaClientes.findIndex(m => m.id === cliente.id);
+    if (index > -1) {
       this.listaClientes.splice(index, 1);
-    
-    this.mostrarAlerta();
-
-
+    }
+  
+    // Mostramos la alerta después de actualizar la lista
+    Swal.fire({
+      title: 'CLIENTE ELIMINADO',
+      text: 'Se eliminó el cliente de manera exitosa',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Solo redirigimos si el usuario confirma la alerta
+        this.router.navigate(['/cliente/all']);
+      }
+    });
   }
+  
 
   mostrarAlerta(){
     Swal.fire({

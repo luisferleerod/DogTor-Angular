@@ -12,42 +12,57 @@ import Swal from 'sweetalert2';
 })
 export class InicioSesionPageComponent {
 
-    formCliente!: string
-    sendCliente!: String
-    mensajeError!: string;
+  formCliente!: string;
+  sendCliente!: string;
+  mensajeError!: string;
 
-    constructor(
-      private clienteService: ClienteService,
-      private route: ActivatedRoute,
-      private router: Router,
-    ) {
-
-    
-  }
+  constructor(
+    private clienteService: ClienteService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {}
 
   formUser: User = {
     username: '',
     password: ''
-  }
+  };
 
-
+  existe: boolean = false;
 
   iniciarSesion() {
-    this.clienteService.iniciarSesion(this.formUser).subscribe(
+    this.clienteService.findById(Number(this.formUser.username)).subscribe(
       (response) => {
-        localStorage.setItem('token', String(response));
-        // Si la respuesta es exitosa, redirige a la página de mostrar cliente
-        this.router.navigate(['/cliente/mostrar']);
+        if (response != null) {
+          this.existe = true;
+          // Solo intenta iniciar sesión si el cliente existe
+          this.clienteService.iniciarSesion(this.formUser).subscribe(
+            (response) => {
+              localStorage.setItem('token', String(response));
+              // Si la respuesta es exitosa, redirige a la página de mostrar cliente
+              this.router.navigate(['/cliente/mostrar']);
+            },
+            (error) => {
+              this.mostrarAlerta("Credenciales inválidas");
+            }
+          );
+        } else {
+          this.mostrarAlerta("Credenciales inválidas");
+        }
       },
       (error) => {
-        Swal.fire({
-          title: 'Error',
-          text: 'Credenciales inválidas',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        });
+        this.mostrarAlerta("Credenciales inválidas");
       }
     );
   }
-  
+
+  mostrarAlerta(mensaje: string) {
+    Swal.fire({
+      title: 'Error',
+      text: mensaje,
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+    return;
+  }
+
 }
